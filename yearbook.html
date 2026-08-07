@@ -11,6 +11,87 @@
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+
+.yearbook-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.yearbook-image {
+    display: block;
+    height: auto;
+}
+
+.yearbook-image.vertical {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.yearbook-image.wide {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project-description {
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    margin-top: 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.skills-list span {
+    padding: 8px 14px;
+    border: 1px solid currentColor;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+
+    .yearbook-image.vertical {
+        width: 85%;
+    }
+
+    .yearbook-image.wide {
+        width: 100%;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+}
+
+</style>
+
 </head>
 
 <body>
@@ -107,30 +188,38 @@ Selected Spreads
 
 <div class="yearbook-gallery">
 
+<img src="images/yearbook/spreadlong1.jpg" class="yearbook-image vertical">
 
-<img src="images/yearbook/spreadlong1.png" class="yearbook-image vertical">
-<img src="images/yearbook/spreadwide1.png" class="yearbook-image wide">
+<img src="images/yearbook/spreadwide1.jpg" class="yearbook-image wide">
 
-<img src="images/yearbook/spreadlong2.png" class="yearbook-image vertical">
-<img src="images/yearbook/spreadwide2.png" class="yearbook-image wide">
+<img src="images/yearbook/spreadlong2.jpg" class="yearbook-image vertical">
 
-<img src="images/yearbook/spreadlong3.png" class="yearbook-image vertical">
-<img src="images/yearbook/spreadwide3.png" class="yearbook-image wide">
+<img src="images/yearbook/spreadwide2.jpg" class="yearbook-image wide">
 
-<img src="images/yearbook/spreadlong4.png" class="yearbook-image vertical">
-<img src="images/yearbook/spreadwide4.png" class="yearbook-image wide">
+<img src="images/yearbook/spreadlong3.jpg" class="yearbook-image vertical">
 
-<img src="images/yearbook/spreadlong5.png" class="yearbook-image vertical">
-<img src="images/yearbook/spreadwide5.png" class="yearbook-image wide">
+<img src="images/yearbook/spreadwide3.jpg" class="yearbook-image wide">
 
-<img src="images/yearbook/spreadlong6.png" class="yearbook-image vertical">
-<img src="images/yearbook/spreadwide6.png" class="yearbook-image wide">
+<img src="images/yearbook/spreadlong4.jpg" class="yearbook-image vertical">
 
-<img src="images/yearbook/spreadlong7.png" class="yearbook-image vertical">
-<img src="images/yearbook/spreadwide7.png" class="yearbook-image wide">
+<img src="images/yearbook/spreadwide4.jpg" class="yearbook-image wide">
 
+<img src="images/yearbook/spreadlong5.jpg" class="yearbook-image vertical">
+
+<img src="images/yearbook/spreadwide5.jpg" class="yearbook-image wide">
+
+<img src="images/yearbook/spreadlong6.jpg" class="yearbook-image vertical">
+
+<img src="images/yearbook/spreadwide6.jpg" class="yearbook-image wide">
+
+<img src="images/yearbook/spreadlong7.jpg" class="yearbook-image vertical">
+
+<img src="images/yearbook/spreadwide7.jpg" class="yearbook-image wide">
+
+<img src="images/yearbook/spreadlong8.jpg" class="yearbook-image vertical">
 
 </div>
+
 
 
 <h2>
