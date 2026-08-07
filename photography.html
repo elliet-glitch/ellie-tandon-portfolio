@@ -20,20 +20,25 @@
 }
 
 .photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
     margin-top: 30px;
 }
 
-.photo-gallery img {
-    width: 100%;
-    height: auto;
+.photo-image {
     display: block;
+    height: auto;
 }
 
-.photo-gallery .wide {
-    grid-column: span 2;
+.photo-image.vertical {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.photo-image.wide {
+    width: 100%;
+    margin: 0 auto;
 }
 
 .back-link {
@@ -44,12 +49,12 @@
 
 @media (max-width: 700px) {
 
-    .photo-gallery {
-        grid-template-columns: 1fr;
+    .photo-image.vertical {
+        width: 85%;
     }
 
-    .photo-gallery .wide {
-        grid-column: span 1;
+    .photo-image.wide {
+        width: 100%;
     }
 
 }
@@ -111,21 +116,49 @@ Selected Photography
 
 <div class="photo-gallery">
 
-<img src="images/photography1.jpg" alt="Photography project image">
+<img src="images/photography/photolong1.jpeg"
+  class="photo-image vertical"
+  alt="Photography">
 
-<img src="images/photography2.jpg" alt="Photography project image">
+<img src="images/photography/photowide1.jpeg"
+  class="photo-image wide"
+  alt="Photography">
 
-<img src="images/photography3.jpg" alt="Photography project image">
+<img src="images/photography/photolong2.jpeg"
+  class="photo-image vertical"
+  alt="Photography">
 
-<img src="images/photography4.jpg" alt="Photography project image">
+<img src="images/photography/photowide2.jpeg"
+  class="photo-image wide"
+  alt="Photography">
 
-<img src="images/photography5.jpg" alt="Photography project image">
+<img src="images/photography/photolong3.jpeg"
+  class="photo-image vertical"
+  alt="Photography">
 
-<img src="images/photography6.jpg" alt="Photography project image">
+<img src="images/photography/photowide3.jpeg"
+  class="photo-image wide"
+  alt="Photography">
 
-<img src="images/photography7.jpg" alt="Photography project image">
+<img src="images/photography/photolong4.jpeg"
+  class="photo-image vertical"
+  alt="Photography">
 
-<img src="images/photography8.jpg" alt="Photography project image">
+<img src="images/photography/photowide4.jpeg"
+  class="photo-image wide"
+  alt="Photography">
+
+<img src="images/photography/photowide5.jpeg"
+  class="photo-image wide"
+  alt="Photography">
+
+<img src="images/photography/photowide6.jpeg"
+  class="photo-image wide"
+  alt="Photography">
+
+<img src="images/photography/photowide7.jpeg"
+  class="photo-image wide"
+  alt="Photography">
 
 </div>
 
