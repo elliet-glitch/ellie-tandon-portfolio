@@ -3,549 +3,586 @@
 /* ---------- GLOBAL STYLES ---------- */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-font-family: 'Inter', sans-serif;
-background: #ffffff;
-color: #1a1a1a;
-line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.6;
 }
 
 a {
-color: inherit;
-text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 img {
-max-width: 100%;
-display: block;
+    max-width: 100%;
+    display: block;
 }
+
 
 /* ---------- NAVIGATION ---------- */
 
 header {
-padding: 30px 8%;
+    padding: 30px 8%;
 }
 
 nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-font-size: 24px;
-font-weight: 700;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .nav-links {
-display: flex;
-gap: 30px;
+    display: flex;
+    gap: 30px;
 }
 
 .nav-links a {
-font-size: 16px;
-transition: 0.3s;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
-opacity: 0.5;
+    opacity: 0.5;
 }
+
 
 /* ---------- HOME HERO ---------- */
 
 .hero {
-padding: 100px 8% 120px;
-max-width: 1400px;
-margin: 0 auto;
+    padding: 120px 8%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .hero-content {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
 }
 
 .hero-text {
-max-width: 650px;
-position: relative;
-z-index: 5;
+    max-width: 650px;
 }
 
 .hero h1 {
-font-size: 68px;
-line-height: 1.08;
-margin-bottom: 25px;
-letter-spacing: -2px;
+    font-size: 72px;
+    line-height: 1.1;
+    margin-bottom: 25px;
 }
 
 .hero span {
-color: #777;
+    color: #666;
 }
 
 .subtitle {
-font-size: 15px;
-color: #777;
-text-transform: uppercase;
-letter-spacing: 2px;
-margin-bottom: 20px;
+    font-size: 16px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
 .intro {
-max-width: 650px;
-font-size: 20px;
-color: #555;
+    max-width: 650px;
+    font-size: 22px;
+    color: #555;
 }
 
-/* ---------- HERO IMAGE / CREATIVE COLLAGE ---------- */
+
+/* ---------- HOMEPAGE IMAGE COLLAGE ---------- */
 
 .hero-image-container {
-width: 430px;
-height: 500px;
-flex-shrink: 0;
-position: relative;
+    position: relative;
+    width: 430px;
+    height: 470px;
+    flex-shrink: 0;
 }
+
+
+/* Profile image */
 
 .elle-image {
-width: 340px;
-height: 430px;
-object-fit: cover;
-border-radius: 4px;
-position: absolute;
-right: 25px;
-top: 30px;
-z-index: 3;
-box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    width: 290px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 20px;
+
+    position: absolute;
+    top: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
 }
 
-/* These classes can be used for artwork
-placed around your profile image */
 
-.hero-work {
-position: absolute;
-object-fit: cover;
-z-index: 2;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-transition: 0.4s ease;
+/* Portfolio images */
+
+.hero-image-container .portfolio-image {
+    position: absolute;
+
+    width: 135px;
+    height: 165px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+
+    transition: 0.3s;
+
+    z-index: 3;
 }
 
-.hero-work:hover {
-transform: translateY(-8px) rotate(0deg) !important;
-z-index: 5;
+.hero-image-container .portfolio-image:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 10;
 }
 
-.hero-work-one {
-width: 150px;
-height: 190px;
-left: -20px;
-top: 0;
-transform: rotate(-7deg);
+
+/* Top left image */
+
+.hero-image-container .portfolio-image.one {
+    top: 0;
+    left: 0;
+    transform: rotate(-7deg);
 }
 
-.hero-work-two {
-width: 145px;
-height: 190px;
-right: -20px;
-bottom: 15px;
-transform: rotate(6deg);
+
+/* Top right image */
+
+.hero-image-container .portfolio-image.two {
+    top: 10px;
+    right: 0;
+    transform: rotate(7deg);
 }
 
-.hero-work-three {
-width: 130px;
-height: 150px;
-left: 0;
-bottom: 25px;
-transform: rotate(5deg);
+
+/* Bottom left image */
+
+.hero-image-container .portfolio-image.three {
+    bottom: 0;
+    left: 10px;
+    transform: rotate(-4deg);
 }
+
+
+/* Bottom right image */
+
+.hero-image-container .portfolio-image.four {
+    bottom: 5px;
+    right: 10px;
+    transform: rotate(5deg);
+}
+
 
 /* ---------- BUTTONS ---------- */
 
 .buttons {
-display: flex;
-gap: 20px;
-margin-top: 35px;
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
 }
 
 .button {
-display: inline-block;
-padding: 14px 28px;
-background: #111;
-color: white;
-border-radius: 30px;
-margin-top: 20px;
-transition: 0.3s;
+    display: inline-block;
+    padding: 14px 28px;
+    background: #111;
+    color: white;
+    border-radius: 30px;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
 .button:hover {
-transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .secondary {
-background: white;
-color: #111;
-border: 1px solid #111;
+    background: white;
+    color: #111;
+    border: 1px solid #111;
 }
+
 
 /* ---------- PAGE LAYOUT ---------- */
 
 .page {
-padding: 10% 8%;
-max-width: 1100px;
-margin: 0 auto;
+    padding: 10% 8%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .page h1 {
-font-size: 60px;
-margin-bottom: 25px;
+    font-size: 60px;
+    margin-bottom: 25px;
 }
 
 .page h2 {
-margin-top: 50px;
-margin-bottom: 20px;
-font-size: 32px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .page p {
-font-size: 19px;
-color: #555;
-margin-bottom: 25px;
+    font-size: 19px;
+    color: #555;
+    margin-bottom: 25px;
 }
+
 
 /* ---------- PROJECT CARDS ---------- */
 
 .project-card {
-background: #fafafa;
-padding: 35px;
-border-radius: 20px;
-margin: 40px 0;
-border: 1px solid #eee;
-transition: 0.3s;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    margin: 40px 0;
+    border: 1px solid #eee;
+    transition: 0.3s;
 }
 
 .project-card:hover {
-transform: translateY(-8px);
-border-color: #ddd;
+    transform: translateY(-8px);
 }
 
 .project-card h2 {
-margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .project-card p {
-color: #555;
+    color: #555;
 }
 
 .project-card img {
-width: 100%;
-height: 350px;
-object-fit: cover;
-border-radius: 15px;
-margin-bottom: 25px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
 .tools {
-color: #777;
-margin-top: 15px;
+    color: #777;
+    margin-top: 15px;
 }
+
 
 /* ---------- CASE STUDY PAGES ---------- */
 
 .case-study {
-padding: 10% 8%;
-max-width: 1000px;
-margin: 0 auto;
+    padding: 10% 8%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .case-study h1 {
-font-size: 60px;
-line-height: 1.1;
-margin: 20px 0;
+    font-size: 60px;
+    line-height: 1.1;
+    margin: 20px 0;
 }
 
 .case-study h2 {
-margin-top: 60px;
-margin-bottom: 20px;
+    margin-top: 60px;
+    margin-bottom: 20px;
 }
 
 .case-study p {
-font-size: 19px;
-color: #555;
-margin-bottom: 25px;
+    font-size: 19px;
+    color: #555;
+    margin-bottom: 25px;
 }
 
 .case-study li {
-font-size: 18px;
-margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
 .project-info {
-margin: 50px 0;
-padding: 25px 0;
-border-top: 1px solid #ddd;
-border-bottom: 1px solid #ddd;
+    margin: 50px 0;
+    padding: 25px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .hero-image {
-width: 100%;
-max-width: 900px;
-margin: 40px 0;
-border-radius: 15px;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px 0;
+    border-radius: 15px;
 }
+
 
 /* ---------- DESIGN PAGE ---------- */
 
 .design-card {
-display: flex;
-align-items: center;
-gap: 40px;
-margin: 50px 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 50px 0;
 }
 
 .design-card img {
-width: 400px;
-height: 300px;
-object-fit: cover;
-border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 .design-card div {
-flex: 1;
+    flex: 1;
 }
+
 
 /* ---------- ART GALLERY ---------- */
 
 .art-gallery {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 40px;
-margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 40px;
 }
 
 .art-image {
-width: 100%;
-height: auto;
-max-height: 600px;
-object-fit: contain;
-border-radius: 15px;
-background: #ffffff;
-transition: 0.3s;
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 15px;
+    background: #ffffff;
+    transition: 0.3s;
 }
 
 .art-image:hover {
-transform: translateY(-8px);
+    transform: translateY(-8px);
 }
 
 .art-gallery h3 {
-margin-top: 15px;
+    margin-top: 15px;
 }
 
-/* ---------- CONTACT PAGE ---------- */
-
-.contact-links {
-display: flex;
-gap: 25px;
-margin: 40px 0;
-}
-
-.contact-links a {
-border-bottom: 1px solid #111;
-transition: 0.3s;
-}
-
-.contact-links a:hover {
-opacity: 0.5;
-}
 
 /* ---------- YEARBOOK GALLERY ---------- */
 
 .yearbook-gallery {
-display: flex;
-flex-direction: column;
-gap: 50px;
-margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 30px;
 }
 
 .yearbook-image {
-display: block;
-height: auto;
+    display: block;
+    height: auto;
+    border-radius: 12px;
 }
 
 .yearbook-image.vertical {
-width: 65%;
-margin: 0 auto;
-}
-
-.yearbook-image.wide {
-width: 100%;
-margin: 0 auto;
-}
-
-@media (max-width: 700px) {
-
-```
-.yearbook-gallery {
-    gap: 30px;
-}
-
-.yearbook-image.vertical {
-    width: 90%;
+    width: 55%;
+    margin: 0 auto;
 }
 
 .yearbook-image.wide {
     width: 100%;
+    margin: 0 auto;
 }
-```
 
-}
 
 /* ---------- PHOTOGRAPHY GALLERY ---------- */
 
-.photo-gallery {
-display: flex;
-flex-direction: column;
-gap: 60px;
-margin-top: 30px;
+.photography-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 30px;
 }
 
-.photo-image {
-display: block;
-height: auto;
+.photography-image {
+    display: block;
+    height: auto;
+    border-radius: 12px;
 }
 
-.photo-image.vertical {
-width: 70%;
-margin: 0 auto;
+.photography-image.vertical {
+    width: 55%;
+    margin: 0 auto;
 }
 
-.photo-image.wide {
-width: 100%;
-margin: 0 auto;
-}
-
-@media (max-width: 700px) {
-
-```
-.photo-image.vertical {
-    width: 90%;
-}
-
-.photo-image.wide {
+.photography-image.wide {
     width: 100%;
+    margin: 0 auto;
 }
-```
 
+
+/* ---------- CONTACT PAGE ---------- */
+
+.contact-links {
+    display: flex;
+    gap: 25px;
+    margin: 40px 0;
 }
+
+.contact-links a {
+    border-bottom: 1px solid #111;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    opacity: 0.5;
+}
+
 
 /* ---------- ANIMATION ---------- */
 
 .hero,
 .page,
 .case-study {
-animation: fadeIn 0.8s ease;
+    animation: fadeIn 0.8s ease;
 }
 
 @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-```
-from {
-    opacity: 0;
-    transform: translateY(20px);
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-to {
-    opacity: 1;
-    transform: translateY(0);
-}
-```
-
-}
 
 /* ---------- MOBILE RESPONSIVE ---------- */
 
 @media (max-width: 768px) {
 
-```
-nav {
-    flex-direction: column;
-    gap: 20px;
-}
+    header {
+        padding: 25px 6%;
+    }
 
-.nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-.hero h1,
-.case-study h1,
-.page h1 {
-    font-size: 42px;
-    letter-spacing: -1px;
-}
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
 
-.hero {
-    padding-top: 70px;
-}
+    .hero {
+        padding: 70px 6%;
+    }
 
-.hero-content {
-    flex-direction: column-reverse;
-    text-align: center;
-}
+    .hero h1,
+    .case-study h1,
+    .page h1 {
+        font-size: 42px;
+    }
 
-.hero-text {
-    max-width: 100%;
-}
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
 
-.hero-image-container {
-    width: 300px;
-    height: 350px;
-}
+    .hero-text {
+        max-width: 100%;
+    }
 
-.elle-image {
-    width: 240px;
-    height: 300px;
-    right: 30px;
-}
+    .intro {
+        font-size: 19px;
+    }
 
-.hero-work-one {
-    width: 100px;
-    height: 130px;
-    left: -5px;
-}
 
-.hero-work-two {
-    width: 100px;
-    height: 130px;
-    right: -5px;
-}
+    /* Mobile image collage */
 
-.hero-work-three {
-    width: 90px;
-    height: 110px;
-    left: 0;
-}
+    .hero-image-container {
+        width: 330px;
+        height: 400px;
+    }
 
-.buttons {
-    flex-direction: column;
-    align-items: center;
-}
+    .elle-image {
+        width: 220px;
+        height: 285px;
+        top: 55px;
+    }
 
-.design-card {
-    flex-direction: column;
-}
+    .hero-image-container .portfolio-image {
+        width: 90px;
+        height: 120px;
+    }
 
-.design-card img {
-    width: 100%;
-}
+    .hero-image-container .portfolio-image.one {
+        top: 5px;
+        left: 0;
+    }
 
-.art-gallery {
-    grid-template-columns: 1fr;
-}
-```
+    .hero-image-container .portfolio-image.two {
+        top: 5px;
+        right: 0;
+    }
+
+    .hero-image-container .portfolio-image.three {
+        bottom: 5px;
+        left: 0;
+    }
+
+    .hero-image-container .portfolio-image.four {
+        bottom: 5px;
+        right: 0;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .design-card {
+        flex-direction: column;
+    }
+
+    .design-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .art-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .yearbook-image.vertical {
+        width: 85%;
+    }
+
+    .yearbook-image.wide {
+        width: 100%;
+    }
+
+    .photography-image.vertical {
+        width: 85%;
+    }
+
+    .photography-image.wide {
+        width: 100%;
+    }
 
 }
