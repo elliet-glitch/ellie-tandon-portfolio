@@ -573,3 +573,54 @@ nav {
 
 
 }
+.yearbook-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.yearbook-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .yearbook-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+.yearbook-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.yearbook-image {
+    display: block;
+    height: auto;
+}
+
+.yearbook-image.vertical {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.yearbook-image.wide {
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+
+    .yearbook-image.vertical {
+        width: 85%;
+    }
+
+    .yearbook-image.wide {
+        width: 100%;
+    }
+
+}
