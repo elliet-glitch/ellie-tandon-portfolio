@@ -669,3 +669,452 @@ nav {
     }
 
 }
+/* =========================================
+   CREATIVE PORTFOLIO ENHANCEMENTS
+   ========================================= */
+
+/* ---------- COLOR VARIABLES ---------- */
+
+:root {
+    --black: #111111;
+    --dark-gray: #333333;
+    --gray: #666666;
+    --light-gray: #f3f3f3;
+    --white: #ffffff;
+
+    --blue: #dcecff;
+    --lavender: #e9ddff;
+    --pink: #ffdfe8;
+    --yellow: #fff1b8;
+    --green: #dff4e5;
+}
+
+
+/* ---------- GENERAL ---------- */
+
+body {
+    overflow-x: hidden;
+}
+
+section {
+    position: relative;
+}
+
+
+/* ---------- HERO DESIGN ---------- */
+
+.hero {
+    max-width: none;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 8%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: var(--lavender);
+    border-radius: 50%;
+    top: -150px;
+    right: -100px;
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    background: var(--yellow);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -80px;
+    z-index: -1;
+}
+
+
+/* ---------- PROFILE IMAGE ---------- */
+
+.hero-image-container {
+    position: relative;
+}
+
+.hero-image-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--pink);
+    border-radius: 25px;
+    transform: rotate(6deg);
+    z-index: -1;
+}
+
+.hero-image-container::after {
+    content: "";
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: var(--yellow);
+    border-radius: 50%;
+    top: -20px;
+    right: -20px;
+}
+
+.elle-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+/* ---------- INTRO TEXT ---------- */
+
+.intro {
+    line-height: 1.7;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.button {
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.secondary:hover {
+    background: var(--blue);
+}
+
+
+/* ---------- PAGE HEADINGS ---------- */
+
+.page h2 {
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.page h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: var(--pink);
+    margin-top: 12px;
+}
+
+
+/* ---------- SKILL CARDS ---------- */
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:nth-of-type(1) {
+    background: var(--blue);
+}
+
+.project-card:nth-of-type(2) {
+    background: var(--lavender);
+}
+
+.project-card:nth-of-type(3) {
+    background: var(--green);
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    right: -25px;
+    bottom: -25px;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) rotate(-1deg);
+}
+
+
+/* ---------- FEATURED WORK ---------- */
+
+.page:nth-of-type(3) {
+    position: relative;
+}
+
+.page:nth-of-type(3)::before {
+    content: "SELECTED WORK";
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: #777;
+}
+
+
+/* ---------- DESIGN CARDS ---------- */
+
+.design-card {
+    background: white;
+    border: 1px solid #eeeeee;
+    border-radius: 25px;
+    padding: 25px;
+    transition: 0.35s ease;
+}
+
+.design-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.design-card img {
+    border-radius: 18px;
+}
+
+
+/* ---------- ART GALLERY ---------- */
+
+.art-gallery > div {
+    position: relative;
+}
+
+.art-gallery .art-image {
+    transition: 0.4s ease;
+}
+
+.art-gallery > div:hover .art-image {
+    transform: scale(1.025);
+}
+
+.art-gallery h3 {
+    font-size: 18px;
+}
+
+
+/* ---------- YEARBOOK ---------- */
+
+.yearbook-gallery {
+    position: relative;
+}
+
+.yearbook-image {
+    border-radius: 15px;
+    transition: 0.35s ease;
+}
+
+.yearbook-image:hover {
+    transform: scale(1.015);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ---------- PHOTOGRAPHY ---------- */
+
+.photography-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.photography-gallery img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    transition: 0.35s ease;
+}
+
+.photography-gallery img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ---------- IMAGE ACCENTS ---------- */
+
+.art-image,
+.design-card img,
+.project-card img {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+
+/* ---------- LINKS ---------- */
+
+a {
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--pink);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* ---------- CONTACT ---------- */
+
+.contact-links a:hover {
+    color: #777;
+}
+
+
+/* ---------- RESPONSIVE TABLET ---------- */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        padding: 80px 6%;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-image-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .page {
+        padding: 80px 6%;
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 25px 6%;
+    }
+
+    .hero {
+        padding: 60px 6%;
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    .hero-image-container {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .page {
+        padding: 70px 6%;
+    }
+
+    .page h1 {
+        font-size: 42px;
+    }
+
+    .page h2 {
+        font-size: 32px;
+    }
+
+    .project-card {
+        padding: 25px;
+    }
+
+    .photography-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .design-card {
+        padding: 18px;
+    }
+
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .hero-image-container {
+        width: 190px;
+        height: 190px;
+    }
+
+    .button {
+        padding: 12px 22px;
+    }
+
+}
