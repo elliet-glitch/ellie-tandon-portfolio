@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Photography | Ellie Tandon</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.photography-intro {
+    max-width: 800px;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.photo-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.photo-gallery .wide {
+    grid-column: span 2;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-gallery .wide {
+        grid-column: span 1;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<h2 class="logo">
+Ellie Tandon
+</h2>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a> <a href="about.html">About</a> <a href="projects.html">Projects</a> <a href="design.html">Design</a> <a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+</header>
+
+<section class="page">
+
+<p class="subtitle">
+Photography
+</p>
+
+<h1>
+Photography Collection
+</h1>
+
+<p class="intro">
+A collection of photographs exploring composition, perspective,
+light, and visual storytelling.
+</p>
+
+<h2>
+About the Collection
+</h2>
+
+<p class="photography-intro">
+Photography is one of the ways I explore visual storytelling.
+I enjoy capturing everyday moments, experimenting with
+composition, and finding interesting perspectives in familiar
+environments. This collection highlights photographs that
+reflect my interest in visual composition and creative direction.
+</p>
+
+<h2>
+Selected Photography
+</h2>
+
+<div class="photo-gallery">
+
+<img src="images/photography1.jpg" alt="Photography project image">
+
+<img src="images/photography2.jpg" alt="Photography project image">
+
+<img src="images/photography3.jpg" alt="Photography project image">
+
+<img src="images/photography4.jpg" alt="Photography project image">
+
+<img src="images/photography5.jpg" alt="Photography project image">
+
+<img src="images/photography6.jpg" alt="Photography project image">
+
+<img src="images/photography7.jpg" alt="Photography project image">
+
+<img src="images/photography8.jpg" alt="Photography project image">
+
+</div>
+
+<h2>
+Skills
+</h2>
+
+<p class="photography-intro">
+Photography • Composition • Visual Storytelling •
+Creative Direction • Image Editing
+</p>
+
+<a href="design.html" class="back-link">
+← Back to Design
+</a>
+
+</section>
+
+</body>
+
+</html>
