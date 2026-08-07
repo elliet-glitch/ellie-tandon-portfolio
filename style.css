@@ -624,3 +624,70 @@ nav {
     }
 
 }
+
+<style>
+
+.photography-intro {
+    max-width: 800px;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.photo-image {
+    display: block;
+    height: auto;
+}
+
+.photo-image.vertical {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.photo-image.wide {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+
+    .photo-image.vertical {
+        width: 90%;
+    }
+
+    .photo-image.wide {
+        width: 100%;
+    }
+
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
