@@ -471,6 +471,89 @@ nav {
 
 /* ---------- MOBILE RESPONSIVE ---------- */
 
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 1100px) {
+
+    .hero {
+        padding: 90px 6%;
+    }
+
+    .hero-content {
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .intro {
+        font-size: 20px;
+    }
+
+    .hero-image-container {
+        width: 350px;
+        height: 400px;
+    }
+
+    .elle-image {
+        width: 240px;
+        height: 310px;
+    }
+
+    .hero-image-container .portfolio-image {
+        width: 105px;
+        height: 135px;
+    }
+}
+
+
+/* ---------- TABLET / SMALLER WINDOW ---------- */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 25px 6%;
+    }
+
+    .hero {
+        padding: 70px 6%;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-text {
+        max-width: 700px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .intro {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-image-container {
+        width: 380px;
+        height: 420px;
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
 @media (max-width: 768px) {
 
     header {
@@ -489,7 +572,7 @@ nav {
     }
 
     .hero {
-        padding: 70px 6%;
+        padding: 60px 6%;
     }
 
     .hero h1,
@@ -512,7 +595,7 @@ nav {
     }
 
 
-    /* Mobile image collage */
+    /* Homepage image collage */
 
     .hero-image-container {
         width: 330px;
