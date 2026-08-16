@@ -5,295 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ellie — portfolio</title>
+    <title>ellie — creative portfolio</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-inner">
 
-<!-- =========================================================
-     LOADING SCREEN
-     ========================================================= -->
+            <div class="loader-name">ellie</div>
 
-<div class="loading-screen">
+            <div class="loader-line">
+                <div class="loader-progress"></div>
+            </div>
 
-    <div class="loading-content">
+            <div class="loader-status">
+                <span>loading portfolio</span>
+                <span id="loaderPercent">0%</span>
+            </div>
 
-        <div class="loading-name">
-            ellie
         </div>
-
-        <div class="loading-bar">
-            <div class="loading-progress"></div>
-        </div>
-
-        <div class="loading-text">
-            loading portfolio...
-        </div>
-
     </div>
 
-</div>
 
+    <!-- WEBSITE -->
+    <div class="site" id="site">
 
+        <!-- HEADER -->
+        <header class="site-header">
 
-<!-- =========================================================
-     WEBSITE
-     ========================================================= -->
-
-<div class="site">
-
-
-    <!-- =====================================================
-         HEADER
-         ===================================================== -->
-
-    <header class="site-header">
-
-        <a href="index.html" class="logo">
-            et
-        </a>
-
-        <nav class="main-nav">
-
-            <a href="#about">
-                about
+            <a href="index.html" class="logo">
+                et
             </a>
 
-            <a href="etresume.pdf" target="_blank">
-                resume
-            </a>
-
-            <a href="contact.html">
-                contact
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <main>
-
-
-        <!-- =================================================
-             HERO
-             ================================================= -->
-
-        <section class="experimental-home">
-
-
-            <!-- TOP INFORMATION -->
-
-            <div class="home-meta">
-
-                <span>
-                    media arts & design
-                </span>
-
-                <span>
-                    dallas, texas
-                </span>
-
+            <div class="header-status">
+                <span class="status-dot"></span>
+                available for creative work
             </div>
 
+            <nav>
+                <a href="#about">about</a>
+                <a href="etresume.pdf" target="_blank">resume ↗</a>
+            </nav>
+
+        </header>
 
 
-            <!-- CENTER -->
+        <main>
 
-            <div class="hero-center">
+            <!-- HERO -->
+            <section class="hero">
 
-                <h1 class="hero-name">
-                    ellie
-                </h1>
+                <div class="hero-meta hero-meta-left">
+                    <span>creative portfolio</span>
+                    <span>01 / 04</span>
+                </div>
 
-                <p class="hero-subtitle">
-                    hi, i'm ellie
-                </p>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 DALLAS SKYLINE
-                 ================================================= -->
-
-            <div class="dallas-skyline">
-
-                <svg
-                    viewBox="0 0 900 150"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-label="Dallas skyline illustration"
-                >
-
-                    <!-- MAIN SKYLINE -->
-
-                    <path d="
-                        M20 145
-
-                        L20 125
-                        L55 125
-
-                        L55 110
-                        L80 110
-                        L80 130
-
-                        L105 130
-                        L105 95
-                        L130 95
-                        L130 120
-
-                        L155 120
-                        L155 105
-                        L180 105
-                        L180 135
-
-                        L205 135
-                        L205 85
-                        L225 85
-                        L225 120
-
-                        L250 120
-                        L250 100
-                        L270 100
-                        L270 130
-
-                        L295 130
-
-                        L295 75
-                        L310 75
-                        L310 45
-                        L325 45
-                        L325 75
-                        L340 75
-                        L340 130
-
-                        L365 130
-                        L365 105
-                        L390 105
-                        L390 125
-
-                        L415 125
-                        L415 90
-                        L440 90
-                        L440 120
-
-                        L465 120
-                        L465 70
-                        L485 70
-                        L485 120
-
-                        L510 120
-                        L510 100
-                        L535 100
-                        L535 125
-
-                        L560 125
-                        L560 85
-                        L580 85
-                        L580 120
-
-                        L605 120
-                        L605 105
-                        L630 105
-                        L630 130
-
-                        L655 130
-                        L655 95
-                        L680 95
-                        L680 120
-
-                        L705 120
-                        L705 80
-                        L730 80
-                        L730 125
-
-                        L755 125
-                        L755 105
-                        L780 105
-                        L780 130
-
-                        L805 130
-                        L805 95
-                        L830 95
-                        L830 120
-
-                        L855 120
-                        L855 105
-                        L880 105
-
-                        L880 145
-                    " />
+                <div class="hero-meta hero-meta-right">
+                    <span>Dallas, Texas</span>
+                    <span>2026</span>
+                </div>
 
 
+                <!-- DECORATIVE ELEMENTS -->
 
-                    <!-- REUNION TOWER -->
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
 
-                    <path d="
-                        M445 70
-                        L450 35
-                        L455 70
-
-                        M447 45
-                        L453 45
-
-                        M450 35
-                        L450 20
-                    " />
+                <div class="cross cross-one">+</div>
+                <div class="cross cross-two">+</div>
+                <div class="cross cross-three">+</div>
 
 
+                <!-- MAIN NAME -->
 
-                    <!-- GROUND LINE -->
+                <div class="hero-center">
 
-                    <line
-                        x1="10"
-                        y1="145"
-                        x2="890"
-                        y2="145"
-                    />
+                    <div class="tiny-label">
+                        welcome to
+                    </div>
 
-                </svg>
+                    <h1 id="heroName">
+                        ellie
+                    </h1>
 
-            </div>
+                    <div class="hero-caption">
+                        media arts + design
+                    </div>
 
-
-
-            <!-- =================================================
-                 FOLDERS
-                 ================================================= -->
-
-            <div class="folder-area">
+                </div>
 
 
-                <!-- DESIGN -->
+                <!-- DESIGN FOLDER -->
 
-                <a
-                    href="design.html"
-                    class="retro-folder folder-design"
-                >
+                <a href="design.html"
+                   class="folder folder-design"
+                   data-folder>
 
                     <div class="folder-tab">
-                        01 / design
+                        design
                     </div>
 
                     <div class="folder-body">
+
+                        <div class="folder-top">
+                            <span>01</span>
+                            <span>folder</span>
+                        </div>
 
                         <div class="folder-icon">
                             ✦
                         </div>
 
-                        <div class="folder-title">
-                            design +<br>
-                            graphics
+                        <div class="folder-name">
+                            design<br>
+                            + graphics
                         </div>
 
-                        <div class="folder-count">
-                            view projects ↗
+                        <div class="folder-footer">
+                            visual work ↗
                         </div>
 
                     </div>
@@ -301,30 +134,34 @@
                 </a>
 
 
+                <!-- MARKETING FOLDER -->
 
-                <!-- MARKETING -->
-
-                <a
-                    href="marketing.html"
-                    class="retro-folder folder-marketing"
-                >
+                <a href="marketing.html"
+                   class="folder folder-marketing"
+                   data-folder>
 
                     <div class="folder-tab">
-                        02 / marketing
+                        marketing
                     </div>
 
                     <div class="folder-body">
 
+                        <div class="folder-top">
+                            <span>02</span>
+                            <span>folder</span>
+                        </div>
+
                         <div class="folder-icon">
-                            ◌
+                            ◉
                         </div>
 
-                        <div class="folder-title">
-                            marketing
+                        <div class="folder-name">
+                            marketing<br>
+                            + strategy
                         </div>
 
-                        <div class="folder-count">
-                            view projects ↗
+                        <div class="folder-footer">
+                            creative work ↗
                         </div>
 
                     </div>
@@ -332,302 +169,249 @@
                 </a>
 
 
-            </div>
+                <!-- BOTTOM INFORMATION -->
+
+                <div class="hero-bottom-left">
+                    <span class="scroll-arrow">↓</span>
+                    <span>scroll to explore</span>
+                </div>
+
+                <div class="hero-bottom-right">
+                    <span>select a folder</span>
+                </div>
+
+            </section>
 
 
+            <!-- ABOUT -->
+            <section class="about-section" id="about">
 
-            <!-- =================================================
-                 HERO BOTTOM
-                 ================================================= -->
+                <div class="section-top">
 
-            <div class="home-instruction">
-                click a folder to explore
-            </div>
+                    <span>02 / about</span>
 
-            <div class="home-scroll">
-                scroll ↓
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             ABOUT
-             ================================================= -->
-
-        <section
-            class="minimal-about"
-            id="about"
-        >
-
-
-            <div class="section-label">
-
-                <span>
-                    01 / about
-                </span>
-
-                <span>
-                    ellie tandon
-                </span>
-
-            </div>
-
-
-
-            <div class="about-grid">
-
-
-                <!-- LEFT -->
-
-                <div>
-
-                    <h2>
-                        hi.
-                    </h2>
+                    <span>get to know me</span>
 
                 </div>
 
 
+                <div class="about-grid">
 
-                <!-- RIGHT -->
+                    <div class="about-heading">
 
-                <div>
+                        <span class="about-small">
+                            hi, i'm
+                        </span>
+
+                        <h2>
+                            ellie<span>.</span>
+                        </h2>
+
+                        <div class="about-number">
+                            01
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-content">
+
+                        <p class="about-lead">
+                            I'm a Media Arts & Design student
+                            interested in the space where
+                            <em>design, technology, and marketing</em>
+                            meet.
+                        </p>
+
+                        <p>
+                            I like creating things that exist
+                            somewhere between visual communication
+                            and digital experiences — from graphic
+                            design and photography to interactive
+                            websites and creative marketing.
+                        </p>
+
+                        <p>
+                            I'm especially interested in visual
+                            storytelling, branding, social media,
+                            UX, and finding creative ways to
+                            communicate an idea.
+                        </p>
+
+
+                        <div class="about-links">
+
+                            <a href="about.html">
+                                more about me
+                                <span>↗</span>
+                            </a>
+
+                            <a href="etresume.pdf" target="_blank">
+                                view resume
+                                <span>↗</span>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DALLAS GRAPHIC -->
+
+                <div class="cityline-wrap">
+
+                    <div class="cityline-label">
+                        <span>based in</span>
+                        <span>32.7767° N / 96.7970° W</span>
+                    </div>
+
+                    <div class="cityline">
+
+                        <div class="building building-one"></div>
+                        <div class="building building-two"></div>
+                        <div class="building building-three"></div>
+                        <div class="building building-four"></div>
+                        <div class="building building-five"></div>
+                        <div class="building building-six"></div>
+                        <div class="building building-seven"></div>
+                        <div class="building building-eight"></div>
+                        <div class="building building-nine"></div>
+                        <div class="building building-ten"></div>
+
+                        <div class="cityline-circle"></div>
+
+                    </div>
+
+                    <div class="cityline-name">
+                        DALLAS / TX
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CREATIVE AREAS -->
+            <section class="areas-section">
+
+                <div class="section-top">
+
+                    <span>03 / interests</span>
+
+                    <span>what i'm into</span>
+
+                </div>
+
+
+                <div class="areas-list">
+
+                    <div class="area-item">
+
+                        <span class="area-number">01</span>
+
+                        <h3>
+                            visual<br>
+                            design
+                        </h3>
+
+                        <span class="area-arrow">↗</span>
+
+                    </div>
+
+
+                    <div class="area-item">
+
+                        <span class="area-number">02</span>
+
+                        <h3>
+                            photography<br>
+                            + video
+                        </h3>
+
+                        <span class="area-arrow">↗</span>
+
+                    </div>
+
+
+                    <div class="area-item">
+
+                        <span class="area-number">03</span>
+
+                        <h3>
+                            digital<br>
+                            experiences
+                        </h3>
+
+                        <span class="area-arrow">↗</span>
+
+                    </div>
+
+
+                    <div class="area-item">
+
+                        <span class="area-number">04</span>
+
+                        <h3>
+                            marketing<br>
+                            + strategy
+                        </h3>
+
+                        <span class="area-arrow">↗</span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTACT -->
+            <section class="contact-section">
+
+                <div class="contact-top">
+
+                    <span>04 / contact</span>
+
+                    <span>let's talk</span>
+
+                </div>
+
+                <div class="contact-content">
 
                     <p>
-                        I'm Ellie, a Media Arts & Design student
-                        interested in the space between creativity,
-                        technology, and communication.
+                        have a project,<br>
+                        opportunity, or idea?
                     </p>
 
-                    <p>
-                        My work moves between graphic design,
-                        photography, digital experiences, and
-                        marketing. I like experimenting with
-                        different formats and finding visual ways
-                        to communicate an idea.
-                    </p>
-
-                    <p>
-                        I'm especially interested in creative
-                        projects where design and strategy work
-                        together.
-                    </p>
-
-                    <a href="about.html">
-                        more about me →
+                    <a href="contact.html">
+                        say hello
+                        <span>↗</span>
                     </a>
 
                 </div>
 
+            </section>
 
-            </div>
+        </main>
 
 
-        </section>
+        <!-- FOOTER -->
+        <footer>
 
+            <span>ellie</span>
 
+            <span>media arts + design</span>
 
-        <!-- =================================================
-             WHAT I DO
-             ================================================= -->
+            <span>© 2026</span>
 
-        <section class="home-work">
+        </footer>
 
+    </div>
 
-            <div class="section-label">
 
-                <span>
-                    02 / interests
-                </span>
-
-                <span>
-                    what i like working on
-                </span>
-
-            </div>
-
-
-
-            <div class="home-work-heading">
-
-                <h2>
-                    design,<br>
-                    media,<br>
-                    strategy.
-                </h2>
-
-
-                <p>
-                    My portfolio brings together creative
-                    and marketing work rather than separating
-                    the two. Explore the folders above to see
-                    individual projects.
-                </p>
-
-            </div>
-
-
-
-            <div class="project-list">
-
-
-                <!-- DESIGN -->
-
-                <a
-                    href="design.html"
-                    class="portfolio-project"
-                >
-
-                    <div class="project-number">
-                        01
-                    </div>
-
-                    <div class="project-preview">
-
-                        <img
-                            src="images/spreadwide1.jpg"
-                            alt="Graphic design project"
-                        >
-
-                    </div>
-
-                    <div class="project-text">
-
-                        <span>
-                            creative
-                        </span>
-
-                        <h3>
-                            Design + Graphics
-                        </h3>
-
-                    </div>
-
-                    <div class="project-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-
-
-                <!-- MARKETING -->
-
-                <a
-                    href="marketing.html"
-                    class="portfolio-project"
-                >
-
-                    <div class="project-number">
-                        02
-                    </div>
-
-                    <div class="project-preview">
-
-                        <img
-                            src="images/dunkin.png"
-                            alt="Marketing project"
-                        >
-
-                    </div>
-
-                    <div class="project-text">
-
-                        <span>
-                            strategy
-                        </span>
-
-                        <h3>
-                            Marketing
-                        </h3>
-
-                    </div>
-
-                    <div class="project-arrow">
-                        ↗
-                    </div>
-
-                </a>
-
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- =================================================
-             CONTACT
-             ================================================= -->
-
-        <section class="home-contact">
-
-
-            <div class="section-label">
-
-                <span>
-                    03 / contact
-                </span>
-
-                <span>
-                    let's talk
-                </span>
-
-            </div>
-
-
-            <h2>
-                let's make<br>
-                something <em>cool.</em>
-            </h2>
-
-
-            <a href="contact.html">
-                get in touch ↗
-            </a>
-
-
-        </section>
-
-
-    </main>
-
-
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
-    <footer>
-
-        <div>
-            ellie tandon
-        </div>
-
-        <div>
-            © 2026
-        </div>
-
-        <div>
-            media arts & design
-        </div>
-
-    </footer>
-
-
-</div>
-
-
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
