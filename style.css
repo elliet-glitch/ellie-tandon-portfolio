@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
 
 
 /* =====================================================
-   GLOBAL
-   ===================================================== */
+   RESET
+===================================================== */
 
 * {
     margin: 0;
@@ -16,10 +16,10 @@ html {
 }
 
 body {
+    background: #f3f1eb;
+    color: #111;
     font-family: 'Inter', sans-serif;
-    background: #fafafa;
-    color: #1a1a1a;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 a {
@@ -28,1029 +28,933 @@ a {
 }
 
 img {
-    max-width: 100%;
     display: block;
+    width: 100%;
+}
+
+::selection {
+    background: #111;
+    color: #f3f1eb;
 }
 
 
 /* =====================================================
-   NAVIGATION
-   ===================================================== */
+   HEADER
+===================================================== */
 
-header {
-    padding: 30px 8%;
-}
+.site-header {
+    height: 90px;
 
-nav {
+    padding: 0 5vw;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #111;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -2px;
 }
 
-.nav-links {
+.site-header nav {
     display: flex;
-    gap: 30px;
-    align-items: center;
+    gap: 35px;
 }
 
-.nav-links a {
-    font-size: 16px;
-    transition: opacity 0.3s ease;
+.site-header nav a {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+
+    position: relative;
 }
 
-.nav-links a:hover {
-    opacity: 0.5;
+.site-header nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 1px;
+
+    background: #111;
+
+    transition: width .3s ease;
+}
+
+.site-header nav a:hover::after,
+.site-header nav a.active::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   SMALL META TEXT
+===================================================== */
+
+.top-meta,
+.section-top,
+.section-number {
+    font-family: 'DM Mono', monospace;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
 }
 
 
 /* =====================================================
    HOME HERO
-   ===================================================== */
+===================================================== */
 
-.hero {
-    padding: 100px 8% 120px;
-    max-width: 1400px;
-    margin: 0 auto;
+.home-hero {
+    min-height: 650px;
+
+    padding: 45px 5vw 70px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #111;
 }
 
-.hero-content {
+.top-meta {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-main {
+    flex: 1;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 70px;
+
+    padding: 80px 0 40px;
 }
 
-.hero-text {
-    max-width: 680px;
-    flex: 1;
+.hero-main h1 {
+    font-size: clamp(120px, 20vw, 300px);
+
+    font-weight: 500;
+
+    letter-spacing: -.09em;
+
+    line-height: .75;
 }
 
-.hero h1 {
-    font-size: clamp(48px, 5.5vw, 72px);
-    line-height: 1.08;
-    margin: 15px 0 25px;
-    letter-spacing: -2px;
-}
+.hero-label {
+    font-family: 'DM Mono', monospace;
 
-.hero h1 span {
-    color: #666;
-}
-
-.subtitle {
-    font-size: 15px;
-    color: #777;
     text-transform: uppercase;
-    letter-spacing: 2px;
+
+    font-size: 12px;
+
+    writing-mode: vertical-rl;
+
+    transform: rotate(180deg);
+}
+
+.hero-description {
+    max-width: 350px;
+
+    margin-left: auto;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FOLDER SECTION
+===================================================== */
+
+.folder-section {
+    padding: 110px 5vw 150px;
+
+    border-bottom: 1px solid #111;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #111;
+}
+
+.folder-intro {
+    margin: 55px 0 80px;
+}
+
+.folder-intro h2 {
+    font-size: clamp(65px, 9vw, 130px);
+
+    font-weight: 500;
+
+    letter-spacing: -.07em;
+
+    line-height: .85;
+}
+
+.folder-intro p {
+    margin-top: 25px;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   FOLDERS
+===================================================== */
+
+.folders {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8vw;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.folder-link {
+    display: block;
+}
+
+
+/* Folder container */
+
+.folder {
+    position: relative;
+
+    height: 400px;
+
+    cursor: pointer;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1);
+}
+
+.folder-link:hover .folder {
+    transform: translateY(-18px) rotate(-1deg);
+}
+
+
+/* Folder tab */
+
+.folder-tab {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 42%;
+
+    height: 55px;
+
+    border: 2px solid #111;
+
+    border-bottom: none;
+
+    border-radius: 15px 15px 0 0;
+
+    background: #d7c69c;
+}
+
+
+/* Folder */
+
+.folder-paper {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    top: 35px;
+
+    border: 2px solid #111;
+
+    border-radius: 0 18px 18px 18px;
+
+    background: #d7c69c;
+
+    padding: 45px;
+
+    overflow: hidden;
+
+    transition:
+        transform .5s cubic-bezier(.2,.8,.2,1),
+        background .3s ease;
+}
+
+
+/* Second folder */
+
+.folder-marketing .folder-tab,
+.folder-marketing .folder-paper {
+    background: #c9d0b1;
+}
+
+.folder-link:hover .folder-paper {
+    transform: rotate(1deg);
+}
+
+
+/* Folder number */
+
+.folder-number {
+    position: absolute;
+
+    top: 25px;
+    right: 30px;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 12px;
+}
+
+
+/* Folder icon */
+
+.folder-icon {
+    width: 85px;
+    height: 65px;
+
+    position: relative;
+
+    margin-top: 25px;
+}
+
+.folder-icon-tab {
+    position: absolute;
+
+    width: 42px;
+    height: 15px;
+
+    top: 0;
+    left: 0;
+
+    background: #111;
+
+    border-radius: 5px 5px 0 0;
+}
+
+.folder-icon-body {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 85px;
+    height: 50px;
+
+    background: #111;
+
+    border-radius: 5px;
+}
+
+
+/* Folder title */
+
+.folder-paper h3 {
+    position: absolute;
+
+    left: 45px;
+    bottom: 75px;
+
+    font-size: clamp(30px, 4vw, 55px);
+
+    line-height: .9;
+
+    letter-spacing: -.05em;
+
     font-weight: 600;
 }
 
-.intro {
-    max-width: 650px;
-    font-size: 20px;
-    color: #555;
-}
-
-
-/* =====================================================
-   HERO VISUAL
-   ===================================================== */
-
-.hero-visual {
-    position: relative;
-    width: 430px;
-    height: 480px;
-    flex-shrink: 0;
-}
-
-
-/* =====================================================
-   PROFILE IMAGE
-   ===================================================== */
-
-.hero-image-container {
+.folder-paper p {
     position: absolute;
 
-    width: 280px;
-    height: 280px;
+    left: 48px;
+    bottom: 42px;
 
-    top: 90px;
-    left: 75px;
+    font-family: 'DM Mono', monospace;
 
-    z-index: 5;
+    font-size: 11px;
 }
 
-.elle-image {
-    width: 100%;
+
+/* Open */
+
+.open-folder {
+    position: absolute;
+
+    right: 35px;
+    bottom: 38px;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 11px;
+
+    opacity: 0;
+
+    transform: translateY(8px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+}
+
+.folder-link:hover .open-folder {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   SELECTED WORK
+===================================================== */
+
+.preview-section {
+    padding: 110px 5vw;
+
+    border-bottom: 1px solid #111;
+}
+
+.preview-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 70px 30px;
+
+    margin-top: 80px;
+}
+
+.preview-card {
+    display: block;
+}
+
+.preview-image {
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    background: #ddd;
+}
+
+.preview-image img {
     height: 100%;
 
     object-fit: cover;
 
-    border-radius: 50%;
-
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    transition:
+        transform .7s cubic-bezier(.2,.8,.2,1);
 }
 
+.preview-card:hover .preview-image img {
+    transform: scale(1.04);
+}
 
-/* =====================================================
-   FLOATING PORTFOLIO IMAGES
-   ===================================================== */
+.preview-info {
+    position: relative;
 
-.hero-work {
+    padding-top: 18px;
+
+    border-top: 1px solid #111;
+
+    margin-top: 10px;
+}
+
+.preview-info span {
+    font-family: 'DM Mono', monospace;
+
+    font-size: 10px;
+}
+
+.preview-info h3 {
+    font-size: 27px;
+
+    font-weight: 500;
+
+    letter-spacing: -.04em;
+
+    margin-top: 12px;
+}
+
+.preview-info p {
+    margin-top: 5px;
+
+    font-size: 13px;
+}
+
+.preview-info strong {
     position: absolute;
 
-    object-fit: cover;
-
-    border-radius: 14px;
-
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-
-    z-index: 2;
-}
-
-
-/* Yearbook */
-
-.hero-work-one {
-    width: 150px;
-    height: 105px;
-
-    top: 0;
     right: 0;
+    top: 18px;
 
-    transform: rotate(5deg);
-}
+    font-size: 20px;
 
-
-/* Photography */
-
-.hero-work-two {
-    width: 125px;
-    height: 165px;
-
-    bottom: 5px;
-    right: 5px;
-
-    transform: rotate(-5deg);
-}
-
-
-/* Collage */
-
-.hero-work-three {
-    width: 135px;
-    height: 120px;
-
-    bottom: 15px;
-    left: 0;
-
-    transform: rotate(5deg);
-}
-
-
-/* Floating image hover */
-
-.hero-work:hover {
-    transform: scale(1.06) rotate(0deg);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-    z-index: 10;
+    font-weight: 400;
 }
 
 
 /* =====================================================
-   BUTTONS
-   ===================================================== */
+   ABOUT
+===================================================== */
 
-.buttons {
-    display: flex;
-    gap: 20px;
-    margin-top: 35px;
-    flex-wrap: wrap;
+.minimal-section {
+    padding: 110px 5vw;
+
+    border-bottom: 1px solid #111;
 }
 
-.button {
-    display: inline-block;
-    padding: 14px 28px;
-
-    background: #111;
-    color: white;
-
-    border-radius: 30px;
-
-    margin-top: 20px;
-
-    transition:
-        transform 0.3s ease,
-        background 0.3s ease;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    background: #333;
-}
-
-.secondary {
-    background: white;
-    color: #111;
-    border: 1px solid #111;
-}
-
-.secondary:hover {
-    background: #111;
-    color: white;
-}
-
-
-/* =====================================================
-   PAGE LAYOUT
-   ===================================================== */
-
-.page {
-    padding: 100px 8%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.page h1 {
-    font-size: 60px;
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
-
-.page h2 {
-    font-size: 36px;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-.page p {
-    font-size: 19px;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-
-/* =====================================================
-   PROJECT CARDS
-   ===================================================== */
-
-.project-card {
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    margin: 30px 0;
-
-    border: 1px solid #eee;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.project-card h2 {
-    margin-bottom: 15px;
-}
-
-.project-card p {
-    color: #555;
-}
-
-.project-card img {
-    width: 100%;
-    height: 350px;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    margin-bottom: 25px;
-}
-
-.tools {
-    color: #777;
-    margin-top: 15px;
-}
-
-
-/* =====================================================
-   SELECTED WORK / INDEX
-   ===================================================== */
-
-.selected-work-header {
-    max-width: 850px;
-    margin-bottom: 60px;
-}
-
-.selected-work-header h2 {
-    font-size: clamp(40px, 5vw, 64px);
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    margin: 15px 0 20px;
-}
-
-.selected-work-header p:last-child {
-    max-width: 650px;
-    font-size: 19px;
-    color: #555;
-}
-
-
-/* =====================================================
-   WORK GRID
-   ===================================================== */
-
-.work-grid {
+.minimal-content {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
 
-    gap: 35px;
+    gap: 10vw;
 
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
+.minimal-content h2 {
+    font-size: clamp(55px, 7vw, 100px);
 
-/* Individual work item */
+    line-height: .85;
 
-.work-item {
-    display: block;
+    font-weight: 500;
 
-    background: white;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-
-    border: 1px solid #eee;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
+    letter-spacing: -.07em;
 }
 
-.work-item:hover {
-    transform: translateY(-8px);
+.minimal-content p {
+    max-width: 480px;
 
-    box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.10);
+    font-size: 18px;
+
+    margin-bottom: 25px;
 }
 
+.underline-link {
+    display: inline-block;
 
-/* Large first project */
+    margin-top: 15px;
 
-.work-large {
-    grid-column: span 2;
-}
+    border-bottom: 1px solid #111;
 
+    padding-bottom: 4px;
 
-/* Work image */
+    font-family: 'DM Mono', monospace;
 
-.work-item > img {
-    width: 100%;
-
-    height: 330px;
-
-    object-fit: cover;
-}
-
-
-/* Large work image */
-
-.work-large > img {
-    height: 470px;
-}
-
-
-/* Work information */
-
-.work-label {
-    padding: 25px 28px 30px;
-}
-
-.work-label span {
-    display: block;
-
-    font-size: 12px;
+    font-size: 11px;
 
     text-transform: uppercase;
-
-    letter-spacing: 1.5px;
-
-    color: #777;
-
-    font-weight: 600;
-
-    margin-bottom: 8px;
-}
-
-.work-label h3 {
-    font-size: 25px;
-
-    line-height: 1.2;
-
-    margin-bottom: 8px;
-}
-
-.work-label p {
-    color: #777;
-
-    font-size: 15px;
-}
-
-
-/* View all button */
-
-.work-button {
-    margin-top: 55px;
-}
-
-
-/* =====================================================
-   CASE STUDY PAGES
-   ===================================================== */
-
-.case-study {
-    padding: 10% 8%;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.case-study h1 {
-    font-size: 60px;
-    line-height: 1.1;
-    margin: 20px 0;
-}
-
-.case-study h2 {
-    margin-top: 60px;
-    margin-bottom: 20px;
-}
-
-.case-study p {
-    font-size: 19px;
-    color: #555;
-    margin-bottom: 25px;
-}
-
-.case-study li {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.project-info {
-    margin: 50px 0;
-
-    padding: 25px 0;
-
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 900px;
-
-    margin: 40px 0;
-
-    border-radius: 15px;
-}
-
-
-/* =====================================================
-   DESIGN PAGE
-   ===================================================== */
-
-.design-card {
-    display: flex;
-
-    align-items: center;
-
-    gap: 40px;
-
-    margin: 50px 0;
-}
-
-.design-card img {
-    width: 400px;
-    height: 300px;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-}
-
-.design-card div {
-    flex: 1;
-}
-
-
-/* =====================================================
-   ART GALLERY
-   ===================================================== */
-
-.art-gallery {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 40px;
-
-    margin-top: 40px;
-}
-
-.art-image {
-    width: 100%;
-    height: auto;
-
-    max-height: 600px;
-
-    object-fit: contain;
-
-    border-radius: 15px;
-
-    background: white;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.art-image:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.10);
-}
-
-.art-gallery h3 {
-    margin-top: 15px;
-}
-
-
-/* =====================================================
-   YEARBOOK
-   ===================================================== */
-
-.yearbook-gallery {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 50px;
-
-    margin-top: 30px;
-}
-
-.yearbook-image {
-    display: block;
-
-    height: auto;
-
-    border-radius: 10px;
-}
-
-.yearbook-image.vertical {
-    width: 55%;
-
-    margin: 0 auto;
-}
-
-.yearbook-image.wide {
-    width: 100%;
-
-    margin: 0 auto;
-}
-
-
-/* =====================================================
-   PHOTOGRAPHY
-   ===================================================== */
-
-.photography-gallery {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 30px;
-
-    margin-top: 50px;
-}
-
-.photography-gallery img {
-    width: 100%;
-
-    height: 500px;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.photography-gallery img:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 
 /* =====================================================
    CONTACT
-   ===================================================== */
+===================================================== */
 
-.contact-links {
-    display: flex;
-
-    gap: 25px;
-
-    margin: 40px 0;
-
-    flex-wrap: wrap;
+.contact-section {
+    padding: 130px 5vw 150px;
 }
 
-.contact-links a {
+.contact-section > span {
+    font-family: 'DM Mono', monospace;
+
+    font-size: 11px;
+}
+
+.contact-section h2 {
+    font-size: clamp(70px, 11vw, 160px);
+
+    font-weight: 500;
+
+    letter-spacing: -.08em;
+
+    line-height: .82;
+
+    max-width: 1000px;
+
+    margin: 70px 0;
+}
+
+.contact-section em {
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+}
+
+.contact-section > a {
+    display: inline-block;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
     border-bottom: 1px solid #111;
 
-    transition: opacity 0.3s ease;
-}
-
-.contact-links a:hover {
-    opacity: 0.5;
+    padding-bottom: 7px;
 }
 
 
 /* =====================================================
-   ANIMATION
-   ===================================================== */
+   PORTFOLIO PAGES
+===================================================== */
 
-.hero,
-.page,
-.case-study {
-    animation: fadeIn 0.8s ease;
+.portfolio-page {
+    padding: 45px 5vw 120px;
 }
 
-@keyframes fadeIn {
+.portfolio-heading {
+    min-height: 520px;
 
-    from {
-        opacity: 0;
+    display: flex;
+    flex-direction: column;
 
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-
+    border-bottom: 1px solid #111;
 }
 
+.portfolio-heading h1 {
+    font-size: clamp(100px, 17vw, 250px);
 
-/* =====================================================
-   TABLET / SMALL LAPTOP
-   ===================================================== */
+    font-weight: 500;
 
-@media (max-width: 1000px) {
+    letter-spacing: -.09em;
 
-    header {
-        padding: 25px 6%;
-    }
+    line-height: .8;
 
-    .hero {
-        padding: 80px 6% 100px;
-    }
+    margin-top: auto;
+}
 
-    .hero-content {
-        gap: 35px;
-    }
+.portfolio-heading p {
+    max-width: 500px;
 
-    .hero-text {
-        max-width: 520px;
-    }
+    font-size: 17px;
 
-    .hero h1 {
-        font-size: 50px;
-    }
+    margin-top: 55px;
 
-    .intro {
-        font-size: 18px;
-    }
-
-    .hero-visual {
-        width: 350px;
-        height: 420px;
-    }
-
-    .hero-image-container {
-        width: 240px;
-        height: 240px;
-
-        top: 80px;
-        left: 55px;
-    }
-
-    .hero-work-one {
-        width: 120px;
-        height: 85px;
-    }
-
-    .hero-work-two {
-        width: 105px;
-        height: 140px;
-    }
-
-    .hero-work-three {
-        width: 110px;
-        height: 95px;
-    }
-
-    .work-item > img {
-        height: 280px;
-    }
-
-    .work-large > img {
-        height: 380px;
-    }
+    margin-bottom: 45px;
 }
 
 
 /* =====================================================
-   TABLET
-   ===================================================== */
+   PROJECTS
+===================================================== */
 
-@media (max-width: 800px) {
+.portfolio-projects {
+    padding-top: 90px;
+}
 
-    nav {
-        flex-direction: column;
+.large-project {
+    display: block;
 
-        gap: 20px;
-    }
+    margin-bottom: 130px;
+}
 
-    .nav-links {
-        flex-wrap: wrap;
+.large-project-image {
+    width: 100%;
 
-        justify-content: center;
+    overflow: hidden;
 
-        gap: 20px;
-    }
+    background: #ddd;
+}
 
-    .hero {
-        padding: 70px 6%;
-    }
+.large-project-image img {
+    width: 100%;
 
-    .hero-content {
-        flex-direction: column;
+    max-height: 750px;
 
-        text-align: center;
-    }
+    object-fit: cover;
 
-    .hero-text {
-        max-width: 700px;
-    }
+    transition:
+        transform .8s cubic-bezier(.2,.8,.2,1);
+}
 
-    .hero h1 {
-        font-size: 46px;
+.large-project:hover .large-project-image img {
+    transform: scale(1.025);
+}
 
-        letter-spacing: -1px;
-    }
+.large-project-info {
+    display: grid;
 
-    .intro {
-        margin-left: auto;
-        margin-right: auto;
-    }
+    grid-template-columns: 1fr 2fr 1fr;
 
-    .buttons {
-        justify-content: center;
-    }
+    gap: 30px;
 
-    .hero-visual {
-        width: 380px;
+    padding-top: 20px;
 
-        height: 420px;
+    border-top: 1px solid #111;
 
-        margin-top: 20px;
-    }
+    margin-top: 10px;
+}
 
-    .page {
-        padding: 80px 6%;
-    }
+.large-project-info > div {
+    display: flex;
 
-    .page h1 {
-        font-size: 48px;
-    }
+    flex-direction: column;
 
-    .case-study {
-        padding: 80px 6%;
-    }
+    gap: 8px;
 
-    .case-study h1 {
-        font-size: 48px;
-    }
+    font-family: 'DM Mono', monospace;
 
-    .work-grid {
-        grid-template-columns: 1fr;
-    }
+    font-size: 10px;
+}
 
-    .work-large {
-        grid-column: span 1;
-    }
+.large-project-info h2 {
+    font-size: clamp(35px, 5vw, 70px);
 
-    .work-item > img,
-    .work-large > img {
-        height: 300px;
-    }
+    font-weight: 500;
 
-    .design-card {
-        flex-direction: column;
+    line-height: .95;
+
+    letter-spacing: -.05em;
+}
+
+.large-project-info p {
+    max-width: 500px;
+
+    font-size: 15px;
+
+    margin-top: 20px;
+}
+
+.large-project-info strong {
+    text-align: right;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 10px;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   COMING SOON
+===================================================== */
+
+.coming-project {
+    border-top: 1px solid #111;
+
+    border-bottom: 1px solid #111;
+
+    padding: 35px 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 2fr 1fr;
+
+    gap: 30px;
+}
+
+.coming-project > span {
+    font-family: 'DM Mono', monospace;
+
+    font-size: 10px;
+}
+
+.coming-project h2 {
+    font-size: 40px;
+
+    font-weight: 500;
+
+    letter-spacing: -.04em;
+}
+
+.coming-project p {
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 25px 5vw;
+
+    border-top: 1px solid #111;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: 'DM Mono', monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 750px) {
+
+    .site-header {
+        height: auto;
+
+        padding: 25px 5vw;
 
         align-items: flex-start;
     }
 
-    .design-card img {
-        width: 100%;
+    .site-header nav {
+        gap: 15px;
 
-        height: auto;
+        flex-wrap: wrap;
+
+        justify-content: flex-end;
     }
 
-    .art-gallery {
+    .site-header nav a {
+        font-size: 9px;
+    }
+
+
+    .home-hero {
+        min-height: 550px;
+
+        padding-top: 30px;
+    }
+
+    .hero-main {
+        padding-top: 100px;
+
+        align-items: flex-end;
+    }
+
+    .hero-main h1 {
+        font-size: 35vw;
+    }
+
+    .hero-label {
+        font-size: 9px;
+    }
+
+
+    .folder-section,
+    .preview-section,
+    .minimal-section {
+        padding-top: 75px;
+
+        padding-bottom: 90px;
+    }
+
+
+    .folders {
         grid-template-columns: 1fr;
+
+        gap: 70px;
     }
 
-    .photography-gallery {
-        grid-template-columns: 1fr;
+    .folder {
+        height: 320px;
     }
 
-    .photography-gallery img {
-        height: auto;
-
-        max-height: none;
+    .folder-paper {
+        padding: 30px;
     }
 
-    .yearbook-image.vertical {
-        width: 85%;
-    }
+    .folder-paper h3 {
+        left: 30px;
+        bottom: 65px;
 
-    .yearbook-image.wide {
-        width: 100%;
-    }
-}
-
-
-/* =====================================================
-   PHONE
-   ===================================================== */
-
-@media (max-width: 500px) {
-
-    header {
-        padding: 22px 5%;
-    }
-
-    .logo {
-        font-size: 21px;
-    }
-
-    .nav-links {
-        gap: 14px;
-    }
-
-    .nav-links a {
-        font-size: 14px;
-    }
-
-    .hero {
-        padding: 55px 5%;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-
-        line-height: 1.1;
-    }
-
-    .subtitle {
-        font-size: 12px;
-    }
-
-    .intro {
-        font-size: 17px;
-    }
-
-    .hero-visual {
-        width: 320px;
-
-        height: 360px;
-    }
-
-    .hero-image-container {
-        width: 210px;
-        height: 210px;
-
-        top: 70px;
-        left: 55px;
-    }
-
-    .hero-work-one {
-        width: 100px;
-        height: 70px;
-    }
-
-    .hero-work-two {
-        width: 90px;
-        height: 120px;
-    }
-
-    .hero-work-three {
-        width: 95px;
-        height: 80px;
-    }
-
-    .buttons {
-        flex-direction: column;
-
-        align-items: center;
-    }
-
-    .button {
-        width: fit-content;
-    }
-
-    .page {
-        padding: 60px 5%;
-    }
-
-    .page h1 {
         font-size: 40px;
     }
 
-    .page h2 {
-        font-size: 30px;
+    .folder-paper p {
+        left: 32px;
+        bottom: 35px;
     }
 
-    .page p {
-        font-size: 17px;
+
+    .open-folder {
+        opacity: 1;
+
+        transform: none;
+
+        right: 25px;
+        bottom: 35px;
     }
 
-    .selected-work-header h2 {
-        font-size: 38px;
+
+    .preview-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
     }
 
-    .work-grid {
-        gap: 25px;
+
+    .minimal-content {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
     }
 
-    .work-item > img,
-    .work-large > img {
-        height: 240px;
+
+    .portfolio-heading {
+        min-height: 430px;
     }
 
-    .work-label {
-        padding: 22px;
+    .portfolio-heading h1 {
+        font-size: 27vw;
     }
 
-    .work-label h3 {
-        font-size: 22px;
+
+    .large-project {
+        margin-bottom: 90px;
     }
 
-    .case-study {
-        padding: 60px 5%;
+    .large-project-info {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
     }
 
-    .case-study h1 {
-        font-size: 40px;
+    .large-project-info strong {
+        text-align: left;
     }
 
-    .case-study p {
-        font-size: 17px;
+
+    .coming-project {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
     }
 
-    .yearbook-image.vertical {
-        width: 90%;
+
+    footer {
+        gap: 20px;
+
+        flex-wrap: wrap;
     }
 
-    .yearbook-image.wide {
-        width: 100%;
-    }
 }
