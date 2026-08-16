@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="portfolio-page">
 
 <header class="site-header">
 
@@ -19,7 +19,9 @@
     </a>
 
     <nav class="main-nav">
-        <a href="projects.html">work</a>
+        <a href="index.html">home</a>
+        <a href="design.html">design</a>
+        <a href="marketing.html" class="active">marketing</a>
         <a href="about.html">about</a>
         <a href="contact.html">contact</a>
     </nav>
@@ -29,13 +31,12 @@
 
 <main class="portfolio-section">
 
-    <!-- HEADER -->
+    <!-- PAGE HEADER -->
 
-    <section class="portfolio-heading">
+    <div class="portfolio-heading">
 
-        <div class="section-label">
-            <span>02</span>
-            <span>marketing</span>
+        <div class="section-number">
+            02 / Marketing
         </div>
 
         <h1>
@@ -43,237 +44,187 @@
         </h1>
 
         <p>
-            Research, strategy, consumer insights, and visual
-            communication.
+            Marketing strategy, consumer research, visual communication,
+            and brand-focused projects.
         </p>
 
-    </section>
+    </div>
 
 
-    <!-- MARKETING PROJECTS -->
+    <!-- PROJECT -->
 
-    <section class="marketing-projects">
+    <section class="marketing-project">
 
+        <a href="dunkin.html" class="marketing-image">
 
-        <!-- DUNKIN -->
+            <img
+                src="images/dunkin.png"
+                alt="Dunkin' marketing plan"
+            >
 
-        <a href="dunkin.html" class="marketing-project">
-
-            <div class="marketing-image">
-
-                <img
-                    src="images/dunkin.png"
-                    alt="Dunkin' Marketing Plan"
-                >
-
-            </div>
-
-            <div class="marketing-info">
-
-                <div class="marketing-number">
-                    01
-                </div>
-
-                <div>
-
-                    <span class="project-category">
-                        Marketing Strategy
-                    </span>
-
-                    <h2>
-                        Dunkin' Marketing Plan
-                    </h2>
-
-                    <p>
-                        Consumer research, competitive analysis,
-                        target market analysis, and strategic
-                        recommendations developed through
-                        collaborative research.
-                    </p>
-
-                    <div class="project-tags">
-
-                        <span>
-                            Research
-                        </span>
-
-                        <span>
-                            Strategy
-                        </span>
-
-                        <span>
-                            Consumer Analysis
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <span class="project-arrow">
-                    ↗
-                </span>
-
+            <div class="image-overlay">
+                <span>View project ↗</span>
             </div>
 
         </a>
 
 
-        <!-- FUTURE PROJECT -->
+        <div class="marketing-info">
 
-        <div class="marketing-project placeholder">
+            <div class="marketing-number">
+                01
+            </div>
 
-            <div class="placeholder-content">
+            <div>
 
-                <span>
-                    02
+                <span class="project-category">
+                    Marketing Strategy
                 </span>
 
+                <h2>
+                    Dunkin' Marketing Plan
+                </h2>
+
                 <p>
-                    More marketing projects
-                    coming soon.
+                    A collaborative marketing strategy project focused on
+                    consumer analysis, competitive research, and developing
+                    recommendations for Dunkin'.
                 </p>
+
+                <div class="project-tags">
+
+                    <span>
+                        Consumer Research
+                    </span>
+
+                    <span>
+                        Brand Strategy
+                    </span>
+
+                    <span>
+                        Market Analysis
+                    </span>
+
+                    <span>
+                        Visual Communication
+                    </span>
+
+                </div>
 
             </div>
 
         </div>
-
-
-        <!-- FUTURE PROJECT -->
-
-        <div class="marketing-project placeholder">
-
-            <div class="placeholder-content">
-
-                <span>
-                    03
-                </span>
-
-                <p>
-                    Research, strategy,
-                    and creative campaigns.
-                </p>
-
-            </div>
-
-        </div>
-
 
     </section>
 
 
-    <!-- SKILLS -->
+    <!-- WHAT I DO -->
 
     <section class="marketing-skills">
 
-        <div class="section-label">
-
-            <span>
-                —
-            </span>
-
-            <span>
-                capabilities
-            </span>
-
+        <div class="section-number">
+            Marketing Skills
         </div>
-
 
         <div class="marketing-skills-grid">
 
-            <div>
+            <div class="marketing-skill">
 
-                <span>
-                    01
-                </span>
+                <span>01</span>
 
                 <h3>
-                    Research
+                    Consumer Research
                 </h3>
 
                 <p>
-                    Consumer research, market analysis,
-                    competitor research, and identifying
-                    audience insights.
+                    Understanding audiences, consumer behavior,
+                    preferences, and market opportunities.
                 </p>
 
             </div>
 
 
-            <div>
+            <div class="marketing-skill">
 
-                <span>
-                    02
-                </span>
+                <span>02</span>
 
                 <h3>
-                    Strategy
+                    Brand Strategy
                 </h3>
 
                 <p>
-                    Developing marketing recommendations
-                    based on consumer behavior and
-                    competitive positioning.
+                    Developing ideas that connect brands with
+                    their target audiences.
                 </p>
 
             </div>
 
 
-            <div>
+            <div class="marketing-skill">
 
-                <span>
-                    03
-                </span>
+                <span>03</span>
 
                 <h3>
-                    Communication
+                    Visual Communication
                 </h3>
 
                 <p>
-                    Presentations, visual communication,
-                    storytelling, and translating research
-                    into clear ideas.
+                    Combining marketing strategy with strong
+                    visual storytelling and design.
                 </p>
 
             </div>
 
         </div>
+
+    </section>
+
+
+    <!-- FUTURE WORK -->
+
+    <section class="coming-soon">
+
+        <span>
+            03 / Coming Soon
+        </span>
+
+        <h2>
+            More marketing<br>
+            work in progress.
+        </h2>
+
+        <p>
+            This section will continue to grow as I develop
+            more marketing, branding, and consumer-focused projects.
+        </p>
 
     </section>
 
 
     <!-- BACK -->
 
-    <section class="portfolio-back">
-
-        <a href="index.html">
-            ← back to home
-        </a>
-
-        <a href="design.html">
-            design + graphics →
-        </a>
-
-    </section>
+    <a href="index.html" class="back-link">
+        ← Back to portfolio
+    </a>
 
 </main>
 
 
-<footer>
+<footer class="site-footer">
 
     <span>
-        ellie
+        © 2026 ellie
     </span>
 
     <span>
-        marketing portfolio
+        marketing
     </span>
 
     <span>
-        © 2026
+        portfolio
     </span>
 
 </footer>
-
 
 </body>
 
