@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap');
 
 
 /* =========================================================
@@ -28,8 +28,8 @@ a {
 }
 
 img {
-    width: 100%;
     display: block;
+    width: 100%;
 }
 
 button,
@@ -48,16 +48,15 @@ a {
     z-index: 9999;
 
     background: #111;
-
-    color: #f2f0e8;
+    color: #f4f2eb;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
     transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
+        opacity .8s ease,
+        visibility .8s ease;
 }
 
 .loading-screen.loaded {
@@ -72,45 +71,48 @@ a {
 }
 
 .loading-name {
-    font-size: clamp(55px, 10vw, 100px);
-    font-weight: 600;
-    letter-spacing: -5px;
-    margin-bottom: 35px;
+    font-size: clamp(60px, 12vw, 110px);
+    font-weight: 500;
+    letter-spacing: -6px;
+    line-height: .8;
+
+    margin-bottom: 40px;
 }
 
 .loading-bar {
     width: 100%;
     height: 2px;
     background: #444;
+
     overflow: hidden;
 }
 
 .loading-progress {
-    width: 0%;
+    width: 0;
     height: 100%;
-    background: #f2f0e8;
+    background: #f4f2eb;
 
     animation: loadingProgress 1.8s ease forwards;
 }
 
 .loading-text {
-    margin-top: 12px;
+    margin-top: 14px;
 
     font-family: "DM Mono", monospace;
 
-    font-size: 11px;
+    font-size: 9px;
 
     text-transform: uppercase;
 
     letter-spacing: 1px;
 
-    opacity: 0.6;
+    opacity: .55;
 }
 
 @keyframes loadingProgress {
 
     from {
-        width: 0%;
+        width: 0;
     }
 
     to {
@@ -126,7 +128,8 @@ a {
 
 .site {
     opacity: 0;
-    transition: opacity 0.8s ease;
+
+    transition: opacity .8s ease;
 }
 
 .site.visible {
@@ -144,16 +147,14 @@ a {
     padding: 0 5vw;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    border-bottom: 1px solid rgba(0,0,0,0.18);
+    border-bottom: 1px solid rgba(0, 0, 0, .18);
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 24px;
 
     font-weight: 600;
 
@@ -167,60 +168,7 @@ a {
 }
 
 .main-nav a {
-    font-family: "DM Mono", monospace;
-
-    font-size: 12px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
     position: relative;
-}
-
-.main-nav a::after {
-    content: "";
-
-    position: absolute;
-
-    bottom: -5px;
-    left: 0;
-
-    width: 0;
-    height: 1px;
-
-    background: #111;
-
-    transition: width 0.25s ease;
-}
-
-.main-nav a:hover::after {
-    width: 100%;
-}
-
-
-/* =========================================================
-   HOME HERO
-   ========================================================= */
-
-.experimental-home {
-    min-height: calc(100vh - 90px);
-
-    padding: 35px 5vw 30px;
-
-    position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    overflow: hidden;
-}
-
-.home-meta {
-    display: flex;
-
-    justify-content: space-between;
 
     font-family: "DM Mono", monospace;
 
@@ -229,29 +177,76 @@ a {
     text-transform: uppercase;
 
     letter-spacing: 1px;
+}
 
-    opacity: 0.65;
+.main-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 1px;
+
+    background: #111;
+
+    transition: width .25s ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
 }
 
 
 /* =========================================================
-   CENTERED ELLIE
+   HOME
+   ========================================================= */
+
+.experimental-home {
+    min-height: calc(100vh - 90px);
+
+    padding: 35px 5vw;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.home-meta {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   CENTER ELLIE
    ========================================================= */
 
 .hero-center {
     position: absolute;
 
     top: 47%;
-
     left: 50%;
 
     transform: translate(-50%, -50%);
 
+    width: 100%;
+
     text-align: center;
 
     z-index: 1;
-
-    width: 100%;
 }
 
 .hero-name {
@@ -259,33 +254,30 @@ a {
 
     font-weight: 500;
 
-    line-height: 0.8;
+    line-height: .75;
 
-    letter-spacing: -10px;
+    letter-spacing: -12px;
 
     text-transform: lowercase;
-
-    transition:
-        transform 0.5s ease;
 }
 
 .hero-subtitle {
-    margin-top: 30px;
+    margin-top: 35px;
 
     font-family: "DM Mono", monospace;
 
-    font-size: 11px;
+    font-size: 10px;
 
     text-transform: uppercase;
 
     letter-spacing: 2px;
 
-    opacity: 0.55;
+    color: #777;
 }
 
 
 /* =========================================================
-   FOLDERS
+   RETRO FOLDERS
    ========================================================= */
 
 .folder-area {
@@ -293,9 +285,9 @@ a {
 
     inset: 0;
 
-    pointer-events: none;
-
     z-index: 5;
+
+    pointer-events: none;
 }
 
 .retro-folder {
@@ -303,17 +295,15 @@ a {
 
     width: 245px;
 
-    cursor: pointer;
-
     pointer-events: auto;
 
     transition:
-        transform 0.45s cubic-bezier(.2,.8,.2,1),
-        filter 0.3s ease;
+        transform .45s cubic-bezier(.2,.8,.2,1),
+        filter .3s ease;
 }
 
 .retro-folder:hover {
-    filter: brightness(1.03);
+    filter: brightness(1.04);
 
     transform:
         translateY(-12px)
@@ -322,63 +312,62 @@ a {
 }
 
 
-/* DESIGN FOLDER */
+/* DESIGN */
 
 .folder-design {
     top: 27%;
-
     left: 13%;
 
     transform: rotate(-5deg);
 }
 
 
-/* MARKETING FOLDER */
+/* MARKETING */
 
 .folder-marketing {
     right: 13%;
-
     bottom: 20%;
 
     transform: rotate(5deg);
 }
 
 
-/* folder tab */
+/* TAB */
 
 .folder-tab {
     width: 115px;
-
     height: 30px;
+
+    display: flex;
+    align-items: center;
+
+    padding-left: 13px;
 
     background: #d6b65c;
 
     border: 2px solid #111;
-
     border-bottom: none;
 
     border-radius: 7px 7px 0 0;
-
-    display: flex;
-
-    align-items: center;
-
-    padding-left: 13px;
 
     font-family: "DM Mono", monospace;
 
     font-size: 9px;
 
-    font-weight: 500;
-
     letter-spacing: 1px;
 }
 
 
-/* folder body */
+/* BODY */
 
 .folder-body {
     min-height: 165px;
+
+    padding: 25px;
+
+    position: relative;
+
+    overflow: hidden;
 
     background: #e1c568;
 
@@ -386,18 +375,9 @@ a {
 
     border-radius: 0 9px 9px 9px;
 
-    padding: 25px;
-
     box-shadow:
-        7px 8px 0 rgba(0,0,0,0.18);
-
-    position: relative;
-
-    overflow: hidden;
+        7px 8px 0 rgba(0, 0, 0, .18);
 }
-
-
-/* subtle folder texture */
 
 .folder-body::after {
     content: "";
@@ -411,7 +391,7 @@ a {
             0deg,
             transparent,
             transparent 5px,
-            rgba(0,0,0,0.025) 6px
+            rgba(0,0,0,.025) 6px
         );
 
     pointer-events: none;
@@ -421,8 +401,6 @@ a {
     font-size: 38px;
 
     margin-bottom: 18px;
-
-    filter: grayscale(1);
 }
 
 .folder-title {
@@ -430,9 +408,9 @@ a {
 
     font-weight: 600;
 
-    text-transform: lowercase;
+    line-height: 1.05;
 
-    line-height: 1.1;
+    text-transform: lowercase;
 }
 
 .folder-count {
@@ -440,186 +418,55 @@ a {
 
     font-family: "DM Mono", monospace;
 
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    color: #665b35;
+}
+
+
+/* =========================================================
+   HOME BOTTOM TEXT
+   ========================================================= */
+
+.home-instruction,
+.home-scroll {
+    position: absolute;
+
+    bottom: 35px;
+
+    font-family: "DM Mono", monospace;
+
     font-size: 9px;
 
     text-transform: uppercase;
 
-    opacity: 0.55;
-}
-
-
-/* =========================================================
-   HOME INSTRUCTIONS
-   ========================================================= */
-
-.home-instruction {
-    position: absolute;
-
-    left: 5vw;
-
-    bottom: 35px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-
-    text-transform: uppercase;
-
     letter-spacing: 1px;
 
-    opacity: 0.55;
+    color: #777;
+}
+
+.home-instruction {
+    left: 5vw;
 }
 
 .home-scroll {
-    position: absolute;
-
     right: 5vw;
-
-    bottom: 35px;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    opacity: 0.55;
 }
 
 
 /* =========================================================
-   SECTION LABELS
+   SECTION LABEL
    ========================================================= */
 
 .section-label {
     display: flex;
-
     justify-content: space-between;
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
 
     padding-bottom: 20px;
 
-    border-bottom: 1px solid rgba(0,0,0,0.18);
-
-    color: #555;
-}
-
-
-/* =========================================================
-   HOME WORK
-   ========================================================= */
-
-.home-work {
-    padding: 150px 5vw;
-
-    background: #f4f2eb;
-}
-
-.home-work-heading {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 40px;
-
-    margin: 70px 0 100px;
-}
-
-.home-work-heading h2 {
-    font-size: clamp(65px, 10vw, 150px);
-
-    font-weight: 500;
-
-    line-height: 0.85;
-
-    letter-spacing: -7px;
-}
-
-.home-work-heading p {
-    max-width: 370px;
-
-    align-self: end;
-
-    font-size: 16px;
-
-    color: #666;
-}
-
-
-/* =========================================================
-   PROJECT LIST
-   ========================================================= */
-
-.project-list {
-    border-top: 1px solid #111;
-}
-
-.portfolio-project {
-    min-height: 150px;
-
-    display: grid;
-
-    grid-template-columns: 70px 250px 1fr 40px;
-
-    align-items: center;
-
-    gap: 35px;
-
-    border-bottom: 1px solid #bbb;
-
-    position: relative;
-
-    transition:
-        background 0.3s ease,
-        padding 0.3s ease;
-}
-
-.portfolio-project:hover {
-    background: #e8e5db;
-
-    padding-left: 20px;
-
-    padding-right: 20px;
-}
-
-.project-number {
-    font-family: "DM Mono", monospace;
-
-    font-size: 11px;
-
-    color: #777;
-}
-
-.project-preview {
-    height: 115px;
-
-    overflow: hidden;
-}
-
-.project-preview img {
-    height: 100%;
-
-    object-fit: cover;
-
-    transition:
-        transform 0.5s ease;
-}
-
-.portfolio-project:hover .project-preview img {
-    transform: scale(1.06);
-}
-
-.project-text span {
-    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
 
     font-family: "DM Mono", monospace;
 
@@ -629,29 +476,7 @@ a {
 
     letter-spacing: 1px;
 
-    color: #777;
-
-    margin-bottom: 8px;
-}
-
-.project-text h3 {
-    font-size: 25px;
-
-    font-weight: 500;
-
-    letter-spacing: -1px;
-}
-
-.project-arrow {
-    font-size: 24px;
-
-    transition:
-        transform 0.3s ease;
-}
-
-.portfolio-project:hover .project-arrow {
-    transform:
-        translate(4px,-4px);
+    color: #666;
 }
 
 
@@ -661,6 +486,8 @@ a {
 
 .minimal-about {
     padding: 150px 5vw;
+
+    background: #f4f2eb;
 }
 
 .about-grid {
@@ -670,39 +497,100 @@ a {
 
     gap: 80px;
 
-    margin-top: 80px;
+    margin-top: 90px;
 }
 
-.about-grid h2 {
-    font-size: clamp(70px, 12vw, 170px);
-
-    line-height: 0.8;
+.about-title h2 {
+    font-size: clamp(75px, 11vw, 165px);
 
     font-weight: 500;
+
+    line-height: .78;
 
     letter-spacing: -8px;
 }
 
-.about-grid p {
+.about-copy {
     max-width: 500px;
 
-    font-size: 21px;
-
-    margin-bottom: 30px;
-
-    color: #444;
+    padding-top: 10px;
 }
 
-.about-grid a {
-    font-family: "DM Mono", monospace;
+.about-copy p {
+    margin-bottom: 28px;
 
-    font-size: 11px;
+    font-size: 18px;
 
-    text-transform: uppercase;
+    color: #555;
+}
+
+.about-copy a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding-bottom: 5px;
 
     border-bottom: 1px solid #111;
 
-    padding-bottom: 4px;
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-section {
+    padding: 150px 5vw;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 50px;
+
+    margin-top: 80px;
+}
+
+.skill {
+    border-top: 1px solid #111;
+
+    padding-top: 20px;
+}
+
+.skill > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.skill h3 {
+    margin: 35px 0 15px;
+
+    font-size: 32px;
+
+    font-weight: 500;
+
+    letter-spacing: -1.5px;
+}
+
+.skill p {
+    max-width: 300px;
+
+    color: #666;
+
+    font-size: 15px;
 }
 
 
@@ -719,38 +607,40 @@ a {
 }
 
 .home-contact .section-label {
-    border-color: rgba(255,255,255,0.25);
+    border-color: rgba(255,255,255,.25);
 
-    color: #999;
+    color: #888;
 }
 
 .home-contact h2 {
-    font-size: clamp(70px, 12vw, 170px);
+    margin: 100px 0;
 
-    line-height: 0.85;
+    font-size: clamp(80px, 13vw, 180px);
 
-    letter-spacing: -8px;
+    line-height: .78;
 
     font-weight: 500;
 
-    margin: 100px 0;
+    letter-spacing: -9px;
 }
 
 .home-contact > a {
-    font-family: "DM Mono", monospace;
-
-    font-size: 12px;
-
-    text-transform: uppercase;
-
     border-bottom: 1px solid #f4f2eb;
 
     padding-bottom: 5px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
 }
 
 
 /* =========================================================
-   PORTFOLIO PAGES
+   PORTFOLIO PAGE
    ========================================================= */
 
 .portfolio-section {
@@ -758,25 +648,27 @@ a {
 }
 
 .portfolio-heading {
-    max-width: 900px;
+    max-width: 1000px;
 
-    margin-bottom: 120px;
+    margin: 80px 0 120px;
 }
 
 .portfolio-heading h1 {
     font-size: clamp(80px, 14vw, 190px);
 
-    line-height: 0.8;
-
-    letter-spacing: -9px;
-
     font-weight: 500;
 
-    margin: 80px 0 45px;
+    line-height: .78;
+
+    letter-spacing: -10px;
+
+    text-transform: lowercase;
+
+    margin-bottom: 50px;
 }
 
-.portfolio-heading > p {
-    max-width: 450px;
+.portfolio-heading p {
+    max-width: 500px;
 
     font-size: 18px;
 
@@ -785,69 +677,66 @@ a {
 
 
 /* =========================================================
-   MARKETING PROJECTS
+   DESIGN PROJECTS
    ========================================================= */
 
-.marketing-projects {
+.design-projects {
     border-top: 1px solid #111;
 }
 
-.marketing-project {
-    display: block;
+.design-card {
+    display: grid;
+
+    grid-template-columns: 1.35fr 1fr;
+
+    gap: 70px;
+
+    padding: 70px 0;
 
     border-bottom: 1px solid #aaa;
 
     transition:
-        background 0.3s ease;
+        padding .4s ease,
+        background .4s ease;
 }
 
-.marketing-project:hover {
-    background: #dedbd1;
+.design-card:hover {
+    padding-left: 25px;
+    padding-right: 25px;
+
+    background: #e3e0d6;
 }
 
-.marketing-image {
-    width: 100%;
-
-    height: 500px;
+.design-card-image {
+    height: 430px;
 
     overflow: hidden;
+
+    background: #d8d6ce;
 }
 
-.marketing-image img {
+.design-card-image img {
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
 
     transition:
-        transform 0.6s ease;
+        transform .7s cubic-bezier(.2,.8,.2,1);
 }
 
-.marketing-project:hover .marketing-image img {
-    transform: scale(1.025);
+.design-card:hover .design-card-image img {
+    transform: scale(1.04);
 }
 
-.marketing-info {
-    min-height: 190px;
+.design-card-content {
+    display: flex;
 
-    display: grid;
+    flex-direction: column;
 
-    grid-template-columns: 70px 1fr 40px;
+    justify-content: center;
 
-    gap: 40px;
-
-    align-items: center;
-
-    padding: 35px 0;
-}
-
-.marketing-number {
-    font-family: "DM Mono", monospace;
-
-    color: #777;
-
-    font-size: 11px;
+    max-width: 450px;
 }
 
 .project-category {
@@ -862,145 +751,61 @@ a {
     letter-spacing: 1px;
 
     color: #777;
-
-    margin-bottom: 10px;
 }
 
-.marketing-info h2 {
-    font-size: 40px;
+.design-card-content h2 {
+    margin: 20px 0 25px;
+
+    font-size: clamp(42px, 5vw, 75px);
 
     font-weight: 500;
 
-    letter-spacing: -2px;
+    line-height: .9;
 
-    margin-bottom: 15px;
+    letter-spacing: -4px;
 }
 
-.marketing-info p {
-    max-width: 650px;
+.design-card-content p {
+    max-width: 400px;
+
+    margin-bottom: 30px;
 
     color: #666;
+
+    font-size: 16px;
 }
 
-.project-tags {
-    display: flex;
+.design-card-link {
+    width: fit-content;
 
-    gap: 10px;
+    padding-bottom: 5px;
 
-    flex-wrap: wrap;
-
-    margin-top: 20px;
-}
-
-.project-tags span {
-    border: 1px solid #999;
-
-    padding: 6px 10px;
+    border-bottom: 1px solid #111;
 
     font-family: "DM Mono", monospace;
-
-    font-size: 8px;
-
-    text-transform: uppercase;
-
-    letter-spacing: .5px;
-}
-
-
-/* =========================================================
-   PLACEHOLDERS
-   ========================================================= */
-
-.placeholder {
-    min-height: 220px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.placeholder-content {
-    width: 100%;
-
-    padding: 40px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    font-family: "DM Mono", monospace;
-
-    color: #777;
-
-    text-transform: uppercase;
 
     font-size: 10px;
+
+    text-transform: uppercase;
 
     letter-spacing: 1px;
+
+    transition: opacity .25s ease;
+}
+
+.design-card:hover .design-card-link {
+    opacity: .5;
 }
 
 
 /* =========================================================
-   MARKETING SKILLS
-   ========================================================= */
-
-.marketing-skills {
-    padding-top: 150px;
-}
-
-.marketing-skills-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 50px;
-
-    margin-top: 70px;
-}
-
-.marketing-skills-grid > div {
-    border-top: 1px solid #111;
-
-    padding-top: 20px;
-}
-
-.marketing-skills-grid span {
-    font-family: "DM Mono", monospace;
-
-    font-size: 10px;
-
-    color: #777;
-}
-
-.marketing-skills-grid h3 {
-    font-size: 28px;
-
-    font-weight: 500;
-
-    margin: 35px 0 15px;
-}
-
-.marketing-skills-grid p {
-    color: #666;
-
-    max-width: 300px;
-}
-
-
-/* =========================================================
-   BACK LINKS
+   BACK NAVIGATION
    ========================================================= */
 
 .portfolio-back {
     display: flex;
 
     justify-content: space-between;
-
-    gap: 30px;
 
     margin-top: 120px;
 
@@ -1021,31 +826,6 @@ a {
 
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-    padding: 30px 5vw;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    border-top: 1px solid rgba(0,0,0,0.2);
-
-    font-family: "DM Mono", monospace;
-
-    font-size: 9px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    color: #666;
-}
-
-
-/* =========================================================
    CASE STUDIES
    ========================================================= */
 
@@ -1055,42 +835,42 @@ footer {
 
     margin: auto;
 
-    padding: 100px 5vw;
+    padding: 100px 5vw 150px;
 }
 
 .case-study h1,
 .page h1 {
+    margin: 70px 0 40px;
+
     font-size: clamp(60px, 10vw, 130px);
-
-    line-height: 0.85;
-
-    letter-spacing: -6px;
 
     font-weight: 500;
 
-    margin: 70px 0 40px;
+    line-height: .82;
+
+    letter-spacing: -7px;
 }
 
 .case-study h2,
 .page h2 {
+    margin: 90px 0 25px;
+
     font-size: 38px;
 
     font-weight: 500;
 
-    letter-spacing: -1.5px;
-
-    margin: 90px 0 25px;
+    letter-spacing: -2px;
 }
 
 .case-study p,
 .page p {
     max-width: 750px;
 
-    font-size: 18px;
+    margin-bottom: 25px;
 
     color: #555;
 
-    margin-bottom: 25px;
+    font-size: 18px;
 }
 
 .case-study li {
@@ -1100,9 +880,9 @@ footer {
 }
 
 .hero-image {
-    margin: 60px 0;
-
     width: 100%;
+
+    margin: 60px 0;
 }
 
 .project-info {
@@ -1112,104 +892,20 @@ footer {
 
     gap: 30px;
 
+    margin: 50px 0;
+
     padding: 30px 0;
 
     border-top: 1px solid #aaa;
-
     border-bottom: 1px solid #aaa;
-
-    margin: 50px 0;
 }
 
 
 /* =========================================================
-   DESIGN PAGE
+   PHOTO / YEARBOOK GALLERIES
    ========================================================= */
 
-.design-card {
-    display: grid;
-
-    grid-template-columns: 1.2fr 1fr;
-
-    gap: 50px;
-
-    padding: 50px 0;
-
-    border-top: 1px solid #aaa;
-}
-
-.design-card img {
-    width: 100%;
-
-    max-height: 500px;
-
-    object-fit: cover;
-}
-
-.design-card h3 {
-    font-size: 32px;
-
-    font-weight: 500;
-
-    margin-bottom: 20px;
-}
-
-.design-card p {
-    font-size: 16px;
-}
-
-.art-gallery {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 30px;
-
-    margin-top: 50px;
-}
-
-.art-gallery h3 {
-    font-size: 18px;
-
-    margin-top: 15px;
-
-    font-weight: 500;
-}
-
-.art-image {
-    width: 100%;
-}
-
-
-/* =========================================================
-   PHOTOGRAPHY
-   ========================================================= */
-
-.photo-gallery {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 60px;
-
-    margin-top: 60px;
-}
-
-.photo-image.vertical {
-    width: 55%;
-
-    margin: auto;
-}
-
-.photo-image.wide {
-    width: 100%;
-}
-
-
-/* =========================================================
-   YEARBOOK
-   ========================================================= */
-
+.photo-gallery,
 .yearbook-gallery {
     display: flex;
 
@@ -1220,12 +916,14 @@ footer {
     margin-top: 60px;
 }
 
+.photo-image.vertical,
 .yearbook-image.vertical {
     width: 55%;
 
     margin: auto;
 }
 
+.photo-image.wide,
 .yearbook-image.wide {
     width: 100%;
 }
@@ -1249,27 +947,26 @@ footer {
         right: 7%;
     }
 
-    .hero-name {
-        font-size: 18vw;
-    }
-
-    .home-work-heading,
     .about-grid {
         grid-template-columns: 1fr;
     }
 
-    .portfolio-project {
-        grid-template-columns: 50px 180px 1fr 30px;
-
-        gap: 20px;
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
-    .marketing-skills-grid {
+    .design-card {
         grid-template-columns: 1fr;
+
+        gap: 40px;
     }
 
 }
 
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
 
 @media (max-width: 700px) {
 
@@ -1284,22 +981,30 @@ footer {
     }
 
     .main-nav a {
-        font-size: 10px;
+        font-size: 9px;
     }
+
+
+    /* HOME */
 
     .experimental-home {
         min-height: calc(100vh - 75px);
+
+        padding: 30px 5%;
     }
 
     .hero-name {
         font-size: 28vw;
 
-        letter-spacing: -6px;
+        letter-spacing: -7px;
     }
 
     .hero-subtitle {
-        font-size: 9px;
+        font-size: 8px;
     }
+
+
+    /* FOLDERS */
 
     .retro-folder {
         width: 175px;
@@ -1307,13 +1012,11 @@ footer {
 
     .folder-design {
         top: 24%;
-
         left: 5%;
     }
 
     .folder-marketing {
         right: 5%;
-
         bottom: 22%;
     }
 
@@ -1337,115 +1040,138 @@ footer {
         font-size: 7px;
     }
 
-    .home-instruction {
-        bottom: 20px;
 
-        left: 5%;
-    }
+    /* ABOUT */
 
-    .home-scroll {
-        bottom: 20px;
-
-        right: 5%;
-    }
-
-    .home-work,
-    .minimal-about,
-    .home-contact {
+    .minimal-about {
         padding: 100px 5%;
     }
 
-    .home-work-heading {
-        margin: 50px 0 60px;
+    .about-grid {
+        margin-top: 60px;
     }
 
-    .home-work-heading h2 {
-        font-size: 75px;
+    .about-title h2 {
+        font-size: 80px;
 
         letter-spacing: -5px;
     }
 
-    .portfolio-project {
-        grid-template-columns: 35px 1fr 25px;
-
-        padding: 25px 0;
+    .about-copy p {
+        font-size: 16px;
     }
 
-    .project-preview {
-        grid-column: 2;
 
-        grid-row: 1;
+    /* SKILLS */
 
-        height: 180px;
+    .skills-section {
+        padding: 100px 5%;
     }
 
-    .project-text {
-        grid-column: 2;
+    .skills-grid {
+        gap: 50px;
 
-        grid-row: 2;
+        margin-top: 60px;
     }
 
-    .project-number {
-        grid-column: 1;
 
-        grid-row: 1 / span 2;
+    /* CONTACT */
 
-        align-self: start;
-
-        padding-top: 5px;
+    .home-contact {
+        padding: 100px 5%;
     }
 
-    .project-arrow {
-        grid-column: 3;
+    .home-contact h2 {
+        margin: 70px 0;
 
-        grid-row: 1;
+        font-size: 85px;
 
-        align-self: start;
+        letter-spacing: -6px;
     }
 
-    .marketing-image {
+
+    /* PORTFOLIO */
+
+    .portfolio-section {
+        padding: 70px 5% 100px;
+    }
+
+    .portfolio-heading {
+        margin: 60px 0 80px;
+    }
+
+    .portfolio-heading h1 {
+        font-size: 20vw;
+
+        letter-spacing: -6px;
+    }
+
+
+    /* DESIGN */
+
+    .design-card {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 45px 0;
+    }
+
+    .design-card:hover {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .design-card-image {
         height: 300px;
     }
 
-    .marketing-info {
-        grid-template-columns: 40px 1fr 25px;
+    .design-card-content h2 {
+        font-size: 48px;
 
-        gap: 15px;
+        letter-spacing: -3px;
     }
 
-    .marketing-info h2 {
-        font-size: 30px;
+    .design-card-content p {
+        font-size: 15px;
+    }
+
+
+    /* CASE STUDIES */
+
+    .case-study,
+    .page {
+        padding: 70px 5% 100px;
+    }
+
+    .case-study h1,
+    .page h1 {
+        font-size: 17vw;
+
+        letter-spacing: -5px;
     }
 
     .project-info {
         grid-template-columns: 1fr;
     }
 
-    .design-card {
-        grid-template-columns: 1fr;
-    }
 
-    .art-gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .photo-image.vertical,
-    .yearbook-image.vertical {
-        width: 90%;
-    }
-
-    .portfolio-heading h1 {
-        letter-spacing: -5px;
-    }
+    /* FOOTER */
 
     footer {
         flex-direction: column;
 
         gap: 10px;
+
+        padding: 25px 5%;
     }
 
 }
 
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
 
 @media (max-width: 450px) {
 
@@ -1454,7 +1180,7 @@ footer {
     }
 
     .main-nav a {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .retro-folder {
@@ -1493,6 +1219,10 @@ footer {
 
     .hero-name {
         font-size: 30vw;
+    }
+
+    .portfolio-heading h1 {
+        font-size: 22vw;
     }
 
 }
