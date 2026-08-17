@@ -2096,3 +2096,712 @@ footer {
     }
 
 }
+/* =====================================================
+   DESIGN PAGE
+===================================================== */
+
+.design-hero {
+    height: calc(100vh - 78px);
+    min-height: 620px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* META */
+
+.design-meta {
+    position: absolute;
+
+    top: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    z-index: 3;
+}
+
+.design-meta-left {
+    left: 4vw;
+}
+
+.design-meta-right {
+    right: 4vw;
+
+    text-align: right;
+}
+
+
+/* TITLE */
+
+.design-title {
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.design-eyebrow {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.design-title h1 {
+    font-size: clamp(110px, 20vw, 300px);
+
+    font-weight: 500;
+
+    line-height: .72;
+
+    letter-spacing: -13px;
+
+    margin: 25px 0 40px;
+}
+
+.design-title h1 span {
+    color: #777;
+}
+
+.design-title p {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+
+/* ORBITS */
+
+.design-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(0,0,0,.12);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.design-orbit-one {
+    width: 600px;
+    height: 600px;
+
+    animation: designOrbit 28s linear infinite;
+}
+
+.design-orbit-two {
+    width: 850px;
+    height: 300px;
+
+    transform: rotate(-20deg);
+
+    animation: designOrbitTwo 36s linear infinite;
+}
+
+@keyframes designOrbit {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes designOrbitTwo {
+
+    from {
+        transform: rotate(-20deg);
+    }
+
+    to {
+        transform: rotate(340deg);
+    }
+
+}
+
+
+/* CROSSES */
+
+.design-cross {
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 18px;
+
+    color: #777;
+
+    animation: designFloat 4s ease-in-out infinite;
+}
+
+.design-cross-one {
+    left: 23%;
+    top: 25%;
+}
+
+.design-cross-two {
+    right: 25%;
+    bottom: 25%;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes designFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+/* OPEN FOLDER */
+
+.open-folder-label {
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 4vw;
+    right: 4vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+/* =====================================================
+   DESIGN INTRO
+===================================================== */
+
+.design-intro {
+    padding: 140px 5vw;
+}
+
+.design-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8vw;
+
+    padding-top: 100px;
+}
+
+.design-intro-grid h2 {
+    font-size: clamp(60px, 8vw, 120px);
+
+    line-height: .82;
+
+    letter-spacing: -6px;
+
+    font-weight: 500;
+}
+
+.design-intro-grid p {
+    max-width: 550px;
+
+    color: #555;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.design-intro-grid .design-intro-lead {
+    color: #111;
+
+    font-size: 25px;
+
+    line-height: 1.3;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   DESIGN PROJECTS
+===================================================== */
+
+.design-work {
+    padding: 140px 5vw;
+
+    background: #f3f1e9;
+}
+
+.design-projects {
+    margin-top: 80px;
+
+    border-top: 1px solid #111;
+}
+
+.design-project {
+    display: grid;
+
+    grid-template-columns: 55px 1.25fr 1fr;
+
+    gap: 35px;
+
+    padding: 55px 0;
+
+    border-bottom: 1px solid #aaa;
+
+    transition:
+        background .35s ease,
+        padding .35s ease;
+}
+
+.design-project:hover {
+    background: #e5e2d8;
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+}
+
+.design-project-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+
+    padding-top: 5px;
+}
+
+
+/* PROJECT IMAGE */
+
+.design-project-image {
+    width: 100%;
+
+    min-height: 420px;
+
+    overflow: hidden;
+}
+
+
+/* PLACEHOLDER */
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+
+    background: #dedbd1;
+
+    border: 1px solid #aaa;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family: "DM Mono", monospace;
+
+    text-transform: uppercase;
+
+    color: #777;
+
+    transition:
+        transform .5s ease,
+        background .3s ease;
+}
+
+.design-project:hover .image-placeholder {
+    transform: scale(1.02);
+
+    background: #d7d4ca;
+}
+
+.image-placeholder span {
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+.image-placeholder small {
+    font-size: 8px;
+
+    margin-top: 10px;
+
+    opacity: .6;
+}
+
+
+/* PROJECT INFO */
+
+.design-project-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 5px 0;
+}
+
+.project-label {
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.design-project-info h3 {
+    font-size: clamp(35px, 4vw, 60px);
+
+    font-weight: 500;
+
+    line-height: .85;
+
+    letter-spacing: -3px;
+
+    margin-top: 20px;
+}
+
+.design-project-info p {
+    max-width: 400px;
+
+    color: #666;
+
+    line-height: 1.6;
+
+    margin: 40px 0;
+}
+
+
+/* TOOLS */
+
+.project-tools {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.project-tools span {
+    border: 1px solid #999;
+
+    padding: 6px 9px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 7px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+
+/* =====================================================
+   DESIGN SKILLS
+===================================================== */
+
+.design-skills {
+    padding: 140px 5vw;
+}
+
+.design-tools {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 45px;
+
+    margin-top: 80px;
+}
+
+.tool {
+    border-top: 1px solid #111;
+
+    padding-top: 20px;
+}
+
+.tool > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: #777;
+}
+
+.tool h3 {
+    font-size: 35px;
+
+    line-height: .9;
+
+    letter-spacing: -2px;
+
+    font-weight: 500;
+
+    margin: 40px 0 25px;
+}
+
+.tool p {
+    color: #666;
+
+    max-width: 300px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   END OF PAGE
+===================================================== */
+
+.design-end {
+    padding: 100px 5vw 140px;
+
+    border-top: 1px solid #111;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+.end-folder {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.end-folder span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    color: #777;
+}
+
+.end-folder strong {
+    font-size: 55px;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+}
+
+.end-links {
+    display: flex;
+
+    gap: 35px;
+}
+
+.end-links a {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid #111;
+
+    padding-bottom: 5px;
+}
+
+
+/* =====================================================
+   DESIGN PAGE MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .design-title h1 {
+        font-size: 22vw;
+    }
+
+    .design-intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .design-project {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .design-project-image {
+        grid-column: 2;
+    }
+
+    .design-project-info {
+        grid-column: 2;
+    }
+
+    .design-tools {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .design-hero {
+        height: calc(100vh - 65px);
+
+        min-height: 580px;
+    }
+
+    .design-title h1 {
+        font-size: 29vw;
+
+        letter-spacing: -8px;
+    }
+
+    .design-title p {
+        font-size: 7px;
+    }
+
+    .design-orbit-one {
+        width: 380px;
+        height: 380px;
+    }
+
+    .design-orbit-two {
+        width: 500px;
+        height: 210px;
+    }
+
+    .design-intro,
+    .design-work,
+    .design-skills {
+        padding: 90px 5%;
+    }
+
+    .design-intro-grid {
+        padding-top: 65px;
+    }
+
+    .design-intro-grid h2 {
+        font-size: 65px;
+
+        letter-spacing: -4px;
+    }
+
+    .design-intro-grid .design-intro-lead {
+        font-size: 21px;
+    }
+
+    .design-project {
+        grid-template-columns: 35px 1fr;
+
+        gap: 15px;
+
+        padding: 40px 0;
+    }
+
+    .design-project-image,
+    .design-project-info {
+        grid-column: 2;
+    }
+
+    .design-project-image {
+        min-height: 300px;
+    }
+
+    .image-placeholder {
+        min-height: 300px;
+    }
+
+    .design-project-info h3 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .design-project-info p {
+        margin: 30px 0;
+    }
+
+    .design-end {
+        padding: 80px 5% 100px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 50px;
+    }
+
+    .end-folder strong {
+        font-size: 45px;
+    }
+
+    .end-links {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+}
