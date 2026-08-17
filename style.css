@@ -8215,3 +8215,539 @@ footer {
     }
 
 }
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
+
+.contact-page-hero {
+    height: calc(100vh - 78px);
+    min-height: 650px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* META */
+
+.contact-page-meta {
+    position: absolute;
+
+    top: 27px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    z-index: 3;
+}
+
+.contact-page-meta-left {
+    left: 4vw;
+}
+
+.contact-page-meta-right {
+    right: 4vw;
+    text-align: right;
+}
+
+
+/* TITLE */
+
+.contact-page-title {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.contact-page-title > span {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+    margin-bottom: 30px;
+}
+
+.contact-page-title h1 {
+    font-size: clamp(110px, 17vw, 250px);
+
+    font-weight: 500;
+
+    line-height: .76;
+
+    letter-spacing: -12px;
+}
+
+.contact-page-title h1 span {
+    color: #777;
+}
+
+.contact-page-title p {
+    margin-top: 45px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+
+/* ORBITS */
+
+.contact-page-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(0,0,0,.13);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.contact-page-orbit-one {
+    width: 620px;
+    height: 620px;
+
+    animation: contactOrbitOne 28s linear infinite;
+}
+
+.contact-page-orbit-two {
+    width: 900px;
+    height: 330px;
+
+    transform: rotate(-25deg);
+
+    animation: contactOrbitTwo 38s linear infinite;
+}
+
+@keyframes contactOrbitOne {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes contactOrbitTwo {
+
+    from {
+        transform: rotate(-25deg);
+    }
+
+    to {
+        transform: rotate(335deg);
+    }
+
+}
+
+
+/* CROSSES */
+
+.contact-page-cross {
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 20px;
+
+    color: #777;
+
+    animation: contactFloat 4s ease-in-out infinite;
+}
+
+.contact-page-cross-one {
+    left: 29%;
+    top: 22%;
+}
+
+.contact-page-cross-two {
+    right: 27%;
+    bottom: 25%;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes contactFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* BOTTOM */
+
+.contact-page-bottom {
+    position: absolute;
+
+    left: 4vw;
+    bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+/* =====================================================
+   CONTACT DETAILS
+===================================================== */
+
+.contact-details {
+    padding: 140px 5vw;
+}
+
+.contact-details-grid {
+    margin-top: 90px;
+
+    border-top: 1px solid #111;
+}
+
+.contact-card {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 50px;
+
+    align-items: center;
+
+    min-height: 220px;
+
+    border-bottom: 1px solid #aaa;
+
+    transition:
+        padding .35s ease,
+        background .35s ease;
+}
+
+.contact-card:hover {
+    padding-left: 25px;
+
+    background: #f3f1e9;
+}
+
+.contact-card-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.contact-card-label {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    margin-bottom: 18px;
+}
+
+.contact-card h2 {
+    font-size: clamp(40px, 5vw, 75px);
+
+    font-weight: 500;
+
+    line-height: .82;
+
+    letter-spacing: -3px;
+}
+
+.contact-card-arrow {
+    font-size: 25px;
+
+    transition: transform .3s ease;
+}
+
+.contact-card:hover .contact-card-arrow {
+    transform: translate(6px, -6px);
+}
+
+
+/* =====================================================
+   OPPORTUNITIES
+===================================================== */
+
+.contact-opportunities {
+    padding: 140px 5vw;
+
+    background: #f3f1e9;
+}
+
+.opportunity-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 90px;
+
+    border-top: 1px solid #111;
+
+    border-left: 1px solid #111;
+}
+
+.opportunity {
+    min-height: 330px;
+
+    padding: 35px;
+
+    border-right: 1px solid #111;
+
+    border-bottom: 1px solid #111;
+}
+
+.opportunity > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.opportunity h3 {
+    margin-top: 70px;
+
+    font-size: 40px;
+
+    font-weight: 500;
+
+    line-height: .85;
+
+    letter-spacing: -2px;
+}
+
+.opportunity p {
+    margin-top: 25px;
+
+    max-width: 300px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.contact-final {
+    background: #111;
+
+    color: #f4f1e8;
+
+    padding: 140px 5vw;
+}
+
+.contact-final-inner {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.contact-final-inner > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #888;
+}
+
+.contact-final h2 {
+    margin-top: 45px;
+
+    font-size: clamp(90px, 14vw, 200px);
+
+    font-weight: 500;
+
+    line-height: .75;
+
+    letter-spacing: -10px;
+}
+
+.contact-final h2 span {
+    color: #777;
+}
+
+.contact-final a {
+    margin-top: 70px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid #f4f1e8;
+
+    padding-bottom: 8px;
+}
+
+.contact-final a span {
+    margin-left: 10px;
+}
+
+
+/* =====================================================
+   CONTACT MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .contact-page-title h1 {
+        font-size: 20vw;
+    }
+
+    .opportunity-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .contact-page-hero {
+        height: calc(100vh - 65px);
+
+        min-height: 600px;
+    }
+
+    .contact-page-title h1 {
+        font-size: 27vw;
+
+        letter-spacing: -7px;
+    }
+
+    .contact-page-title p {
+        margin-top: 30px;
+
+        font-size: 8px;
+    }
+
+    .contact-page-orbit-one {
+        width: 390px;
+        height: 390px;
+    }
+
+    .contact-page-orbit-two {
+        width: 540px;
+        height: 220px;
+    }
+
+    .contact-details,
+    .contact-opportunities,
+    .contact-final {
+        padding: 90px 5%;
+    }
+
+    .contact-details-grid {
+        margin-top: 65px;
+    }
+
+    .contact-card {
+        grid-template-columns: 35px 1fr 25px;
+
+        min-height: 170px;
+    }
+
+    .contact-card h2 {
+        font-size: 36px;
+
+        letter-spacing: -2px;
+    }
+
+    .opportunity-grid {
+        margin-top: 65px;
+    }
+
+    .opportunity {
+        min-height: 260px;
+    }
+
+    .opportunity h3 {
+        margin-top: 45px;
+
+        font-size: 34px;
+    }
+
+    .contact-final h2 {
+        font-size: 25vw;
+
+        letter-spacing: -6px;
+    }
+
+    .contact-final a {
+        font-size: 8px;
+
+        margin-top: 55px;
+    }
+
+}
