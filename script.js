@@ -1,252 +1,219 @@
+javascript
+/* =========================================================
+   PORTFOLIO JAVASCRIPT
+========================================================= */
+
+
+/* =========================================================
+   PAGE LOADING
+========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const loadingScreen = document.getElementById("loadingScreen");
-    const site = document.getElementById("site");
-    const progress = document.querySelector(".loader-progress");
-    const percent = document.getElementById("loaderPercent");
 
-    let loadingProgress = 0;
-
-
-    /* =====================================================
-       LOADING SCREEN
-    ===================================================== */
-
-    const loadingInterval = setInterval(() => {
-
-        loadingProgress += Math.floor(Math.random() * 8) + 3;
-
-        if (loadingProgress >= 100) {
-            loadingProgress = 100;
-            clearInterval(loadingInterval);
-        }
-
-        progress.style.width = `${loadingProgress}%`;
-        percent.textContent = `${loadingProgress}%`;
-
-    }, 100);
-
-
-    function finishLoading() {
-
-        progress.style.width = "100%";
-        percent.textContent = "100%";
-
-        setTimeout(() => {
-
-            loadingScreen.classList.add("hidden");
-            site.classList.add("visible");
-
-        }, 350);
+    if (!loadingScreen) {
+        return;
     }
 
+    const percent = document.getElementById("loaderPercent");
+    const progress = document.querySelector(".loader-progress");
 
-    /* Never leave the site stuck behind the loader */
-    window.addEventListener("load", () => {
+    let current = 0;
 
-        setTimeout(() => {
-            finishLoading();
-        }, 500);
+    const interval = setInterval(() => {
 
-    });
+        current += Math.floor(Math.random() * 8) + 4;
 
+        if (current >= 100) {
 
-    /* Backup in case an image/font takes too long */
-    setTimeout(() => {
+            current = 100;
 
-        if (!loadingScreen.classList.contains("hidden")) {
-            finishLoading();
-        }
+            clearInterval(interval);
 
-    }, 3000);
-
-
-
-    /* =====================================================
-       FOLDER MOUSE MOVEMENT
-    ===================================================== */
-
-    const folders = document.querySelectorAll("[data-folder]");
-
-    folders.forEach(folder => {
-
-        folder.addEventListener("mousemove", (event) => {
-
-            const rect = folder.getBoundingClientRect();
-
-            const x =
-                (event.clientX - rect.left) /
-                rect.width -
-                0.5;
-
-            const y =
-                (event.clientY - rect.top) /
-                rect.height -
-                0.5;
-
-            const baseRotation =
-                folder.classList.contains("folder-design")
-                    ? -7
-                    : 7;
-
-            folder.style.transform = `
-                translate(${x * 12}px, ${y * 12}px)
-                rotate(${baseRotation + x * 5}deg)
-                scale(1.035)
-            `;
-
-        });
-
-
-        folder.addEventListener("mouseleave", () => {
-
-            const rotation =
-                folder.classList.contains("folder-design")
-                    ? -7
-                    : 7;
-
-            folder.style.transform =
-                `rotate(${rotation}deg)`;
-
-        });
-
-    });
-
-
-
-    /* =====================================================
-       HERO NAME MOUSE MOVEMENT
-    ===================================================== */
-
-    const heroName = document.getElementById("heroName");
-
-    document.addEventListener("mousemove", (event) => {
-
-        if (window.innerWidth < 700) return;
-
-        const x =
-            (event.clientX / window.innerWidth - 0.5);
-
-        const y =
-            (event.clientY / window.innerHeight - 0.5);
-
-        heroName.style.transform = `
-            translate(${x * 8}px, ${y * 5}px)
-        `;
-
-    });
-
-
-
-    /* =====================================================
-       PARALLAX DECORATIONS
-    ===================================================== */
-
-    const crosses =
-        document.querySelectorAll(".cross");
-
-    document.addEventListener("mousemove", (event) => {
-
-        if (window.innerWidth < 700) return;
-
-        const x =
-            event.clientX / window.innerWidth - 0.5;
-
-        const y =
-            event.clientY / window.innerHeight - 0.5;
-
-        crosses.forEach((cross, index) => {
-
-            const amount = (index + 1) * 8;
-
-            cross.style.transform = `
-                translate(
-                    ${x * amount}px,
-                    ${y * amount}px
-                )
-            `;
-
-        });
-
-    });
-
-
-
-    /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
-
-    const revealItems = document.querySelectorAll(
-        ".about-grid, .cityline-wrap, .area-item, .contact-content"
-    );
-
-
-    const observer =
-        new IntersectionObserver(
-            (entries) => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("revealed");
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.15
+            if (percent) {
+                percent.textContent = "100%";
             }
-        );
 
+            if (progress) {
+                progress.style.width = "100%";
+            }
 
-    revealItems.forEach(item => {
+            setTimeout(() => {
 
-        item.style.opacity = "0";
-        item.style.transform = "translateY(30px)";
-        item.style.transition =
-            "opacity .8s ease, transform .8s ease";
+                loadingScreen.style.opacity = "0";
+                loadingScreen.style.transition = "opacity .5s ease";
 
-        observer.observe(item);
+                setTimeout(() => {
+                    loadingScreen.style.display = "none";
+                }, 500);
 
-    });
+            }, 300);
 
-
-    /* Add the revealed state dynamically */
-    const revealStyle = document.createElement("style");
-
-    revealStyle.textContent = `
-
-        .revealed {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
+            return;
         }
 
-    `;
+        if (percent) {
+            percent.textContent = current + "%";
+        }
 
-    document.head.appendChild(revealStyle);
+        if (progress) {
+            progress.style.width = current + "%";
+        }
+
+    }, 80);
+
+});
 
 
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
-    /* =====================================================
-       PREVENT BROKEN FOLDER FEEL
-    ===================================================== */
+const revealElements = document.querySelectorAll(
+    ".section-top, .home-project, .about-interest, .directory-item, .tool, .design-project, .marketing-list > div"
+);
 
-    folders.forEach(folder => {
+const revealObserver = new IntersectionObserver(
+    (entries) => {
 
-        folder.addEventListener("click", () => {
+        entries.forEach((entry) => {
 
-            folder.style.pointerEvents = "none";
+            if (entry.isIntersecting) {
 
-            folder.style.transition =
-                "transform .25s ease, opacity .25s ease";
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
 
-            folder.style.opacity = ".7";
+                revealObserver.unobserve(entry.target);
+
+            }
 
         });
+
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+
+revealElements.forEach((element) => {
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(20px)";
+    element.style.transition = "opacity .7s ease, transform .7s ease";
+
+    revealObserver.observe(element);
+
+});
+
+
+/* =========================================================
+   IMAGE FADE-IN
+========================================================= */
+
+const images = document.querySelectorAll("img");
+
+images.forEach((image) => {
+
+    image.style.opacity = "0";
+    image.style.transition = "opacity .6s ease";
+
+    if (image.complete) {
+
+        image.style.opacity = "1";
+
+    } else {
+
+        image.addEventListener("load", () => {
+            image.style.opacity = "1";
+        });
+
+    }
+
+});
+
+
+/* =========================================================
+   CURRENT PAGE
+========================================================= */
+
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+const navigationLinks =
+    document.querySelectorAll("nav a");
+
+navigationLinks.forEach((link) => {
+
+    const href = link.getAttribute("href");
+
+    if (href === currentPage) {
+
+        link.style.opacity = "0.45";
+
+    }
+
+});
+
+
+/* =========================================================
+   EXTERNAL LINKS
+========================================================= */
+
+document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+
+    link.setAttribute("rel", "noopener noreferrer");
+
+});
+
+
+/* =========================================================
+   CURSOR MOVEMENT
+========================================================= */
+
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener("mousemove", (event) => {
+
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+});
+
+
+/* =========================================================
+   KEYBOARD SHORTCUT
+========================================================= */
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+
+        const loadingScreen =
+            document.getElementById("loadingScreen");
+
+        if (loadingScreen) {
+            loadingScreen.style.display = "none";
+        }
+
+    }
+
+});
+
+
+/* =========================================================
+   PREVENT BROKEN IMAGE ICONS
+========================================================= */
+
+document.querySelectorAll("img").forEach((image) => {
+
+    image.addEventListener("error", () => {
+
+        image.style.display = "none";
 
     });
 
 });
+
