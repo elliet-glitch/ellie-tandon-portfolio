@@ -1,330 +1,221 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-
     /* =====================================================
        LOADING SCREEN
     ===================================================== */
 
-    const loadingScreen =
-        document.getElementById("loadingScreen");
-
-    const site =
-        document.getElementById("site");
-
-    const progress =
-        document.querySelector(".loader-progress");
-
-    const percent =
-        document.getElementById("loaderPercent");
-
+    const loadingScreen = document.getElementById("loadingScreen");
+    const site = document.getElementById("site");
+    const progress = document.querySelector(".loader-progress");
+    const percent = document.getElementById("loaderPercent");
 
     let loadingProgress = 0;
 
+    if (loadingScreen) {
 
-    const loadingInterval = setInterval(() => {
+        const loadingInterval = setInterval(() => {
 
-        loadingProgress +=
-            Math.floor(Math.random() * 8) + 3;
+            loadingProgress += Math.floor(Math.random() * 8) + 3;
 
+            if (loadingProgress >= 100) {
+                loadingProgress = 100;
+                clearInterval(loadingInterval);
+            }
 
-        if (loadingProgress >= 100) {
+            if (progress) {
+                progress.style.width = `${loadingProgress}%`;
+            }
 
-            loadingProgress = 100;
+            if (percent) {
+                percent.textContent = `${loadingProgress}%`;
+            }
 
-            clearInterval(loadingInterval);
+        }, 100);
 
+        function finishLoading() {
+
+            if (progress) {
+                progress.style.width = "100%";
+            }
+
+            if (percent) {
+                percent.textContent = "100%";
+            }
+
+            setTimeout(() => {
+
+                if (loadingScreen) {
+                    loadingScreen.classList.add("hidden");
+                }
+
+                if (site) {
+                    site.classList.add("visible");
+                }
+
+            }, 350);
         }
 
-
-        if (progress) {
-
-            progress.style.width =
-                `${loadingProgress}%`;
-
-        }
-
-
-        if (percent) {
-
-            percent.textContent =
-                `${loadingProgress}%`;
-
-        }
-
-    }, 100);
-
-
-
-    function finishLoading() {
-
-        if (progress) {
-
-            progress.style.width =
-                "100%";
-
-        }
-
-
-        if (percent) {
-
-            percent.textContent =
-                "100%";
-
-        }
-
+        window.addEventListener("load", () => {
+            setTimeout(finishLoading, 500);
+        });
 
         setTimeout(() => {
 
-            if (loadingScreen) {
-
-                loadingScreen.classList.add(
-                    "hidden"
-                );
-
+            if (
+                loadingScreen &&
+                !loadingScreen.classList.contains("hidden")
+            ) {
+                finishLoading();
             }
 
-
-            if (site) {
-
-                site.classList.add(
-                    "visible"
-                );
-
-            }
-
-        }, 350);
-
+        }, 3000);
     }
-
-
-
-    window.addEventListener("load", () => {
-
-        setTimeout(() => {
-
-            finishLoading();
-
-        }, 500);
-
-    });
-
-
-
-    setTimeout(() => {
-
-        if (
-            loadingScreen &&
-            !loadingScreen.classList.contains("hidden")
-        ) {
-
-            finishLoading();
-
-        }
-
-    }, 3000);
-
 
 
     /* =====================================================
        FOLDER MOUSE MOVEMENT
+       Only runs on pages that actually have folders
     ===================================================== */
 
-    const folders =
-        document.querySelectorAll("[data-folder]");
-
+    const folders = document.querySelectorAll("[data-folder]");
 
     folders.forEach(folder => {
 
-        folder.addEventListener(
-            "mousemove",
-            event => {
+        folder.addEventListener("mousemove", (event) => {
 
-                const rect =
-                    folder.getBoundingClientRect();
+            const rect = folder.getBoundingClientRect();
 
+            const x =
+                (event.clientX - rect.left) /
+                rect.width - 0.5;
 
-                const x =
-                    (event.clientX - rect.left) /
-                    rect.width -
-                    0.5;
+            const y =
+                (event.clientY - rect.top) /
+                rect.height - 0.5;
 
+            const baseRotation =
+                folder.classList.contains("folder-design")
+                    ? -7
+                    : 7;
 
-                const y =
-                    (event.clientY - rect.top) /
-                    rect.height -
-                    0.5;
+            folder.style.transform = `
+                translate(${x * 12}px, ${y * 12}px)
+                rotate(${baseRotation + x * 5}deg)
+                scale(1.035)
+            `;
 
+        });
 
-                const baseRotation =
-                    folder.classList.contains(
-                        "folder-design"
-                    )
-                        ? -7
-                        : 7;
+        folder.addEventListener("mouseleave", () => {
 
+            const rotation =
+                folder.classList.contains("folder-design")
+                    ? -7
+                    : 7;
 
-                folder.style.transform = `
-                    translate(
-                        ${x * 12}px,
-                        ${y * 12}px
-                    )
-                    rotate(
-                        ${baseRotation + x * 5}deg
-                    )
-                    scale(1.035)
-                `;
+            folder.style.transform =
+                `rotate(${rotation}deg)`;
 
-            }
-        );
+        });
 
+        folder.addEventListener("click", () => {
 
-        folder.addEventListener(
-            "mouseleave",
-            () => {
+            folder.style.transition =
+                "transform .25s ease, opacity .25s ease";
 
-                const rotation =
-                    folder.classList.contains(
-                        "folder-design"
-                    )
-                        ? -7
-                        : 7;
+            folder.style.opacity = ".7";
 
-
-                folder.style.transform =
-                    `rotate(${rotation}deg)`;
-
-            }
-        );
+        });
 
     });
-
 
 
     /* =====================================================
        HERO NAME MOUSE MOVEMENT
     ===================================================== */
 
-    const heroName =
-        document.getElementById("heroName");
-
+    const heroName = document.getElementById("heroName");
 
     if (heroName) {
 
-        document.addEventListener(
-            "mousemove",
-            event => {
+        document.addEventListener("mousemove", (event) => {
 
-                if (window.innerWidth < 700) {
-                    return;
-                }
+            if (window.innerWidth < 700) return;
 
+            const x =
+                event.clientX /
+                window.innerWidth - 0.5;
 
-                const x =
-                    event.clientX /
-                    window.innerWidth -
-                    0.5;
+            const y =
+                event.clientY /
+                window.innerHeight - 0.5;
 
+            heroName.style.transform = `
+                translate(${x * 8}px, ${y * 5}px)
+            `;
 
-                const y =
-                    event.clientY /
-                    window.innerHeight -
-                    0.5;
-
-
-                heroName.style.transform = `
-                    translate(
-                        ${x * 8}px,
-                        ${y * 5}px
-                    )
-                `;
-
-            }
-        );
+        });
 
     }
-
 
 
     /* =====================================================
        PARALLAX DECORATIONS
     ===================================================== */
 
-    const crosses =
-        document.querySelectorAll(".cross");
+    const crosses = document.querySelectorAll(".cross");
 
+    if (crosses.length > 0) {
 
-    document.addEventListener(
-        "mousemove",
-        event => {
+        document.addEventListener("mousemove", (event) => {
 
-            if (window.innerWidth < 700) {
-                return;
-            }
-
+            if (window.innerWidth < 700) return;
 
             const x =
                 event.clientX /
-                window.innerWidth -
-                0.5;
-
+                window.innerWidth - 0.5;
 
             const y =
                 event.clientY /
-                window.innerHeight -
-                0.5;
+                window.innerHeight - 0.5;
 
+            crosses.forEach((cross, index) => {
 
-            crosses.forEach(
-                (cross, index) => {
+                const amount = (index + 1) * 8;
 
-                    const amount =
-                        (index + 1) * 8;
+                cross.style.transform = `
+                    translate(${x * amount}px, ${y * amount}px)
+                `;
 
+            });
 
-                    cross.style.transform = `
-                        translate(
-                            ${x * amount}px,
-                            ${y * amount}px
-                        )
-                    `;
+        });
 
-                }
-            );
-
-        }
-    );
-
+    }
 
 
     /* =====================================================
        SCROLL REVEAL
     ===================================================== */
 
-    const revealItems =
-        document.querySelectorAll(
-            ".about-grid, .cityline-wrap, .area-item, .contact-content"
-        );
+    const revealItems = document.querySelectorAll(
+        ".about-grid, .cityline-wrap, .area-item, .contact-content"
+    );
 
+    if (revealItems.length > 0) {
 
-    const observer =
-        new IntersectionObserver(
-            entries => {
+        const observer = new IntersectionObserver(
+            (entries) => {
 
-                entries.forEach(
-                    entry => {
+                entries.forEach(entry => {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                    if (entry.isIntersecting) {
 
-                            entry.target.classList.add(
-                                "revealed"
-                            );
-
-                        }
+                        entry.target.classList.add("revealed");
 
                     }
-                );
+
+                });
 
             },
             {
@@ -332,150 +223,85 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         );
 
+        revealItems.forEach(item => {
 
-    revealItems.forEach(item => {
+            item.style.opacity = "0";
 
-        item.style.opacity = "0";
+            item.style.transform =
+                "translateY(30px)";
 
-        item.style.transform =
-            "translateY(30px)";
+            item.style.transition =
+                "opacity .8s ease, transform .8s ease";
 
-        item.style.transition =
-            "opacity .8s ease, transform .8s ease";
+            observer.observe(item);
 
-        observer.observe(item);
-
-    });
-
-
-
-    /* =====================================================
-       REVEALED STATE
-    ===================================================== */
-
-    const revealStyle =
-        document.createElement("style");
-
-
-    revealStyle.textContent = `
-
-        .revealed {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-    `;
-
-
-    document.head.appendChild(
-        revealStyle
-    );
-
-
-
-    /* =====================================================
-       CLICKABLE FOLDERS
-    ===================================================== */
-
-    folders.forEach(folder => {
-
-        folder.addEventListener(
-            "click",
-            () => {
-
-                folder.style.transition =
-                    "transform .25s ease, opacity .25s ease";
-
-                folder.style.opacity =
-                    ".7";
-
-            }
-        );
-
-    });
-
-
-
-    /* =====================================================
-       PROJECT FILTERS
-    ===================================================== */
-
-    const filterButtons =
-        document.querySelectorAll(
-            ".filter-button"
-        );
-
-
-    const projectItems =
-        document.querySelectorAll(
-            ".work-item"
-        );
-
-
-    const projectCount =
-        document.getElementById(
-            "projectCount"
-        );
-
-
-    function updateProjectCount() {
-
-        if (!projectCount) {
-            return;
-        }
-
-
-        const visibleProjects =
-            document.querySelectorAll(
-                ".work-item:not(.filter-hidden)"
-            );
-
-
-        projectCount.textContent =
-            String(
-                visibleProjects.length
-            ).padStart(2, "0");
+        });
 
     }
 
 
+    /* =====================================================
+       PROJECT FILTERS
+       Only runs on the Projects page
+    ===================================================== */
 
-    filterButtons.forEach(button => {
+    const filterButtons =
+        document.querySelectorAll(".filter-button");
 
-        button.addEventListener(
-            "click",
-            () => {
+    const projectItems =
+        document.querySelectorAll(".work-item");
+
+    const projectCount =
+        document.getElementById("projectCount");
+
+
+    if (
+        filterButtons.length > 0 &&
+        projectItems.length > 0
+    ) {
+
+        function updateProjectCount() {
+
+            const visibleProjects =
+                document.querySelectorAll(
+                    ".work-item:not(.filter-hidden)"
+                );
+
+            if (projectCount) {
+
+                projectCount.textContent =
+                    String(visibleProjects.length).padStart(2, "0");
+
+            }
+
+        }
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
 
                 const filter =
-                    button.getAttribute(
-                        "data-filter"
-                    );
+                    button.getAttribute("data-filter");
 
 
-                /* Active button */
+                /* Active filter */
 
                 filterButtons.forEach(btn => {
 
-                    btn.classList.remove(
-                        "active"
-                    );
+                    btn.classList.remove("active");
 
                 });
 
-
-                button.classList.add(
-                    "active"
-                );
+                button.classList.add("active");
 
 
-                /* Filter projects */
+                /* Show / hide projects */
 
                 projectItems.forEach(project => {
 
                     const category =
-                        project.getAttribute(
-                            "data-category"
-                        );
+                        project.getAttribute("data-category");
 
 
                     if (
@@ -500,18 +326,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 updateProjectCount();
 
-            }
-        );
+            });
 
-    });
-
+        });
 
 
-    /* =====================================================
-       INITIAL PROJECT COUNT
-    ===================================================== */
+        updateProjectCount();
 
-    updateProjectCount();
-
+    }
 
 });
