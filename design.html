@@ -5,240 +5,619 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ellie — design + graphics</title>
+    <title>design + graphics — ellie</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="site page-site">
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
 
-    <!-- HEADER -->
-    <header class="site-header">
+        <div class="loader-inner">
 
-        <a href="index.html" class="logo">et</a>
+            <div class="loader-name">design</div>
 
-        <div class="header-status">
-            <span class="status-dot"></span>
-            design archive
+            <div class="loader-line">
+                <div class="loader-progress"></div>
+            </div>
+
+            <div class="loader-status">
+                <span>opening folder</span>
+                <span id="loaderPercent">0%</span>
+            </div>
+
         </div>
 
-        <nav>
-            <a href="index.html">home</a>
-            <a href="etresume.pdf" target="_blank">resume ↗</a>
-        </nav>
-
-    </header>
+    </div>
 
 
-    <main class="portfolio-page">
+    <!-- WEBSITE -->
+    <div class="site" id="site">
 
-        <!-- PAGE INTRO -->
-        <section class="portfolio-hero">
+        <!-- HEADER -->
+        <header class="site-header">
 
-            <div class="page-meta">
-                <span>01 / 02</span>
-                <span>visual work</span>
+            <a href="index.html" class="logo">
+                et
+            </a>
+
+            <div class="header-status">
+                <span class="status-dot"></span>
+                design + graphics
             </div>
 
-            <div class="portfolio-title">
+            <nav>
 
-                <span class="eyebrow">folder 01</span>
+                <a href="index.html">
+                    home
+                </a>
 
-                <h1>
-                    design<br>
-                    <span>+ graphics.</span>
-                </h1>
+                <a href="marketing.html">
+                    marketing
+                </a>
 
-                <p>
-                    A collection of visual work exploring graphic
-                    design, editorial layouts, branding, and
-                    visual communication.
-                </p>
+                <a href="etresume.pdf" target="_blank">
+                    resume ↗
+                </a>
 
-            </div>
+            </nav>
 
-        </section>
-
-
-        <!-- PROJECTS -->
-        <section class="portfolio-work">
-
-            <div class="page-section-label">
-                <span>selected work</span>
-                <span>01—04</span>
-            </div>
+        </header>
 
 
-            <!-- PROJECT 01 -->
-            <article class="design-project">
+        <main>
 
-                <div class="project-image project-placeholder">
-                    <span>add image</span>
+
+            <!-- =================================================
+                 PAGE HERO
+            ================================================= -->
+
+            <section class="design-hero">
+
+                <div class="design-meta design-meta-left">
+
+                    <span>01 / design</span>
+                    <span>visual work</span>
+
                 </div>
 
-                <div class="project-details">
 
-                    <div class="project-index">
-                        01 / editorial
-                    </div>
+                <div class="design-meta design-meta-right">
+
+                    <span>ellie</span>
+                    <span>2026</span>
+
+                </div>
+
+
+                <!-- DECORATION -->
+
+                <div class="design-orbit design-orbit-one"></div>
+
+                <div class="design-orbit design-orbit-two"></div>
+
+
+                <div class="design-cross design-cross-one">
+                    +
+                </div>
+
+                <div class="design-cross design-cross-two">
+                    +
+                </div>
+
+
+                <!-- TITLE -->
+
+                <div class="design-title">
+
+                    <span class="design-eyebrow">
+                        folder / 01
+                    </span>
+
+                    <h1>
+                        design<span>.</span>
+                    </h1>
+
+                    <p>
+                        graphic design + visual communication
+                    </p>
+
+                </div>
+
+
+                <!-- FOLDER LABEL -->
+
+                <div class="open-folder-label">
+
+                    <span>opened folder</span>
+
+                    <span>↘</span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INTRO
+            ================================================= -->
+
+            <section class="design-intro">
+
+                <div class="section-top">
+
+                    <span>02 / selected work</span>
+
+                    <span>design + graphics</span>
+
+                </div>
+
+
+                <div class="design-intro-grid">
 
                     <h2>
-                        yearbook<br>
+                        visual<br>
+                        communication
+                    </h2>
+
+
+                    <div>
+
+                        <p class="design-intro-lead">
+
+                            I like using design to turn an idea
+                            into something people can immediately
+                            understand.
+
+                        </p>
+
+
+                        <p>
+
+                            My work includes graphic design,
+                            editorial layouts, branding,
+                            digital graphics, and visual
+                            storytelling.
+
+                        </p>
+
+
+                        <p>
+
+                            I’m interested in creating visuals
+                            that feel intentional while still
+                            having personality.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 GRAPHIC DESIGN
+            ================================================= -->
+
+            <section class="design-work">
+
+                <div class="section-top">
+
+                    <span>03 / graphic design</span>
+
+                    <span>selected projects</span>
+
+                </div>
+
+
+                <div class="design-projects">
+
+
+                    <!-- PROJECT 01 -->
+
+                    <article class="design-project">
+
+                        <div class="design-project-number">
+                            01
+                        </div>
+
+
+                        <div class="design-project-image">
+
+                            <!-- REPLACE WITH YOUR IMAGE -->
+
+                            <div class="image-placeholder">
+
+                                <span>
+                                    project image
+                                </span>
+
+                                <small>
+                                    graphic design
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="design-project-info">
+
+                            <div>
+
+                                <span class="project-label">
+                                    graphic design
+                                </span>
+
+                                <h3>
+                                    editorial<br>
+                                    design
+                                </h3>
+
+                            </div>
+
+
+                            <p>
+
+                                A collection of editorial
+                                layouts exploring typography,
+                                hierarchy, imagery, and
+                                visual storytelling.
+
+                            </p>
+
+
+                            <div class="project-tools">
+
+                                <span>indesign</span>
+                                <span>photoshop</span>
+                                <span>typography</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 02 -->
+
+                    <article class="design-project">
+
+                        <div class="design-project-number">
+                            02
+                        </div>
+
+
+                        <div class="design-project-image">
+
+                            <div class="image-placeholder">
+
+                                <span>
+                                    project image
+                                </span>
+
+                                <small>
+                                    branding
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="design-project-info">
+
+                            <div>
+
+                                <span class="project-label">
+                                    branding
+                                </span>
+
+                                <h3>
+                                    visual<br>
+                                    identity
+                                </h3>
+
+                            </div>
+
+
+                            <p>
+
+                                Exploring how typography,
+                                composition, imagery, and
+                                visual systems can create
+                                a recognizable identity.
+
+                            </p>
+
+
+                            <div class="project-tools">
+
+                                <span>illustrator</span>
+                                <span>photoshop</span>
+                                <span>branding</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 03 -->
+
+                    <article class="design-project">
+
+                        <div class="design-project-number">
+                            03
+                        </div>
+
+
+                        <div class="design-project-image">
+
+                            <div class="image-placeholder">
+
+                                <span>
+                                    project image
+                                </span>
+
+                                <small>
+                                    digital design
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="design-project-info">
+
+                            <div>
+
+                                <span class="project-label">
+                                    digital design
+                                </span>
+
+                                <h3>
+                                    web +<br>
+                                    interface
+                                </h3>
+
+                            </div>
+
+
+                            <p>
+
+                                Digital projects combining
+                                layout, interaction, typography,
+                                and code to create experimental
+                                web experiences.
+
+                            </p>
+
+
+                            <div class="project-tools">
+
+                                <span>html</span>
+                                <span>css</span>
+                                <span>javascript</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- PROJECT 04 -->
+
+                    <article class="design-project">
+
+                        <div class="design-project-number">
+                            04
+                        </div>
+
+
+                        <div class="design-project-image">
+
+                            <div class="image-placeholder">
+
+                                <span>
+                                    project image
+                                </span>
+
+                                <small>
+                                    photography
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="design-project-info">
+
+                            <div>
+
+                                <span class="project-label">
+                                    visual storytelling
+                                </span>
+
+                                <h3>
+                                    photography<br>
+                                    + imagery
+                                </h3>
+
+                            </div>
+
+
+                            <p>
+
+                                Photography used as a design
+                                element to build atmosphere,
+                                communicate an idea, or support
+                                a larger visual story.
+
+                            </p>
+
+
+                            <div class="project-tools">
+
+                                <span>lightroom</span>
+                                <span>photoshop</span>
+                                <span>photography</span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SKILLS
+            ================================================= -->
+
+            <section class="design-skills">
+
+                <div class="section-top">
+
+                    <span>04 / tools</span>
+
+                    <span>things i use</span>
+
+                </div>
+
+
+                <div class="design-tools">
+
+
+                    <div class="tool">
+
+                        <span>01</span>
+
+                        <h3>
+                            Adobe<br>
+                            Creative Cloud
+                        </h3>
+
+                        <p>
+                            Photoshop · Illustrator ·
+                            InDesign · Lightroom · After Effects
+                        </p>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <span>02</span>
+
+                        <h3>
+                            Digital<br>
+                            Design
+                        </h3>
+
+                        <p>
+                            Figma · Canva · Visual Studio Code
+                        </p>
+
+                    </div>
+
+
+                    <div class="tool">
+
+                        <span>03</span>
+
+                        <h3>
+                            Web<br>
+                            Development
+                        </h3>
+
+                        <p>
+                            HTML · CSS · JavaScript ·
+                            Bootstrap · GitHub
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 BACK TO FOLDERS
+            ================================================= -->
+
+            <section class="design-end">
+
+                <div class="end-folder">
+
+                    <span>
+                        folder / 01
+                    </span>
+
+                    <strong>
                         design
-                    </h2>
-
-                    <p>
-                        Editorial design and page development
-                        created through my work on yearbook staff.
-                        Focused on composition, typography,
-                        photography, and visual storytelling.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>InDesign</span>
-                        <span>Photoshop</span>
-                        <span>Editorial</span>
-                    </div>
+                    </strong>
 
                 </div>
 
-            </article>
 
+                <div class="end-links">
 
-            <!-- PROJECT 02 -->
-            <article class="design-project reverse">
+                    <a href="index.html">
+                        ← back home
+                    </a>
 
-                <div class="project-image project-placeholder">
-                    <span>add image</span>
-                </div>
-
-                <div class="project-details">
-
-                    <div class="project-index">
-                        02 / graphic design
-                    </div>
-
-                    <h2>
-                        graphic<br>
-                        experiments
-                    </h2>
-
-                    <p>
-                        Personal and academic design work exploring
-                        typography, layout, image treatment,
-                        composition, and visual systems.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>Illustrator</span>
-                        <span>Photoshop</span>
-                        <span>Typography</span>
-                    </div>
+                    <a href="marketing.html">
+                        open marketing →
+                    </a>
 
                 </div>
 
-            </article>
+            </section>
 
 
-            <!-- PROJECT 03 -->
-            <article class="design-project">
-
-                <div class="project-image project-placeholder">
-                    <span>add image</span>
-                </div>
-
-                <div class="project-details">
-
-                    <div class="project-index">
-                        03 / digital
-                    </div>
-
-                    <h2>
-                        digital<br>
-                        experiences
-                    </h2>
-
-                    <p>
-                        Interactive projects combining visual design,
-                        web development, and storytelling.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                </div>
-
-            </article>
+        </main>
 
 
-            <!-- PROJECT 04 -->
-            <article class="design-project reverse">
+        <!-- FOOTER -->
 
-                <div class="project-image project-placeholder">
-                    <span>add image</span>
-                </div>
+        <footer>
 
-                <div class="project-details">
+            <span>ellie</span>
 
-                    <div class="project-index">
-                        04 / photography
-                    </div>
+            <span>design + graphics</span>
 
-                    <h2>
-                        photo<br>
-                        + image
-                    </h2>
+            <span>© 2026</span>
 
-                    <p>
-                        Photography and image-based work focused on
-                        composition, perspective, and visual storytelling.
-                    </p>
+        </footer>
 
-                    <div class="project-tags">
-                        <span>Photography</span>
-                        <span>Lightroom</span>
-                        <span>Photoshop</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-        </section>
+    </div>
 
 
-        <!-- BACK -->
-        <section class="page-back">
-
-            <a href="index.html">
-                ← back to home
-            </a>
-
-            <a href="marketing.html">
-                next folder → marketing
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <span>ellie</span>
-        <span>design + graphics</span>
-        <span>© 2026</span>
-
-    </footer>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
