@@ -2723,4 +2723,29 @@ footer {
         font-size: 30vw;
     }
 }
+.about-interest {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.about-interest:hover {
+    padding-left: 25px;
+    background: #e5e2d8;
+}
+
+.about-interest h2 {
+    transition: transform .3s ease;
+}
+
+.about-interest:hover h2 {
+    transform: translateX(5px);
+}
+
+.interest-arrow {
+    transition: transform .3s ease;
+}
+
+.about-interest:hover .interest-arrow {
+    transform: translate(6px, -6px);
+}
