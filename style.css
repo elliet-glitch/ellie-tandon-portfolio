@@ -1351,4 +1351,748 @@ footer {
         font-size: 30vw;
     }
 
+} /* =====================================================
+   INNER PORTFOLIO PAGES
+===================================================== */
+
+.page-site {
+    opacity: 1;
+}
+
+.portfolio-page,
+.about-page,
+.contact-page {
+    padding: 0 5vw;
+}
+
+
+/* PAGE META */
+
+.page-meta {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 28px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+/* PAGE HERO */
+
+.portfolio-hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.portfolio-title {
+    max-width: 1000px;
+}
+
+.eyebrow {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+    margin-bottom: 30px;
+}
+
+.portfolio-title h1 {
+    font-size: clamp(90px, 15vw, 220px);
+
+    font-weight: 500;
+
+    line-height: .75;
+
+    letter-spacing: -11px;
+}
+
+.portfolio-title h1 span {
+    color: #777;
+}
+
+.portfolio-title p {
+    max-width: 480px;
+
+    margin-top: 55px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+
+/* SECTION LABEL */
+
+.page-section-label {
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(0,0,0,.2);
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+/* DESIGN PROJECTS */
+
+.portfolio-work {
+    padding-bottom: 100px;
+}
+
+.design-project {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 7vw;
+
+    padding: 80px 0;
+
+    border-bottom: 1px solid #aaa;
+
+    align-items: center;
+}
+
+.design-project.reverse {
+    grid-template-columns: 1fr 1.3fr;
+}
+
+.design-project.reverse .project-image {
+    order: 2;
+}
+
+.design-project.reverse .project-details {
+    order: 1;
+}
+
+.project-image {
+    min-height: 450px;
+
+    overflow: hidden;
+
+    border: 1px solid #aaa;
+}
+
+.project-placeholder {
+    background: #dedbd1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.project-details {
+    max-width: 500px;
+}
+
+.project-index {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.project-details h2 {
+    font-size: clamp(50px, 6vw, 85px);
+
+    font-weight: 500;
+
+    line-height: .8;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 35px;
+}
+
+.project-details p {
+    color: #555;
+
+    line-height: 1.6;
+
+    max-width: 450px;
+}
+
+
+/* TAGS */
+
+.project-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 30px;
+}
+
+.project-tags span {
+    border: 1px solid #999;
+
+    padding: 7px 10px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+
+/* MARKETING */
+
+.marketing-project-new {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 6vw;
+
+    padding: 80px 0;
+
+    border-bottom: 1px solid #aaa;
+
+    align-items: center;
+}
+
+.marketing-project-image {
+    min-height: 430px;
+}
+
+.marketing-project-content h2 {
+    font-size: clamp(55px, 7vw, 95px);
+
+    font-weight: 500;
+
+    line-height: .8;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+.marketing-project-content p {
+    max-width: 470px;
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+/* MARKETING SKILLS */
+
+.marketing-skills-new {
+    padding: 130px 0;
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 50px;
+
+    padding-top: 70px;
+}
+
+.skills-grid > div {
+    border-top: 1px solid #111;
+
+    padding-top: 20px;
+}
+
+.skills-grid span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: #777;
+}
+
+.skills-grid h3 {
+    font-size: 45px;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+
+    margin: 40px 0 15px;
+}
+
+.skills-grid p {
+    max-width: 300px;
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+
+/* ABOUT PAGE */
+
+.about-page {
+    padding-bottom: 120px;
+}
+
+.about-intro {
+    min-height: 600px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.about-intro h1 {
+    font-size: clamp(100px, 17vw, 240px);
+
+    font-weight: 500;
+
+    line-height: .72;
+
+    letter-spacing: -12px;
+}
+
+.about-intro h1 span {
+    color: #777;
+}
+
+
+.about-description {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    gap: 6vw;
+
+    padding: 100px 0;
+
+    border-top: 1px solid #aaa;
+}
+
+.about-description-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.about-description > div:last-child {
+    max-width: 800px;
+}
+
+.large-about-text {
+    font-size: clamp(28px, 4vw, 50px) !important;
+
+    line-height: 1.15 !important;
+
+    color: #111 !important;
+
+    margin-bottom: 55px !important;
+}
+
+.about-description p {
+    max-width: 650px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #555;
+
+    margin-bottom: 30px;
+}
+
+.about-description em {
+    font-style: normal;
+
+    text-decoration: underline;
+
+    text-underline-offset: 6px;
+}
+
+
+/* INTERESTS */
+
+.about-interests {
+    padding: 100px 0;
+}
+
+.interest-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 70px;
+
+    border-top: 1px solid #111;
+}
+
+.interest-grid span {
+    padding: 25px 0;
+
+    border-bottom: 1px solid #aaa;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+}
+
+
+/* LOCATION */
+
+.about-location {
+    padding: 130px 0;
+
+    border-top: 1px solid #aaa;
+}
+
+.location-label {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    color: #777;
+}
+
+.about-location h2 {
+    font-size: clamp(90px, 17vw, 230px);
+
+    font-weight: 500;
+
+    line-height: .75;
+
+    letter-spacing: -12px;
+
+    margin: 50px 0 30px;
+}
+
+.about-location > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+
+/* CONTACT */
+
+.contact-page-site {
+    background: #111;
+
+    color: #f4f1e8;
+}
+
+.contact-page-site .site-header {
+    border-color: rgba(255,255,255,.15);
+}
+
+.contact-page-site .logo,
+.contact-page-site .site-header nav a {
+    color: #f4f1e8;
+}
+
+.contact-page-site .site-header nav a::after {
+    background: #f4f1e8;
+}
+
+.contact-page-site .page-meta {
+    color: #888;
+}
+
+.contact-intro {
+    min-height: 600px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.contact-intro .eyebrow {
+    color: #888;
+}
+
+.contact-intro h1 {
+    font-size: clamp(100px, 18vw, 250px);
+
+    line-height: .7;
+
+    letter-spacing: -13px;
+
+    font-weight: 500;
+}
+
+.contact-intro h1 span {
+    color: #888;
+}
+
+
+.contact-links {
+    border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.contact-links a {
+    display: grid;
+
+    grid-template-columns: 70px 150px 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+
+    min-height: 130px;
+
+    border-bottom: 1px solid rgba(255,255,255,.2);
+
+    transition: padding .3s ease;
+}
+
+.contact-links a:hover {
+    padding-left: 20px;
+}
+
+.contact-number,
+.contact-label {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.contact-value {
+    font-size: 25px;
+
+    color: #f4f1e8;
+}
+
+.contact-note {
+    padding: 130px 0;
+}
+
+.contact-note p {
+    max-width: 600px;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+
+    color: #aaa;
+}
+
+
+/* PAGE BACK */
+
+.page-back {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 30px 0;
+
+    border-top: 1px solid #aaa;
+}
+
+.page-back a {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   INNER PAGE RESPONSIVE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .portfolio-hero,
+    .about-intro,
+    .contact-intro {
+        min-height: 500px;
+    }
+
+    .design-project,
+    .design-project.reverse,
+    .marketing-project-new {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .design-project.reverse .project-image,
+    .design-project.reverse .project-details {
+        order: initial;
+    }
+
+    .project-image,
+    .marketing-project-image {
+        min-height: 350px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .about-description {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links a {
+        grid-template-columns: 40px 100px 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .portfolio-page,
+    .about-page,
+    .contact-page {
+        padding: 0 5%;
+    }
+
+    .portfolio-title h1,
+    .about-intro h1,
+    .contact-intro h1 {
+        font-size: 25vw;
+
+        letter-spacing: -6px;
+    }
+
+    .portfolio-title p {
+        font-size: 15px;
+
+        margin-top: 40px;
+    }
+
+    .design-project,
+    .marketing-project-new {
+        padding: 55px 0;
+    }
+
+    .project-image,
+    .marketing-project-image {
+        min-height: 260px;
+    }
+
+    .project-details h2,
+    .marketing-project-content h2 {
+        font-size: 50px;
+
+        letter-spacing: -3px;
+    }
+
+    .skills-grid h3 {
+        font-size: 38px;
+    }
+
+    .large-about-text {
+        font-size: 25px !important;
+    }
+
+    .about-description p {
+        font-size: 15px;
+    }
+
+    .about-location h2 {
+        font-size: 25vw;
+
+        letter-spacing: -6px;
+    }
+
+    .contact-links a {
+        grid-template-columns: 30px 1fr;
+        gap: 10px;
+
+        padding: 25px 0;
+    }
+
+    .contact-value {
+        grid-column: 2;
+
+        font-size: 17px;
+    }
+
+    .page-back {
+        gap: 20px;
+
+        flex-direction: column;
+    }
+
 }
