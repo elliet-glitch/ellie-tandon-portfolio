@@ -3440,3 +3440,1113 @@ footer {
     }
 
 }
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
+
+.about-page-hero {
+    height: calc(100vh - 78px);
+    min-height: 650px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-page-meta {
+    position: absolute;
+    top: 27px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: #777;
+    z-index: 3;
+}
+
+.about-page-meta:first-child {
+    left: 4vw;
+}
+
+.about-page-meta:last-of-type {
+    right: 4vw;
+    text-align: right;
+}
+
+.about-page-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.about-page-title > span {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.about-page-title h1 {
+    font-size: clamp(130px, 23vw, 340px);
+    font-weight: 500;
+    line-height: .7;
+    letter-spacing: -15px;
+}
+
+.about-page-title h1 span {
+    color: #777;
+}
+
+.about-page-title p {
+    margin-top: 45px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+
+/* ABOUT ORBITS */
+
+.about-page-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(0,0,0,.13);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.about-page-orbit-one {
+    width: 580px;
+    height: 580px;
+
+    animation: rotateOrbit 25s linear infinite;
+}
+
+.about-page-orbit-two {
+    width: 850px;
+    height: 310px;
+
+    transform: rotate(-25deg);
+
+    animation: rotateOrbitTwo 35s linear infinite;
+}
+
+
+/* ABOUT CROSSES */
+
+.about-page-cross {
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+    font-size: 20px;
+
+    color: #777;
+
+    animation: floatCross 4s ease-in-out infinite;
+}
+
+.about-cross-one {
+    left: 27%;
+    top: 22%;
+}
+
+.about-cross-two {
+    right: 28%;
+    bottom: 23%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* ABOUT HERO BOTTOM */
+
+.about-page-bottom {
+    position: absolute;
+
+    left: 4vw;
+    right: 4vw;
+    bottom: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+/* ABOUT INTRO */
+
+.about-page-intro {
+    padding: 130px 5vw;
+}
+
+.about-page-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8vw;
+
+    padding-top: 100px;
+}
+
+.about-page-big-text {
+    display: flex;
+    flex-direction: column;
+
+    font-size: clamp(70px, 9vw, 140px);
+
+    line-height: .8;
+    letter-spacing: -7px;
+}
+
+.about-page-big-text span {
+    color: #777;
+}
+
+.about-page-big-text strong {
+    font-weight: 500;
+}
+
+.about-page-copy {
+    padding-top: 20px;
+}
+
+.about-page-copy p {
+    max-width: 560px;
+
+    color: #555;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.about-page-copy .about-page-lead {
+    color: #111;
+
+    font-size: 27px;
+    line-height: 1.3;
+
+    margin-bottom: 45px;
+}
+
+
+/* ABOUT INTERESTS */
+
+.about-page-areas {
+    padding: 130px 5vw;
+
+    background: #f3f1e9;
+}
+
+.about-interest-list {
+    margin-top: 80px;
+
+    border-top: 1px solid #111;
+}
+
+.about-interest {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 50px;
+
+    align-items: center;
+
+    min-height: 190px;
+
+    border-bottom: 1px solid #aaa;
+
+    transition:
+        padding .35s ease,
+        background .35s ease;
+}
+
+.about-interest:hover {
+    padding-left: 25px;
+    background: #e5e2d8;
+}
+
+.about-interest > span:first-child {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.about-interest h2 {
+    font-size: clamp(45px, 6vw, 90px);
+
+    font-weight: 500;
+
+    line-height: .8;
+
+    letter-spacing: -4px;
+}
+
+.about-interest p {
+    max-width: 470px;
+
+    margin-top: 18px;
+
+    color: #666;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.interest-arrow {
+    font-size: 25px;
+
+    transition: transform .3s ease;
+}
+
+.about-interest:hover .interest-arrow {
+    transform: translate(6px,-6px);
+}
+
+
+/* CURRENTLY */
+
+.about-current {
+    padding: 130px 5vw;
+}
+
+.currently-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8vw;
+
+    padding-top: 100px;
+}
+
+.currently-title > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.currently-title h2 {
+    margin-top: 25px;
+
+    font-size: clamp(65px, 8vw, 120px);
+
+    font-weight: 500;
+
+    line-height: .8;
+
+    letter-spacing: -6px;
+}
+
+.currently-title h2 span {
+    color: #777;
+}
+
+.currently-list {
+    border-top: 1px solid #111;
+}
+
+.currently-item {
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    gap: 20px;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid #bbb;
+}
+
+.currently-item span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    color: #777;
+}
+
+.currently-item p {
+    max-width: 430px;
+
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+
+/* TOOLS */
+
+.about-tools {
+    padding: 130px 5vw;
+
+    background: #f3f1e9;
+}
+
+.tools-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 80px;
+
+    border-top: 1px solid #111;
+    border-left: 1px solid #111;
+}
+
+.tools-grid span {
+    padding: 28px;
+
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+.tools-grid span:hover {
+    background: #e5e2d8;
+}
+
+
+/* ABOUT CONTACT */
+
+.about-page-contact {
+    padding: 150px 5vw;
+
+    background: #111;
+    color: #f4f1e8;
+}
+
+.about-contact-small {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #888;
+}
+
+.about-page-contact h2 {
+    margin-top: 45px;
+
+    font-size: clamp(70px, 11vw, 170px);
+
+    font-weight: 500;
+
+    line-height: .78;
+
+    letter-spacing: -8px;
+}
+
+.about-page-contact h2 span {
+    color: #777;
+}
+
+.about-page-contact a {
+    display: inline-block;
+
+    margin-top: 70px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #f4f1e8;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* ABOUT END */
+
+.about-page-end {
+    padding: 35px 5vw;
+
+    background: #111;
+
+    border-top: 1px solid rgba(255,255,255,.15);
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    color: #888;
+}
+
+.about-page-end a:hover {
+    color: #f4f1e8;
+}
+
+
+
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
+
+.contact-page-hero {
+    height: calc(100vh - 78px);
+    min-height: 650px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-page-meta {
+    position: absolute;
+    top: 27px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    color: #777;
+
+    z-index: 3;
+}
+
+.contact-meta-left {
+    left: 4vw;
+}
+
+.contact-meta-right {
+    right: 4vw;
+    text-align: right;
+}
+
+
+/* CONTACT TITLE */
+
+.contact-page-title {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.contact-page-title > span {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+    margin-bottom: 25px;
+}
+
+.contact-page-title h1 {
+    font-size: clamp(130px, 23vw, 340px);
+
+    font-weight: 500;
+
+    line-height: .7;
+
+    letter-spacing: -15px;
+}
+
+.contact-page-title h1 span {
+    color: #777;
+}
+
+.contact-page-title p {
+    margin-top: 45px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    color: #777;
+}
+
+
+/* CONTACT ORBITS */
+
+.contact-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(0,0,0,.13);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.contact-orbit-one {
+    width: 570px;
+    height: 570px;
+
+    animation: rotateOrbit 25s linear infinite;
+}
+
+.contact-orbit-two {
+    width: 820px;
+    height: 300px;
+
+    transform: rotate(-25deg);
+
+    animation: rotateOrbitTwo 35s linear infinite;
+}
+
+
+/* CONTACT CROSSES */
+
+.contact-cross {
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 20px;
+
+    color: #777;
+
+    animation: floatCross 4s ease-in-out infinite;
+}
+
+.contact-cross-one {
+    left: 30%;
+    top: 20%;
+}
+
+.contact-cross-two {
+    right: 30%;
+    top: 30%;
+
+    animation-delay: 1s;
+}
+
+.contact-cross-three {
+    left: 25%;
+    bottom: 20%;
+
+    animation-delay: 2s;
+}
+
+
+/* CONTACT BOTTOM */
+
+.contact-page-bottom {
+    position: absolute;
+
+    left: 4vw;
+    right: 4vw;
+    bottom: 25px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+
+/* CONTACT INTRO */
+
+.contact-intro {
+    padding: 130px 5vw;
+}
+
+.contact-intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8vw;
+
+    padding-top: 100px;
+}
+
+.contact-intro-grid h2 {
+    font-size: clamp(100px, 13vw, 190px);
+
+    font-weight: 500;
+
+    line-height: .75;
+
+    letter-spacing: -10px;
+}
+
+.contact-intro-grid h2 span {
+    color: #777;
+}
+
+.contact-intro-copy {
+    padding-top: 25px;
+}
+
+.contact-intro-copy p {
+    max-width: 560px;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+.contact-intro-copy .contact-lead {
+    color: #111;
+
+    font-size: 27px;
+
+    line-height: 1.3;
+
+    margin-bottom: 45px;
+}
+
+
+/* CONTACT LINKS */
+
+.contact-links-section {
+    padding: 130px 5vw;
+
+    background: #f3f1e9;
+}
+
+.contact-links {
+    margin-top: 80px;
+
+    border-top: 1px solid #111;
+}
+
+.contact-link {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 50px;
+
+    align-items: center;
+
+    min-height: 160px;
+
+    border-bottom: 1px solid #aaa;
+
+    transition:
+        padding .35s ease,
+        background .35s ease;
+}
+
+.contact-link:hover {
+    padding-left: 25px;
+
+    background: #e5e2d8;
+}
+
+.contact-link-number {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.contact-link-main span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.contact-link-main h3 {
+    margin-top: 8px;
+
+    font-size: clamp(40px, 5vw, 70px);
+
+    font-weight: 500;
+
+    line-height: .85;
+
+    letter-spacing: -3px;
+}
+
+.contact-link-arrow {
+    font-size: 25px;
+
+    transition: transform .3s ease;
+}
+
+.contact-link:hover .contact-link-arrow {
+    transform: translate(6px,-6px);
+}
+
+
+/* AVAILABILITY */
+
+.contact-availability {
+    padding: 130px 5vw;
+}
+
+.availability-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8vw;
+
+    padding-top: 100px;
+}
+
+.availability-title {
+    position: relative;
+}
+
+.availability-dot {
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    margin-bottom: 25px;
+
+    animation: blink 2s infinite;
+}
+
+.availability-title h2 {
+    font-size: clamp(65px, 8vw, 120px);
+
+    font-weight: 500;
+
+    line-height: .8;
+
+    letter-spacing: -6px;
+}
+
+.availability-title h2 span {
+    color: #777;
+}
+
+.availability-copy {
+    padding-top: 40px;
+}
+
+.availability-copy p {
+    max-width: 530px;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* BIG CONTACT */
+
+.contact-big {
+    padding: 150px 5vw;
+
+    background: #111;
+
+    color: #f4f1e8;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 50px;
+}
+
+.contact-big span {
+    font-size: clamp(55px, 8vw, 120px);
+
+    line-height: .8;
+
+    letter-spacing: -6px;
+}
+
+.contact-big a {
+    white-space: nowrap;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid #f4f1e8;
+
+    padding-bottom: 8px;
+}
+
+
+/* CONTACT END */
+
+.contact-page-end {
+    padding: 35px 5vw;
+
+    background: #111;
+
+    border-top: 1px solid rgba(255,255,255,.15);
+
+    display: flex;
+    justify-content: space-between;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    color: #888;
+}
+
+.contact-page-end a:hover {
+    color: #f4f1e8;
+}
+
+
+
+/* =====================================================
+   ABOUT + CONTACT MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .about-page-title h1,
+    .contact-page-title h1 {
+        font-size: 21vw;
+    }
+
+    .about-page-intro-grid,
+    .currently-grid,
+    .contact-intro-grid,
+    .availability-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-page-big-text {
+        font-size: 20vw;
+    }
+
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-interest {
+        grid-template-columns: 50px 1fr 35px;
+    }
+
+    .contact-link {
+        grid-template-columns: 50px 1fr 35px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .about-page-hero,
+    .contact-page-hero {
+        height: calc(100vh - 65px);
+        min-height: 600px;
+    }
+
+    .about-page-title h1,
+    .contact-page-title h1 {
+        font-size: 28vw;
+
+        letter-spacing: -8px;
+    }
+
+    .about-page-orbit-one,
+    .contact-orbit-one {
+        width: 380px;
+        height: 380px;
+    }
+
+    .about-page-orbit-two,
+    .contact-orbit-two {
+        width: 500px;
+        height: 220px;
+    }
+
+    .about-page-intro,
+    .about-page-areas,
+    .about-current,
+    .about-tools,
+    .contact-intro,
+    .contact-links-section,
+    .contact-availability {
+        padding: 90px 5%;
+    }
+
+    .about-page-intro-grid,
+    .currently-grid,
+    .contact-intro-grid,
+    .availability-grid {
+        padding-top: 70px;
+    }
+
+    .about-page-copy .about-page-lead,
+    .contact-intro-copy .contact-lead {
+        font-size: 21px;
+    }
+
+    .about-page-copy p,
+    .contact-intro-copy p,
+    .availability-copy p {
+        font-size: 15px;
+    }
+
+    .about-interest {
+        grid-template-columns: 35px 1fr 25px;
+
+        min-height: 150px;
+    }
+
+    .about-interest h2 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .about-interest p {
+        font-size: 13px;
+        max-width: 90%;
+    }
+
+    .contact-link {
+        grid-template-columns: 35px 1fr 25px;
+
+        min-height: 135px;
+    }
+
+    .contact-link-main h3 {
+        font-size: 42px;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page-contact {
+        padding: 100px 5%;
+    }
+
+    .about-page-contact h2 {
+        font-size: 20vw;
+    }
+
+    .contact-big {
+        padding: 100px 5%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .contact-big span {
+        font-size: 18vw;
+    }
+
+    .about-page-end,
+    .contact-page-end {
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .about-page-title h1,
+    .contact-page-title h1 {
+        font-size: 30vw;
+    }
+
+}
