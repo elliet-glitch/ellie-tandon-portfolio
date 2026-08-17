@@ -1,61 +1,124 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    const loadingScreen = document.getElementById("loadingScreen");
-    const site = document.getElementById("site");
-    const progress = document.querySelector(".loader-progress");
-    const percent = document.getElementById("loaderPercent");
-
-    let loadingProgress = 0;
-
 
     /* =====================================================
        LOADING SCREEN
     ===================================================== */
 
+    const loadingScreen =
+        document.getElementById("loadingScreen");
+
+    const site =
+        document.getElementById("site");
+
+    const progress =
+        document.querySelector(".loader-progress");
+
+    const percent =
+        document.getElementById("loaderPercent");
+
+
+    let loadingProgress = 0;
+
+
     const loadingInterval = setInterval(() => {
 
-        loadingProgress += Math.floor(Math.random() * 8) + 3;
+        loadingProgress +=
+            Math.floor(Math.random() * 8) + 3;
+
 
         if (loadingProgress >= 100) {
+
             loadingProgress = 100;
+
             clearInterval(loadingInterval);
+
         }
 
-        progress.style.width = `${loadingProgress}%`;
-        percent.textContent = `${loadingProgress}%`;
+
+        if (progress) {
+
+            progress.style.width =
+                `${loadingProgress}%`;
+
+        }
+
+
+        if (percent) {
+
+            percent.textContent =
+                `${loadingProgress}%`;
+
+        }
 
     }, 100);
 
 
+
     function finishLoading() {
 
-        progress.style.width = "100%";
-        percent.textContent = "100%";
+        if (progress) {
+
+            progress.style.width =
+                "100%";
+
+        }
+
+
+        if (percent) {
+
+            percent.textContent =
+                "100%";
+
+        }
+
 
         setTimeout(() => {
 
-            loadingScreen.classList.add("hidden");
-            site.classList.add("visible");
+            if (loadingScreen) {
+
+                loadingScreen.classList.add(
+                    "hidden"
+                );
+
+            }
+
+
+            if (site) {
+
+                site.classList.add(
+                    "visible"
+                );
+
+            }
 
         }, 350);
+
     }
 
 
-    /* Never leave the site stuck behind the loader */
+
     window.addEventListener("load", () => {
 
         setTimeout(() => {
+
             finishLoading();
+
         }, 500);
 
     });
 
 
-    /* Backup in case an image/font takes too long */
+
     setTimeout(() => {
 
-        if (!loadingScreen.classList.contains("hidden")) {
+        if (
+            loadingScreen &&
+            !loadingScreen.classList.contains("hidden")
+        ) {
+
             finishLoading();
+
         }
 
     }, 3000);
@@ -66,49 +129,72 @@ document.addEventListener("DOMContentLoaded", () => {
        FOLDER MOUSE MOVEMENT
     ===================================================== */
 
-    const folders = document.querySelectorAll("[data-folder]");
+    const folders =
+        document.querySelectorAll("[data-folder]");
+
 
     folders.forEach(folder => {
 
-        folder.addEventListener("mousemove", (event) => {
+        folder.addEventListener(
+            "mousemove",
+            event => {
 
-            const rect = folder.getBoundingClientRect();
-
-            const x =
-                (event.clientX - rect.left) /
-                rect.width -
-                0.5;
-
-            const y =
-                (event.clientY - rect.top) /
-                rect.height -
-                0.5;
-
-            const baseRotation =
-                folder.classList.contains("folder-design")
-                    ? -7
-                    : 7;
-
-            folder.style.transform = `
-                translate(${x * 12}px, ${y * 12}px)
-                rotate(${baseRotation + x * 5}deg)
-                scale(1.035)
-            `;
-
-        });
+                const rect =
+                    folder.getBoundingClientRect();
 
 
-        folder.addEventListener("mouseleave", () => {
+                const x =
+                    (event.clientX - rect.left) /
+                    rect.width -
+                    0.5;
 
-            const rotation =
-                folder.classList.contains("folder-design")
-                    ? -7
-                    : 7;
 
-            folder.style.transform =
-                `rotate(${rotation}deg)`;
+                const y =
+                    (event.clientY - rect.top) /
+                    rect.height -
+                    0.5;
 
-        });
+
+                const baseRotation =
+                    folder.classList.contains(
+                        "folder-design"
+                    )
+                        ? -7
+                        : 7;
+
+
+                folder.style.transform = `
+                    translate(
+                        ${x * 12}px,
+                        ${y * 12}px
+                    )
+                    rotate(
+                        ${baseRotation + x * 5}deg
+                    )
+                    scale(1.035)
+                `;
+
+            }
+        );
+
+
+        folder.addEventListener(
+            "mouseleave",
+            () => {
+
+                const rotation =
+                    folder.classList.contains(
+                        "folder-design"
+                    )
+                        ? -7
+                        : 7;
+
+
+                folder.style.transform =
+                    `rotate(${rotation}deg)`;
+
+            }
+        );
 
     });
 
@@ -118,23 +204,44 @@ document.addEventListener("DOMContentLoaded", () => {
        HERO NAME MOUSE MOVEMENT
     ===================================================== */
 
-    const heroName = document.getElementById("heroName");
+    const heroName =
+        document.getElementById("heroName");
 
-    document.addEventListener("mousemove", (event) => {
 
-        if (window.innerWidth < 700) return;
+    if (heroName) {
 
-        const x =
-            (event.clientX / window.innerWidth - 0.5);
+        document.addEventListener(
+            "mousemove",
+            event => {
 
-        const y =
-            (event.clientY / window.innerHeight - 0.5);
+                if (window.innerWidth < 700) {
+                    return;
+                }
 
-        heroName.style.transform = `
-            translate(${x * 8}px, ${y * 5}px)
-        `;
 
-    });
+                const x =
+                    event.clientX /
+                    window.innerWidth -
+                    0.5;
+
+
+                const y =
+                    event.clientY /
+                    window.innerHeight -
+                    0.5;
+
+
+                heroName.style.transform = `
+                    translate(
+                        ${x * 8}px,
+                        ${y * 5}px
+                    )
+                `;
+
+            }
+        );
+
+    }
 
 
 
@@ -145,30 +252,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const crosses =
         document.querySelectorAll(".cross");
 
-    document.addEventListener("mousemove", (event) => {
 
-        if (window.innerWidth < 700) return;
+    document.addEventListener(
+        "mousemove",
+        event => {
 
-        const x =
-            event.clientX / window.innerWidth - 0.5;
+            if (window.innerWidth < 700) {
+                return;
+            }
 
-        const y =
-            event.clientY / window.innerHeight - 0.5;
 
-        crosses.forEach((cross, index) => {
+            const x =
+                event.clientX /
+                window.innerWidth -
+                0.5;
 
-            const amount = (index + 1) * 8;
 
-            cross.style.transform = `
-                translate(
-                    ${x * amount}px,
-                    ${y * amount}px
-                )
-            `;
+            const y =
+                event.clientY /
+                window.innerHeight -
+                0.5;
 
-        });
 
-    });
+            crosses.forEach(
+                (cross, index) => {
+
+                    const amount =
+                        (index + 1) * 8;
+
+
+                    cross.style.transform = `
+                        translate(
+                            ${x * amount}px,
+                            ${y * amount}px
+                        )
+                    `;
+
+                }
+            );
+
+        }
+    );
 
 
 
@@ -176,24 +300,31 @@ document.addEventListener("DOMContentLoaded", () => {
        SCROLL REVEAL
     ===================================================== */
 
-    const revealItems = document.querySelectorAll(
-        ".about-grid, .cityline-wrap, .area-item, .contact-content"
-    );
+    const revealItems =
+        document.querySelectorAll(
+            ".about-grid, .cityline-wrap, .area-item, .contact-content"
+        );
 
 
     const observer =
         new IntersectionObserver(
-            (entries) => {
+            entries => {
 
-                entries.forEach(entry => {
+                entries.forEach(
+                    entry => {
 
-                    if (entry.isIntersecting) {
+                        if (
+                            entry.isIntersecting
+                        ) {
 
-                        entry.target.classList.add("revealed");
+                            entry.target.classList.add(
+                                "revealed"
+                            );
+
+                        }
 
                     }
-
-                });
+                );
 
             },
             {
@@ -205,7 +336,10 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach(item => {
 
         item.style.opacity = "0";
-        item.style.transform = "translateY(30px)";
+
+        item.style.transform =
+            "translateY(30px)";
+
         item.style.transition =
             "opacity .8s ease, transform .8s ease";
 
@@ -214,8 +348,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* Add the revealed state dynamically */
-    const revealStyle = document.createElement("style");
+
+    /* =====================================================
+       REVEALED STATE
+    ===================================================== */
+
+    const revealStyle =
+        document.createElement("style");
+
 
     revealStyle.textContent = `
 
@@ -226,27 +366,152 @@ document.addEventListener("DOMContentLoaded", () => {
 
     `;
 
-    document.head.appendChild(revealStyle);
+
+    document.head.appendChild(
+        revealStyle
+    );
 
 
 
     /* =====================================================
-       PREVENT BROKEN FOLDER FEEL
+       CLICKABLE FOLDERS
     ===================================================== */
 
     folders.forEach(folder => {
 
-        folder.addEventListener("click", () => {
+        folder.addEventListener(
+            "click",
+            () => {
 
-            folder.style.pointerEvents = "none";
+                folder.style.transition =
+                    "transform .25s ease, opacity .25s ease";
 
-            folder.style.transition =
-                "transform .25s ease, opacity .25s ease";
+                folder.style.opacity =
+                    ".7";
 
-            folder.style.opacity = ".7";
-
-        });
+            }
+        );
 
     });
+
+
+
+    /* =====================================================
+       PROJECT FILTERS
+    ===================================================== */
+
+    const filterButtons =
+        document.querySelectorAll(
+            ".filter-button"
+        );
+
+
+    const projectItems =
+        document.querySelectorAll(
+            ".work-item"
+        );
+
+
+    const projectCount =
+        document.getElementById(
+            "projectCount"
+        );
+
+
+    function updateProjectCount() {
+
+        if (!projectCount) {
+            return;
+        }
+
+
+        const visibleProjects =
+            document.querySelectorAll(
+                ".work-item:not(.filter-hidden)"
+            );
+
+
+        projectCount.textContent =
+            String(
+                visibleProjects.length
+            ).padStart(2, "0");
+
+    }
+
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                const filter =
+                    button.getAttribute(
+                        "data-filter"
+                    );
+
+
+                /* Active button */
+
+                filterButtons.forEach(btn => {
+
+                    btn.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                /* Filter projects */
+
+                projectItems.forEach(project => {
+
+                    const category =
+                        project.getAttribute(
+                            "data-category"
+                        );
+
+
+                    if (
+                        filter === "all" ||
+                        category === filter
+                    ) {
+
+                        project.classList.remove(
+                            "filter-hidden"
+                        );
+
+                    } else {
+
+                        project.classList.add(
+                            "filter-hidden"
+                        );
+
+                    }
+
+                });
+
+
+                updateProjectCount();
+
+            }
+        );
+
+    });
+
+
+
+    /* =====================================================
+       INITIAL PROJECT COUNT
+    ===================================================== */
+
+    updateProjectCount();
+
 
 });
