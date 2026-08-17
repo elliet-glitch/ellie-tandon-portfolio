@@ -5,151 +5,524 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ellie — about</title>
+    <title>about — ellie</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="site page-site">
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
 
-    <header class="site-header">
+        <div class="loader-inner">
 
-        <a href="index.html" class="logo">et</a>
+            <div class="loader-name">about</div>
 
-        <div class="header-status">
-            <span class="status-dot"></span>
-            about ellie
+            <div class="loader-line">
+                <div class="loader-progress"></div>
+            </div>
+
+            <div class="loader-status">
+                <span>opening about</span>
+                <span id="loaderPercent">0%</span>
+            </div>
+
         </div>
 
-        <nav>
-            <a href="index.html">home</a>
-            <a href="etresume.pdf" target="_blank">resume ↗</a>
-        </nav>
-
-    </header>
+    </div>
 
 
-    <main class="about-page">
+    <!-- WEBSITE -->
+    <div class="site" id="site">
 
-        <div class="page-meta">
-            <span>about / 01</span>
+        <!-- HEADER -->
+        <header class="site-header">
+
+            <a href="index.html" class="logo">
+                et
+            </a>
+
+            <div class="header-status">
+                <span class="status-dot"></span>
+                media arts + design
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+                    home
+                </a>
+
+                <a href="design.html">
+                    design
+                </a>
+
+                <a href="marketing.html">
+                    marketing
+                </a>
+
+                <a href="etresume.pdf" target="_blank">
+                    resume ↗
+                </a>
+
+            </nav>
+
+        </header>
+
+
+        <main>
+
+
+            <!-- =========================================
+                 ABOUT HERO
+            ========================================== -->
+
+            <section class="about-page-hero">
+
+                <div class="about-page-meta">
+
+                    <span>about / 01</span>
+                    <span>ellie tandon</span>
+
+                </div>
+
+
+                <div class="about-page-orbit about-page-orbit-one"></div>
+                <div class="about-page-orbit about-page-orbit-two"></div>
+
+
+                <div class="about-page-cross about-cross-one">
+                    +
+                </div>
+
+                <div class="about-page-cross about-cross-two">
+                    +
+                </div>
+
+
+                <div class="about-page-title">
+
+                    <span>
+                        hi, i'm
+                    </span>
+
+                    <h1>
+                        ellie<span>.</span>
+                    </h1>
+
+                    <p>
+                        media arts + design student
+                    </p>
+
+                </div>
+
+
+                <div class="about-page-bottom">
+
+                    <span>
+                        Dallas, Texas
+                    </span>
+
+                    <span>
+                        scroll ↓
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 INTRO
+            ========================================== -->
+
+            <section class="about-page-intro">
+
+                <div class="section-top">
+
+                    <span>02 / introduction</span>
+
+                    <span>a little about me</span>
+
+                </div>
+
+
+                <div class="about-page-intro-grid">
+
+                    <div class="about-page-big-text">
+
+                        <span>
+                            I like making
+                        </span>
+
+                        <strong>
+                            things.
+                        </strong>
+
+                    </div>
+
+
+                    <div class="about-page-copy">
+
+                        <p class="about-page-lead">
+
+                            I'm a Media Arts & Design student
+                            at UT Dallas with an interest in
+                            design, marketing, photography,
+                            technology, and digital experiences.
+
+                        </p>
+
+
+                        <p>
+
+                            I've always enjoyed the process of
+                            taking an idea and figuring out how
+                            to turn it into something visual.
+                            Sometimes that's a graphic, sometimes
+                            a photograph, sometimes a video,
+                            and sometimes an entire website.
+
+                        </p>
+
+
+                        <p>
+
+                            What interests me most is the space
+                            between creativity and communication —
+                            figuring out not only what something
+                            looks like, but why it works and who
+                            it's communicating with.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 WHAT I DO
+            ========================================== -->
+
+            <section class="about-page-areas">
+
+                <div class="section-top">
+
+                    <span>03 / interests</span>
+
+                    <span>things i like creating</span>
+
+                </div>
+
+
+                <div class="about-interest-list">
+
+
+                    <div class="about-interest">
+
+                        <span>01</span>
+
+                        <div>
+
+                            <h2>
+                                graphic<br>
+                                design
+                            </h2>
+
+                            <p>
+                                Visual identities, layouts,
+                                posters, editorial design,
+                                and digital graphics.
+                            </p>
+
+                        </div>
+
+                        <span class="interest-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="about-interest">
+
+                        <span>02</span>
+
+                        <div>
+
+                            <h2>
+                                photography<br>
+                                + video
+                            </h2>
+
+                            <p>
+                                Capturing moments and creating
+                                visual stories through photography,
+                                video, and editing.
+                            </p>
+
+                        </div>
+
+                        <span class="interest-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="about-interest">
+
+                        <span>03</span>
+
+                        <div>
+
+                            <h2>
+                                digital<br>
+                                experiences
+                            </h2>
+
+                            <p>
+                                Websites, interactive projects,
+                                UX concepts, and creative
+                                digital experiences.
+                            </p>
+
+                        </div>
+
+                        <span class="interest-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="about-interest">
+
+                        <span>04</span>
+
+                        <div>
+
+                            <h2>
+                                marketing<br>
+                                + content
+                            </h2>
+
+                            <p>
+                                Social media, content creation,
+                                branding, audience research,
+                                and creative strategy.
+                            </p>
+
+                        </div>
+
+                        <span class="interest-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 CURRENTLY
+            ========================================== -->
+
+            <section class="about-current">
+
+                <div class="section-top">
+
+                    <span>04 / currently</span>
+
+                    <span>2026</span>
+
+                </div>
+
+
+                <div class="currently-grid">
+
+
+                    <div class="currently-title">
+
+                        <span>
+                            right now
+                        </span>
+
+                        <h2>
+                            what i'm<br>
+                            up to<span>.</span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="currently-list">
+
+                        <div class="currently-item">
+
+                            <span>01</span>
+
+                            <p>
+                                studying Media Arts & Design
+                                at UT Dallas
+                            </p>
+
+                        </div>
+
+
+                        <div class="currently-item">
+
+                            <span>02</span>
+
+                            <p>
+                                exploring marketing,
+                                UX, and digital experiences
+                            </p>
+
+                        </div>
+
+
+                        <div class="currently-item">
+
+                            <span>03</span>
+
+                            <p>
+                                building my creative
+                                portfolio
+                            </p>
+
+                        </div>
+
+
+                        <div class="currently-item">
+
+                            <span>04</span>
+
+                            <p>
+                                looking for opportunities
+                                to create, learn, and collaborate
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 TOOLS
+            ========================================== -->
+
+            <section class="about-tools">
+
+                <div class="section-top">
+
+                    <span>05 / tools</span>
+
+                    <span>things i work with</span>
+
+                </div>
+
+
+                <div class="tools-grid">
+
+                    <span>Adobe Photoshop</span>
+                    <span>Adobe Illustrator</span>
+                    <span>Adobe InDesign</span>
+                    <span>Adobe Lightroom</span>
+                    <span>After Effects</span>
+                    <span>Canva</span>
+                    <span>Figma</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Git</span>
+                    <span>GitHub</span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 CONTACT
+            ========================================== -->
+
+            <section class="about-page-contact">
+
+                <div class="about-contact-small">
+                    want to work together?
+                </div>
+
+                <h2>
+                    let's make<br>
+                    something<span>.</span>
+                </h2>
+
+                <a href="contact.html">
+                    get in touch ↗
+                </a>
+
+            </section>
+
+
+            <!-- =========================================
+                 END
+            ========================================== -->
+
+            <section class="about-page-end">
+
+                <a href="index.html">
+                    ← back home
+                </a>
+
+                <a href="design.html">
+                    design →
+                </a>
+
+                <a href="marketing.html">
+                    marketing →
+                </a>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
             <span>ellie</span>
-        </div>
+
+            <span>media arts + design</span>
+
+            <span>© 2026</span>
+
+        </footer>
+
+    </div>
 
 
-        <section class="about-intro">
-
-            <span class="eyebrow">nice to meet you</span>
-
-            <h1>
-                hi, i'm<br>
-                <span>ellie.</span>
-            </h1>
-
-        </section>
-
-
-        <section class="about-description">
-
-            <div class="about-description-number">
-                01
-            </div>
-
-            <div>
-
-                <p class="large-about-text">
-                    I'm a Media Arts & Design student at
-                    UT Dallas interested in the space between
-                    <em>design, technology, and marketing.</em>
-                </p>
-
-                <p>
-                    I enjoy creating visual experiences that make
-                    information feel interesting and approachable.
-                    My work spans graphic design, photography,
-                    video, web design, and creative marketing.
-                </p>
-
-                <p>
-                    I'm especially interested in visual storytelling,
-                    branding, social media, UX, and digital experiences.
-                    I like figuring out not only what something should
-                    look like, but why it should work that way.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <section class="about-interests">
-
-            <div class="page-section-label">
-                <span>currently interested in</span>
-                <span>02</span>
-            </div>
-
-            <div class="interest-grid">
-
-                <span>graphic design</span>
-                <span>photography</span>
-                <span>videography</span>
-                <span>social media</span>
-                <span>branding</span>
-                <span>UX / UI</span>
-                <span>web design</span>
-                <span>marketing</span>
-
-            </div>
-
-        </section>
-
-
-        <section class="about-location">
-
-            <div class="location-label">
-                based in
-            </div>
-
-            <h2>
-                DALLAS
-            </h2>
-
-            <span>
-                TEXAS / USA
-            </span>
-
-        </section>
-
-
-        <section class="page-back">
-
-            <a href="index.html">
-                ← back to home
-            </a>
-
-            <a href="contact.html">
-                contact me →
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <span>ellie</span>
-        <span>media arts + design</span>
-        <span>© 2026</span>
-
-    </footer>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
