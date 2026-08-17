@@ -1,219 +1,252 @@
-
-/* =========================================================
-   PORTFOLIO JAVASCRIPT
-========================================================= */
-
-
-/* =========================================================
-   PAGE LOADING
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const loadingScreen = document.getElementById("loadingScreen");
-
-    if (!loadingScreen) {
-        return;
-    }
-
-    const percent = document.getElementById("loaderPercent");
+    const site = document.getElementById("site");
     const progress = document.querySelector(".loader-progress");
+    const percent = document.getElementById("loaderPercent");
 
-    let current = 0;
+    let loadingProgress = 0;
 
-    const interval = setInterval(() => {
 
-        current += Math.floor(Math.random() * 8) + 4;
+    /* =====================================================
+       LOADING SCREEN
+    ===================================================== */
 
-        if (current >= 100) {
+    const loadingInterval = setInterval(() => {
 
-            current = 100;
+        loadingProgress += Math.floor(Math.random() * 8) + 3;
 
-            clearInterval(interval);
-
-            if (percent) {
-                percent.textContent = "100%";
-            }
-
-            if (progress) {
-                progress.style.width = "100%";
-            }
-
-            setTimeout(() => {
-
-                loadingScreen.style.opacity = "0";
-                loadingScreen.style.transition = "opacity .5s ease";
-
-                setTimeout(() => {
-                    loadingScreen.style.display = "none";
-                }, 500);
-
-            }, 300);
-
-            return;
+        if (loadingProgress >= 100) {
+            loadingProgress = 100;
+            clearInterval(loadingInterval);
         }
 
-        if (percent) {
-            percent.textContent = current + "%";
+        progress.style.width = `${loadingProgress}%`;
+        percent.textContent = `${loadingProgress}%`;
+
+    }, 100);
+
+
+    function finishLoading() {
+
+        progress.style.width = "100%";
+        percent.textContent = "100%";
+
+        setTimeout(() => {
+
+            loadingScreen.classList.add("hidden");
+            site.classList.add("visible");
+
+        }, 350);
+    }
+
+
+    /* Never leave the site stuck behind the loader */
+    window.addEventListener("load", () => {
+
+        setTimeout(() => {
+            finishLoading();
+        }, 500);
+
+    });
+
+
+    /* Backup in case an image/font takes too long */
+    setTimeout(() => {
+
+        if (!loadingScreen.classList.contains("hidden")) {
+            finishLoading();
         }
 
-        if (progress) {
-            progress.style.width = current + "%";
-        }
-
-    }, 80);
-
-});
+    }, 3000);
 
 
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
 
-const revealElements = document.querySelectorAll(
-    ".section-top, .home-project, .about-interest, .directory-item, .tool, .design-project, .marketing-list > div"
-);
+    /* =====================================================
+       FOLDER MOUSE MOVEMENT
+    ===================================================== */
 
-const revealObserver = new IntersectionObserver(
-    (entries) => {
+    const folders = document.querySelectorAll("[data-folder]");
 
-        entries.forEach((entry) => {
+    folders.forEach(folder => {
 
-            if (entry.isIntersecting) {
+        folder.addEventListener("mousemove", (event) => {
 
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
+            const rect = folder.getBoundingClientRect();
 
-                revealObserver.unobserve(entry.target);
+            const x =
+                (event.clientX - rect.left) /
+                rect.width -
+                0.5;
 
-            }
+            const y =
+                (event.clientY - rect.top) /
+                rect.height -
+                0.5;
+
+            const baseRotation =
+                folder.classList.contains("folder-design")
+                    ? -7
+                    : 7;
+
+            folder.style.transform = `
+                translate(${x * 12}px, ${y * 12}px)
+                rotate(${baseRotation + x * 5}deg)
+                scale(1.035)
+            `;
 
         });
 
-    },
-    {
-        threshold: 0.1
-    }
-);
 
+        folder.addEventListener("mouseleave", () => {
 
-revealElements.forEach((element) => {
+            const rotation =
+                folder.classList.contains("folder-design")
+                    ? -7
+                    : 7;
 
-    element.style.opacity = "0";
-    element.style.transform = "translateY(20px)";
-    element.style.transition = "opacity .7s ease, transform .7s ease";
+            folder.style.transform =
+                `rotate(${rotation}deg)`;
 
-    revealObserver.observe(element);
-
-});
-
-
-/* =========================================================
-   IMAGE FADE-IN
-========================================================= */
-
-const images = document.querySelectorAll("img");
-
-images.forEach((image) => {
-
-    image.style.opacity = "0";
-    image.style.transition = "opacity .6s ease";
-
-    if (image.complete) {
-
-        image.style.opacity = "1";
-
-    } else {
-
-        image.addEventListener("load", () => {
-            image.style.opacity = "1";
         });
 
-    }
-
-});
+    });
 
 
-/* =========================================================
-   CURRENT PAGE
-========================================================= */
 
-const currentPage =
-    window.location.pathname.split("/").pop() || "index.html";
+    /* =====================================================
+       HERO NAME MOUSE MOVEMENT
+    ===================================================== */
 
-const navigationLinks =
-    document.querySelectorAll("nav a");
+    const heroName = document.getElementById("heroName");
 
-navigationLinks.forEach((link) => {
+    document.addEventListener("mousemove", (event) => {
 
-    const href = link.getAttribute("href");
+        if (window.innerWidth < 700) return;
 
-    if (href === currentPage) {
+        const x =
+            (event.clientX / window.innerWidth - 0.5);
 
-        link.style.opacity = "0.45";
+        const y =
+            (event.clientY / window.innerHeight - 0.5);
 
-    }
+        heroName.style.transform = `
+            translate(${x * 8}px, ${y * 5}px)
+        `;
 
-});
-
-
-/* =========================================================
-   EXTERNAL LINKS
-========================================================= */
-
-document.querySelectorAll('a[target="_blank"]').forEach((link) => {
-
-    link.setAttribute("rel", "noopener noreferrer");
-
-});
+    });
 
 
-/* =========================================================
-   CURSOR MOVEMENT
-========================================================= */
 
-let mouseX = 0;
-let mouseY = 0;
+    /* =====================================================
+       PARALLAX DECORATIONS
+    ===================================================== */
 
-document.addEventListener("mousemove", (event) => {
+    const crosses =
+        document.querySelectorAll(".cross");
 
-    mouseX = event.clientX;
-    mouseY = event.clientY;
+    document.addEventListener("mousemove", (event) => {
 
-});
+        if (window.innerWidth < 700) return;
+
+        const x =
+            event.clientX / window.innerWidth - 0.5;
+
+        const y =
+            event.clientY / window.innerHeight - 0.5;
+
+        crosses.forEach((cross, index) => {
+
+            const amount = (index + 1) * 8;
+
+            cross.style.transform = `
+                translate(
+                    ${x * amount}px,
+                    ${y * amount}px
+                )
+            `;
+
+        });
+
+    });
 
 
-/* =========================================================
-   KEYBOARD SHORTCUT
-========================================================= */
 
-document.addEventListener("keydown", (event) => {
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
 
-    if (event.key === "Escape") {
+    const revealItems = document.querySelectorAll(
+        ".about-grid, .cityline-wrap, .area-item, .contact-content"
+    );
 
-        const loadingScreen =
-            document.getElementById("loadingScreen");
 
-        if (loadingScreen) {
-            loadingScreen.style.display = "none";
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("revealed");
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.15
+            }
+        );
+
+
+    revealItems.forEach(item => {
+
+        item.style.opacity = "0";
+        item.style.transform = "translateY(30px)";
+        item.style.transition =
+            "opacity .8s ease, transform .8s ease";
+
+        observer.observe(item);
+
+    });
+
+
+    /* Add the revealed state dynamically */
+    const revealStyle = document.createElement("style");
+
+    revealStyle.textContent = `
+
+        .revealed {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
-    }
+    `;
 
-});
+    document.head.appendChild(revealStyle);
 
 
-/* =========================================================
-   PREVENT BROKEN IMAGE ICONS
-========================================================= */
 
-document.querySelectorAll("img").forEach((image) => {
+    /* =====================================================
+       PREVENT BROKEN FOLDER FEEL
+    ===================================================== */
 
-    image.addEventListener("error", () => {
+    folders.forEach(folder => {
 
-        image.style.display = "none";
+        folder.addEventListener("click", () => {
+
+            folder.style.pointerEvents = "none";
+
+            folder.style.transition =
+                "transform .25s ease, opacity .25s ease";
+
+            folder.style.opacity = ".7";
+
+        });
 
     });
 
 });
-
