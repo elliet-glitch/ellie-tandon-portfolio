@@ -1,167 +1,734 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lost Computer | Ellie Tandon</title>
+    <title>desktop narrative — ellie</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<header>
 
-<nav>
+    <!-- =====================================================
+         LOADING SCREEN
+    ===================================================== -->
 
-<h2 class="logo">
-Ellie Tandon
-</h2>
+    <div class="loading-screen" id="loadingScreen">
 
-<div class="nav-links">
+        <div class="loader-inner">
 
-<a href="index.html">Home</a> <a href="about.html">About</a> <a href="projects.html">Projects</a> <a href="design.html">Design</a> <a href="contact.html">Contact</a>
+            <div class="loader-name">
+                digital
+            </div>
 
-</div>
+            <div class="loader-line">
 
-</nav>
+                <div class="loader-progress"></div>
 
-</header>
+            </div>
 
-<section class="case-study">
+            <div class="loader-status">
 
-<p class="subtitle">
-ATCM 2335: Internet Studio I
-</p>
+                <span>
+                    opening project
+                </span>
 
-<h1>
-Lost Computer
-</h1>
+                <span id="loaderPercent">
+                    0%
+                </span>
 
-<p class="intro">
-An interactive web experience that turns a familiar computer desktop
-into a space for digital storytelling and exploration.
-</p>
+            </div>
 
-<img
-src="images/desktop-narrative.png"
-class="hero-image"
-alt="Lost Computer interactive desktop interface"
+        </div>
 
->
+    </div>
 
-<div class="project-info">
 
-<p>
-<strong>Tools:</strong> HTML, CSS, JavaScript
-</p>
 
-<p>
-<strong>Timeline:</strong> Summer 2026
-</p>
+    <!-- =====================================================
+         WEBSITE
+    ===================================================== -->
 
-<p>
-<strong>Role:</strong> Designer & Developer
-</p>
+    <div class="site" id="site">
 
-</div>
 
-<div class="project-buttons">
+        <!-- =================================================
+             HEADER
+        ================================================= -->
 
-<a
-href="https://elliet-glitch.github.io/lost-computer/"
-class="button"
-target="_blank"
+        <header class="site-header">
 
->
+            <a href="index.html" class="logo">
+                et
+            </a>
 
-View Live Project </a>
 
-<a
-href="https://github.com/elliet-glitch/lost-computer"
-class="button"
-target="_blank"
+            <div class="header-status">
 
->
+                <span class="status-dot"></span>
 
-View Code </a>
+                digital experiences
 
-</div>
+            </div>
 
-<h2>
-Project Overview
-</h2>
 
-<p>
-Lost Computer is an interactive website built around the idea of a
-computer that was left behind. Users explore the desktop by opening
-folders, documents, photos, notes, downloads, and other digital
-artifacts.
-</p>
+            <nav>
 
-<p>
-Rather than explaining a complete story, the project leaves small
-clues throughout the interface and allows users to decide what they
-mean. The familiar desktop format makes the experience recognizable
-while creating room for curiosity and discovery.
-</p>
+                <a href="index.html">
+                    home
+                </a>
 
-<h2>
-Design Goals
-</h2>
+                <a href="about.html">
+                    about
+                </a>
 
-<ul>
+                <a href="design.html">
+                    design
+                </a>
 
-<li>Create a familiar desktop interface that users can explore.</li>
+                <a href="photography.html">
+                    photography
+                </a>
 
-<li>Use files, photos, and notes as digital storytelling elements.</li>
+                <a href="marketing.html">
+                    marketing
+                </a>
 
-<li>Keep the narrative simple and open to interpretation.</li>
+                <a href="etresume.pdf" target="_blank">
+                    resume ↗
+                </a>
 
-<li>Experiment with interaction as a way of communicating information.</li>
+            </nav>
 
-</ul>
+        </header>
 
-<h2>
-Development Process
-</h2>
 
-<p>
-I built the interface from scratch using HTML and CSS and used
-JavaScript to create the interactive elements. I developed clickable
-desktop icons, pop-up windows, file interactions, photo previews,
-and system messages to make the website function like a small
-interactive computer environment.
-</p>
 
-<p>
-I also focused on the visual details of an older computer interface,
-including the desktop wallpaper, taskbar, window styling, file icons,
-and typography.
-</p>
+        <main>
 
-<h2>
-Outcome
-</h2>
 
-<p>
-The finished project combines web design, interaction, and storytelling
-into an experience that encourages users to explore rather than simply
-read. The project allowed me to experiment with how familiar digital
-interfaces can be repurposed as creative environments for storytelling.
-</p>
+            <!-- =================================================
+                 HERO
+            ================================================= -->
 
-<a href="projects.html" class="button">
-Back to Projects
-</a>
+            <section class="design-hero desktop-hero">
 
-</section>
-<script src="script.js"></script>
+
+                <div class="design-meta design-meta-left">
+
+                    <span>
+                        01 / digital
+                    </span>
+
+                    <span>
+                        interactive web
+                    </span>
+
+                </div>
+
+
+                <div class="design-meta design-meta-right">
+
+                    <span>
+                        ellie
+                    </span>
+
+                    <span>
+                        2026
+                    </span>
+
+                </div>
+
+
+
+                <!-- ORBITS -->
+
+                <div class="design-orbit design-orbit-one"></div>
+
+                <div class="design-orbit design-orbit-two"></div>
+
+
+
+                <!-- FLOATING CROSSES -->
+
+                <div class="design-cross design-cross-one">
+                    +
+                </div>
+
+                <div class="design-cross design-cross-two">
+                    +
+                </div>
+
+
+
+                <!-- TITLE -->
+
+                <div class="design-title">
+
+                    <span class="design-eyebrow">
+                        project / 01
+                    </span>
+
+                    <h1>
+                        desktop<br>
+                        narrative<span>.</span>
+                    </h1>
+
+                    <p>
+                        interactive storytelling through a computer interface
+                    </p>
+
+                </div>
+
+
+
+                <div class="open-folder-label">
+
+                    <span>
+                        project opened
+                    </span>
+
+                    <span>
+                        scroll ↓
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROJECT INTRO
+            ================================================= -->
+
+            <section class="design-intro">
+
+
+                <div class="section-top">
+
+                    <span>
+                        02 / overview
+                    </span>
+
+                    <span>
+                        ATCM 2335 / Internet Studio I
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-intro-grid">
+
+
+                    <h2>
+
+                        lost<br>
+                        computer<span>.</span>
+
+                    </h2>
+
+
+
+                    <div>
+
+                        <p class="design-intro-lead">
+
+                            An interactive web experience that
+                            turns a familiar computer desktop
+                            into a space for digital storytelling
+                            and exploration.
+
+                        </p>
+
+
+                        <p>
+
+                            Lost Computer is built around the
+                            idea of a computer that was left
+                            behind. Instead of presenting a
+                            traditional linear story, the project
+                            lets users explore the desktop and
+                            discover pieces of the narrative
+                            themselves.
+
+                        </p>
+
+
+                        <p>
+
+                            The project was created for
+                            ATCM 2335: Internet Studio I
+                            during Summer 2026.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 HERO IMAGE
+            ================================================= -->
+
+            <section class="design-work">
+
+
+                <div class="section-top">
+
+                    <span>
+                        03 / interface
+                    </span>
+
+                    <span>
+                        interactive desktop
+                    </span>
+
+                </div>
+
+
+
+                <div class="case-study-image">
+
+                    <img
+                        src="images/desktop-narrative.png"
+                        alt="Lost Computer interactive desktop interface"
+                    >
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROJECT INFO
+            ================================================= -->
+
+            <section class="design-skills">
+
+
+                <div class="section-top">
+
+                    <span>
+                        04 / project info
+                    </span>
+
+                    <span>
+                        role + tools
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-tools">
+
+
+                    <div class="tool">
+
+                        <span>
+                            01 / tools
+                        </span>
+
+                        <h3>
+                            HTML<br>
+                            CSS + JavaScript
+                        </h3>
+
+                        <p>
+
+                            Built from scratch using
+                            HTML, CSS, and JavaScript
+                            to create the interactive
+                            desktop environment.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="tool">
+
+                        <span>
+                            02 / role
+                        </span>
+
+                        <h3>
+                            designer<br>
+                            + developer
+                        </h3>
+
+                        <p>
+
+                            Designed the interface,
+                            developed the interactions,
+                            and shaped the visual
+                            storytelling experience.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="tool">
+
+                        <span>
+                            03 / timeline
+                        </span>
+
+                        <h3>
+                            summer<br>
+                            2026
+                        </h3>
+
+                        <p>
+
+                            Created as a project for
+                            ATCM 2335: Internet Studio I
+                            at UT Dallas.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DESIGN GOALS
+            ================================================= -->
+
+            <section class="design-intro">
+
+
+                <div class="section-top">
+
+                    <span>
+                        05 / concept
+                    </span>
+
+                    <span>
+                        design goals
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-intro-grid">
+
+
+                    <h2>
+
+                        explore<br>
+                        the unknown<span>.</span>
+
+                    </h2>
+
+
+
+                    <div>
+
+                        <p class="design-intro-lead">
+
+                            The goal was to make the interface
+                            feel familiar while using it as a
+                            creative storytelling environment.
+
+                        </p>
+
+
+                        <ul>
+
+                            <li>
+                                Create a desktop interface
+                                users can explore.
+                            </li>
+
+                            <li>
+                                Use files, photos, and notes
+                                as storytelling elements.
+                            </li>
+
+                            <li>
+                                Keep the narrative open to
+                                interpretation.
+                            </li>
+
+                            <li>
+                                Experiment with interaction
+                                as a way of communicating
+                                information.
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROCESS
+            ================================================= -->
+
+            <section class="design-work">
+
+
+                <div class="section-top">
+
+                    <span>
+                        06 / process
+                    </span>
+
+                    <span>
+                        building the experience
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-intro-grid">
+
+
+                    <h2>
+
+                        interface<br>
+                        as story<span>.</span>
+
+                    </h2>
+
+
+
+                    <div>
+
+                        <p class="design-intro-lead">
+
+                            I built the interface from the
+                            ground up and used interaction
+                            to make the user part of the
+                            storytelling process.
+
+                        </p>
+
+
+                        <p>
+
+                            I developed clickable desktop
+                            icons, pop-up windows, file
+                            interactions, photo previews,
+                            system messages, and other
+                            interface elements.
+
+                        </p>
+
+
+                        <p>
+
+                            I also focused on details that
+                            would make the environment feel
+                            like an older computer system,
+                            including the wallpaper,
+                            taskbar, window styling,
+                            file icons, and typography.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 OUTCOME
+            ================================================= -->
+
+            <section class="design-intro">
+
+
+                <div class="section-top">
+
+                    <span>
+                        07 / outcome
+                    </span>
+
+                    <span>
+                        final experience
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-intro-grid">
+
+
+                    <h2>
+
+                        click.<br>
+                        explore.<br>
+                        discover<span>.</span>
+
+                    </h2>
+
+
+
+                    <div>
+
+                        <p class="design-intro-lead">
+
+                            The finished project combines
+                            web design, interaction, and
+                            storytelling into an experience
+                            that encourages users to explore.
+
+                        </p>
+
+
+                        <p>
+
+                            Rather than simply reading a story,
+                            users discover information through
+                            the interface and decide for
+                            themselves what the different
+                            digital artifacts might mean.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROJECT LINKS
+            ================================================= -->
+
+            <section class="design-end">
+
+
+                <div class="end-folder">
+
+                    <span>
+                        project / 01
+                    </span>
+
+                    <strong>
+                        desktop narrative
+                    </strong>
+
+                </div>
+
+
+
+                <div class="end-links">
+
+                    <a
+                        href="https://elliet-glitch.github.io/lost-computer/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        view live project ↗
+                    </a>
+
+
+                    <a
+                        href="https://github.com/elliet-glitch/lost-computer"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        view code ↗
+                    </a>
+
+
+                    <a href="design.html">
+                        ← design
+                    </a>
+
+
+                    <a href="marketing.html">
+                        marketing →
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================= -->
+
+        <footer>
+
+            <span>
+                ellie
+            </span>
+
+            <span>
+                media arts + design
+            </span>
+
+            <span>
+                © 2026
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
+```
