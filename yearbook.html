@@ -1,150 +1,243 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yearbook Design — Ellie Tandon</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>The Imprint Yearbook | Ellie Tandon</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.yearbook-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.yearbook-image {
+    display: block;
+    height: auto;
+}
+
+.yearbook-image.vertical {
+    width: 55%;
+    margin: 0 auto;
+}
+
+.yearbook-image.wide {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.project-description {
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+}
+
+.project-info p {
+    margin-top: 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.skills-list span {
+    padding: 8px 14px;
+    border: 1px solid currentColor;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 700px) {
+
+    .yearbook-image.vertical {
+        width: 85%;
+    }
+
+    .yearbook-image.wide {
+        width: 100%;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<header class="site-header">
+<header>
 
-    <a href="index.html" class="logo">et</a>
+<nav>
 
-    <div class="header-status">
-        <span class="status-dot"></span>
-        editorial design
-    </div>
+<h2 class="logo">
+Ellie Tandon
+</h2>
 
-    <nav>
-        <a href="index.html">home</a>
-        <a href="about.html">about</a>
-        <a href="projects.html">projects</a>
-        <a href="contact.html">contact</a>
-        <a href="etresume.pdf" target="_blank">resume ↗</a>
-    </nav>
+<div class="nav-links">
+
+<a href="index.html">Home</a> <a href="about.html">About</a> <a href="projects.html">Projects</a> <a href="design.html">Design</a> <a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
 
 </header>
 
-<main>
+<section class="page">
 
-<section class="case-study">
+<p class="subtitle">
+Publication Design
+</p>
 
-    <div class="section-top">
-        <span>01 / project</span>
-        <span>editorial design</span>
-    </div>
+<h1>
+The Imprint Yearbook
+</h1>
 
-    <p class="subtitle">
-        Editorial / Publication
-    </p>
+<p class="intro">
+A collection of editorial design work created for The Imprint,
+exploring visual storytelling, typography, photography, and
+publication design.
+</p>
 
-    <h1>
-        Yearbook<br>
-        <span>Design.</span>
-    </h1>
+<div class="project-info">
 
-    <p class="intro">
-        A collection of editorial design, photography,
-        layout, and visual storytelling developed through
-        yearbook production.
-    </p>
+<div>
 
+<h3>
+My Role
+</h3>
 
-    <div class="case-study-image">
+<p>
+Associate Editor-in-Chief & Graphic Design Editor
+</p>
 
-        <img
-            src="images/yearbook-cover.jpg"
-            alt="Yearbook design"
-        >
+</div>
 
-    </div>
+<div>
 
+<h3>
+Tools
+</h3>
 
-    <div class="project-info">
+<p>
+Adobe InDesign • Adobe Photoshop
+</p>
 
-        <p><strong>Role:</strong> Associate Editor-in-Chief / Designer</p>
+</div>
 
-        <p><strong>Focus:</strong> Editorial design, photography, layout</p>
+<div>
 
-        <p><strong>Tools:</strong> Adobe InDesign, Photoshop, Lightroom</p>
+<h3>
+Focus
+</h3>
 
-    </div>
+<p>
+Editorial Design • Layout • Photography • Visual Storytelling
+</p>
 
+</div>
 
-    <h2>
-        Project Overview
-    </h2>
+</div>
 
-    <p>
-        Yearbook design was one of my first opportunities to work
-        extensively with visual communication and editorial layout.
-        I worked with other members of the editorial staff to plan
-        page organization, visual direction, and the overall structure
-        of the publication.
-    </p>
+<h2>
+About the Project
+</h2>
 
-    <p>
-        The process required balancing creative ideas with deadlines,
-        technical requirements, photography, written content,
-        and collaboration between multiple people.
-    </p>
+<p class="project-description">
+As Associate Editor-in-Chief and Graphic Design Editor, I helped
+develop the visual direction of the yearbook and designed page
+layouts throughout the publication. I worked with writers and
+photographers to create cohesive spreads that combined imagery,
+typography, and storytelling.
+</p>
 
+<h2>
+Selected Spreads
+</h2>
 
-    <h2>
-        What I Worked On
-    </h2>
-
-    <ul>
-        <li>Editorial page layouts</li>
-        <li>Photography and image selection</li>
-        <li>Typography and visual hierarchy</li>
-        <li>Page planning and organization</li>
-        <li>Photoshop image editing</li>
-        <li>InDesign publication design</li>
-        <li>Collaboration with editorial staff</li>
-    </ul>
+<div class="yearbook-gallery">
 
 
-    <h2>
-        What I Learned
-    </h2>
+<img src="images/spreadwide1.jpg" class="yearbook-image wide">
 
-    <p>
-        Yearbook taught me how important collaboration and planning
-        are to creative projects. Because every page contributed to
-        one larger publication, design decisions had to work together
-        rather than exist independently.
-    </p>
+<img src="images/spreadlong2.jpg" class="yearbook-image vertical">
 
-    <p>
-        It also strengthened my interest in visual storytelling and
-        gave me experience working within real deadlines while
-        maintaining a consistent visual direction.
-    </p>
+<img src="images/spreadwide2.jpg" class="yearbook-image wide">
+
+<img src="images/spreadlong3.jpg" class="yearbook-image vertical">
+
+<img src="images/spreadwide3.jpg" class="yearbook-image wide">
+
+<img src="images/spreadlong4.jpg" class="yearbook-image vertical">
+
+<img src="images/spreadwide4.jpg" class="yearbook-image wide">
+
+<img src="images/spreadlong5.jpg" class="yearbook-image vertical">
+
+<img src="images/spreadwide5.jpg" class="yearbook-image wide">
+
+<img src="images/spreadlong6.jpg" class="yearbook-image vertical">
+
+<img src="images/spreadwide6.jpg" class="yearbook-image wide">
+
+<img src="images/spreadlong7.jpg" class="yearbook-image vertical">
+
+<img src="images/spreadwide7.jpg" class="yearbook-image wide">
+
+<img src="images/spreadlong8.jpg" class="yearbook-image vertical">
+
+</div>
 
 
-    <a href="design.html" class="button">
-        ← back to design
-    </a>
+
+<h2>
+Skills
+</h2>
+
+<div class="skills-list">
+
+<span>Editorial Design</span> <span>Typography</span> <span>Layout Design</span> <span>Photography</span> <span>Visual Storytelling</span> <span>Adobe InDesign</span> <span>Adobe Photoshop</span>
+
+</div>
+
+<a href="design.html" class="back-link">
+← Back to Design
+</a>
 
 </section>
-
-</main>
-
-<footer>
-    <span>ellie tandon</span>
-    <span>media arts + design</span>
-    <span>© 2026</span>
-</footer>
-
 <script src="script.js"></script>
-
 </body>
-</html>
 
+</html>
