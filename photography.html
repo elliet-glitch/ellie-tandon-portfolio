@@ -1,182 +1,825 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Photography | Ellie Tandon</title>
+    <title>photography + video — ellie</title>
 
-<link rel="stylesheet" href="style.css">
-
-<style>
-
-.photography-intro {
-    max-width: 800px;
-    line-height: 1.7;
-    margin-bottom: 50px;
-}
-
-.photo-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin-top: 30px;
-}
-
-.photo-image {
-    display: block;
-    height: auto;
-}
-
-.photo-image.vertical {
-    width: 55%;
-    margin: 0 auto;
-}
-
-.photo-image.wide {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.back-link {
-    display: inline-block;
-    margin-top: 60px;
-    margin-bottom: 40px;
-}
-
-@media (max-width: 700px) {
-
-    .photo-image.vertical {
-        width: 85%;
-    }
-
-    .photo-image.wide {
-        width: 100%;
-    }
-
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<header>
 
-<nav>
+    <!-- =====================================================
+         LOADING SCREEN
+    ===================================================== -->
 
-<h2 class="logo">
-Ellie Tandon
-</h2>
+    <div class="loading-screen" id="loadingScreen">
 
-<div class="nav-links">
+        <div class="loader-inner">
 
-<a href="index.html">Home</a> <a href="about.html">About</a> <a href="projects.html">Projects</a> <a href="design.html">Design</a> <a href="contact.html">Contact</a>
+            <div class="loader-name">
+                photography
+            </div>
 
-</div>
+            <div class="loader-line">
 
-</nav>
+                <div class="loader-progress"></div>
 
-</header>
+            </div>
 
-<section class="page">
+            <div class="loader-status">
 
-<p class="subtitle">
-Photography
-</p>
+                <span>
+                    opening folder
+                </span>
 
-<h1>
-Photography Collection
-</h1>
+                <span id="loaderPercent">
+                    0%
+                </span>
 
-<p class="intro">
-A collection of photographs exploring composition, perspective,
-light, and visual storytelling.
-</p>
+            </div>
 
-<h2>
-About the Collection
-</h2>
+        </div>
 
-<p class="photography-intro">
-Photography is one of the ways I explore visual storytelling.
-I enjoy capturing everyday moments, experimenting with
-composition, and finding interesting perspectives in familiar
-environments. This collection highlights photographs that
-reflect my interest in visual composition and creative direction.
-</p>
+    </div>
 
-<h2>
-Selected Photography
-</h2>
 
-<div class="photo-gallery">
 
-<img src="images/photography/photolong1.jpeg"
-  class="photo-image vertical"
-  alt="Photography">
+    <!-- =====================================================
+         WEBSITE
+    ===================================================== -->
 
-<img src="images/photography/photowide1.jpeg"
-  class="photo-image wide"
-  alt="Photography">
+    <div class="site" id="site">
 
-<img src="images/photography/photolong2.jpeg"
-  class="photo-image vertical"
-  alt="Photography">
 
-<img src="images/photography/photowide2.jpeg"
-  class="photo-image wide"
-  alt="Photography">
+        <!-- =================================================
+             HEADER
+        ================================================= -->
 
-<img src="images/photography/photolong3.jpeg"
-  class="photo-image vertical"
-  alt="Photography">
+        <header class="site-header">
 
-<img src="images/photography/photowide3.jpeg"
-  class="photo-image wide"
-  alt="Photography">
+            <a href="index.html" class="logo">
+                et
+            </a>
 
-<img src="images/photography/photolong4.jpeg"
-  class="photo-image vertical"
-  alt="Photography">
 
-<img src="images/photography/photowide4.jpeg"
-  class="photo-image wide"
-  alt="Photography">
+            <div class="header-status">
 
-<img src="images/photography/photowide5.jpeg"
-  class="photo-image wide"
-  alt="Photography">
+                <span class="status-dot"></span>
 
-<img src="images/photography/photowide6.jpeg"
-  class="photo-image wide"
-  alt="Photography">
+                photography + video
 
-<img src="images/photography/photowide7.jpeg"
-  class="photo-image wide"
-  alt="Photography">
+            </div>
 
-</div>
 
-<h2>
-Skills
-</h2>
+            <nav>
 
-<p class="photography-intro">
-Photography • Composition • Visual Storytelling •
-Creative Direction • Image Editing
-</p>
+                <a href="index.html">
+                    home
+                </a>
 
-<a href="design.html" class="back-link">
-← Back to Design
-</a>
+                <a href="about.html">
+                    about
+                </a>
 
-</section>
-<script src="script.js"></script>
+                <a href="design.html">
+                    design
+                </a>
+
+                <a href="marketing.html">
+                    marketing
+                </a>
+
+                <a href="etresume.pdf" target="_blank">
+                    resume ↗
+                </a>
+
+            </nav>
+
+        </header>
+
+
+
+        <main>
+
+
+            <!-- =================================================
+                 HERO
+            ================================================= -->
+
+            <section class="design-hero photography-hero">
+
+
+                <div class="design-meta design-meta-left">
+
+                    <span>
+                        01 / photography
+                    </span>
+
+                    <span>
+                        photo + video
+                    </span>
+
+                </div>
+
+
+                <div class="design-meta design-meta-right">
+
+                    <span>
+                        ellie
+                    </span>
+
+                    <span>
+                        2026
+                    </span>
+
+                </div>
+
+
+
+                <!-- ORBITS -->
+
+                <div class="design-orbit design-orbit-one"></div>
+
+                <div class="design-orbit design-orbit-two"></div>
+
+
+
+                <!-- FLOATING CROSSES -->
+
+                <div class="design-cross design-cross-one">
+                    +
+                </div>
+
+                <div class="design-cross design-cross-two">
+                    +
+                </div>
+
+
+
+                <!-- TITLE -->
+
+                <div class="design-title">
+
+                    <span class="design-eyebrow">
+                        folder / 02
+                    </span>
+
+                    <h1>
+                        photography<span>.</span>
+                    </h1>
+
+                    <p>
+                        photography + visual storytelling
+                    </p>
+
+                </div>
+
+
+
+                <div class="open-folder-label">
+
+                    <span>
+                        opened folder
+                    </span>
+
+                    <span>
+                        scroll ↓
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 INTRO
+            ================================================= -->
+
+            <section class="design-intro">
+
+
+                <div class="section-top">
+
+                    <span>
+                        02 / photography
+                    </span>
+
+                    <span>
+                        visual storytelling
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-intro-grid">
+
+
+                    <h2>
+
+                        capturing<br>
+                        perspective<span>.</span>
+
+                    </h2>
+
+
+
+                    <div>
+
+
+                        <p class="design-intro-lead">
+
+                            Photography is one of the ways
+                            I explore visual storytelling —
+                            from everyday moments to
+                            carefully composed images.
+
+                        </p>
+
+
+                        <p>
+
+                            I enjoy looking for interesting
+                            perspectives, experimenting with
+                            composition and light, and finding
+                            ways to make an ordinary moment
+                            visually interesting.
+
+                        </p>
+
+
+                        <p>
+
+                            My photography work also connects
+                            with my interests in graphic design,
+                            creative direction, and video.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PHOTOGRAPHY GALLERY
+            ================================================= -->
+
+            <section class="design-work">
+
+
+                <div class="section-top">
+
+                    <span>
+                        03 / selected work
+                    </span>
+
+                    <span>
+                        photography collection
+                    </span>
+
+                </div>
+
+
+
+                <div class="photo-gallery">
+
+
+                    <!-- PHOTO 01 -->
+
+                    <figure class="photo-item photo-vertical">
+
+                        <img
+                            src="images/photography/photolong1.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                01
+                            </span>
+
+                            <span>
+                                photography / composition
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 02 -->
+
+                    <figure class="photo-item photo-wide">
+
+                        <img
+                            src="images/photography/photowide1.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                02
+                            </span>
+
+                            <span>
+                                photography / visual storytelling
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 03 -->
+
+                    <figure class="photo-item photo-vertical">
+
+                        <img
+                            src="images/photography/photolong2.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                03
+                            </span>
+
+                            <span>
+                                photography / perspective
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 04 -->
+
+                    <figure class="photo-item photo-wide">
+
+                        <img
+                            src="images/photography/photowide2.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                04
+                            </span>
+
+                            <span>
+                                photography / composition
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 05 -->
+
+                    <figure class="photo-item photo-vertical">
+
+                        <img
+                            src="images/photography/photolong3.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                05
+                            </span>
+
+                            <span>
+                                photography / visual study
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 06 -->
+
+                    <figure class="photo-item photo-wide">
+
+                        <img
+                            src="images/photography/photowide3.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                06
+                            </span>
+
+                            <span>
+                                photography / visual storytelling
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 07 -->
+
+                    <figure class="photo-item photo-vertical">
+
+                        <img
+                            src="images/photography/photolong4.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                07
+                            </span>
+
+                            <span>
+                                photography / perspective
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 08 -->
+
+                    <figure class="photo-item photo-wide">
+
+                        <img
+                            src="images/photography/photowide4.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                08
+                            </span>
+
+                            <span>
+                                photography / composition
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 09 -->
+
+                    <figure class="photo-item photo-wide">
+
+                        <img
+                            src="images/photography/photowide5.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                09
+                            </span>
+
+                            <span>
+                                photography / visual storytelling
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 10 -->
+
+                    <figure class="photo-item photo-wide">
+
+                        <img
+                            src="images/photography/photowide6.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                10
+                            </span>
+
+                            <span>
+                                photography / creative direction
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+
+                    <!-- PHOTO 11 -->
+
+                    <figure class="photo-item photo-wide">
+
+                        <img
+                            src="images/photography/photowide7.jpeg"
+                            alt="Photography project image"
+                        >
+
+                        <figcaption>
+
+                            <span>
+                                11
+                            </span>
+
+                            <span>
+                                photography / visual study
+                            </span>
+
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 APPROACH
+            ================================================= -->
+
+            <section class="design-skills">
+
+
+                <div class="section-top">
+
+                    <span>
+                        04 / approach
+                    </span>
+
+                    <span>
+                        behind the camera
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-tools">
+
+
+                    <div class="tool">
+
+                        <span>
+                            01 / composition
+                        </span>
+
+                        <h3>
+                            finding<br>
+                            the frame
+                        </h3>
+
+                        <p>
+
+                            I pay attention to framing,
+                            perspective, balance, and
+                            the visual relationships
+                            within an image.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="tool">
+
+                        <span>
+                            02 / storytelling
+                        </span>
+
+                        <h3>
+                            capturing<br>
+                            a moment
+                        </h3>
+
+                        <p>
+
+                            I use photography to
+                            document moments,
+                            environments, people,
+                            and visual details.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="tool">
+
+                        <span>
+                            03 / editing
+                        </span>
+
+                        <h3>
+                            refining<br>
+                            the image
+                        </h3>
+
+                        <p>
+
+                            Lightroom and Photoshop
+                            help me refine color,
+                            composition, lighting,
+                            and the overall mood.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SKILLS
+            ================================================= -->
+
+            <section class="design-intro">
+
+
+                <div class="section-top">
+
+                    <span>
+                        05 / skills
+                    </span>
+
+                    <span>
+                        photography toolkit
+                    </span>
+
+                </div>
+
+
+
+                <div class="design-intro-grid">
+
+
+                    <h2>
+
+                        photo<br>
+                        + video<span>.</span>
+
+                    </h2>
+
+
+
+                    <div>
+
+                        <p class="design-intro-lead">
+
+                            Photography • Composition •
+                            Visual Storytelling •
+                            Creative Direction •
+                            Image Editing
+
+                        </p>
+
+
+                        <p>
+
+                            Tools I work with include
+                            Adobe Lightroom, Photoshop,
+                            and other Adobe Creative Cloud
+                            tools for editing and developing
+                            visual content.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 END
+            ================================================= -->
+
+            <section class="design-end">
+
+
+                <div class="end-folder">
+
+                    <span>
+                        folder / 02
+                    </span>
+
+                    <strong>
+                        photography
+                    </strong>
+
+                </div>
+
+
+
+                <div class="end-links">
+
+                    <a href="design.html">
+                        ← design
+                    </a>
+
+                    <a href="desktop-narrative.html">
+                        digital experiences →
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             FOOTER
+        ================================================= -->
+
+        <footer>
+
+            <span>
+                ellie
+            </span>
+
+            <span>
+                media arts + design
+            </span>
+
+            <span>
+                © 2026
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
 </body>
 
 </html>
+```
