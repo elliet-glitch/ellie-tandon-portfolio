@@ -5277,3 +5277,706 @@ footer {
     }
 
 }
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
+
+.contact-page-hero {
+    height: calc(100vh - 78px);
+    min-height: 650px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* META */
+
+.contact-page-meta {
+    position: absolute;
+
+    top: 27px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+
+    z-index: 3;
+}
+
+.contact-page-meta-left {
+    left: 4vw;
+}
+
+.contact-page-meta-right {
+    right: 4vw;
+
+    text-align: right;
+}
+
+
+/* TITLE */
+
+.contact-page-title {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+}
+
+.contact-page-title > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+.contact-page-title h1 {
+    margin-top: 30px;
+
+    font-size: clamp(110px, 18vw, 270px);
+
+    font-weight: 500;
+
+    line-height: .72;
+
+    letter-spacing: -12px;
+}
+
+.contact-page-title h1 span {
+    color: #777;
+}
+
+.contact-page-title p {
+    margin-top: 45px;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+
+/* ORBITS */
+
+.contact-orbit {
+    position: absolute;
+
+    border: 1px solid rgba(0,0,0,.13);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.contact-orbit-one {
+    width: 590px;
+    height: 590px;
+
+    animation: contactOrbitOne 26s linear infinite;
+}
+
+.contact-orbit-two {
+    width: 850px;
+    height: 300px;
+
+    transform: rotate(25deg);
+
+    animation: contactOrbitTwo 34s linear infinite;
+}
+
+@keyframes contactOrbitOne {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes contactOrbitTwo {
+
+    from {
+        transform: rotate(25deg);
+    }
+
+    to {
+        transform: rotate(385deg);
+    }
+
+}
+
+
+/* CROSSES */
+
+.contact-cross {
+    position: absolute;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 20px;
+
+    color: #777;
+
+    animation: contactFloat 4s ease-in-out infinite;
+}
+
+.contact-cross-one {
+    left: 27%;
+    top: 23%;
+}
+
+.contact-cross-two {
+    right: 25%;
+    bottom: 24%;
+
+    animation-delay: 1.5s;
+}
+
+@keyframes contactFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* BOTTOM */
+
+.contact-page-bottom {
+    position: absolute;
+
+    left: 4vw;
+    right: 4vw;
+    bottom: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.contact-scroll-arrow {
+    font-size: 16px;
+
+    animation: scrollBounce 1.5s infinite;
+}
+
+
+/* =====================================================
+   CONTACT INFO
+===================================================== */
+
+.contact-info-section {
+    padding: 140px 5vw;
+}
+
+.contact-info-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8vw;
+
+    padding-top: 100px;
+}
+
+.contact-info-heading {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.contact-info-heading span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    line-height: 1.4;
+
+    color: #777;
+}
+
+.contact-info-heading strong {
+    margin-top: 35px;
+
+    font-size: clamp(90px, 13vw, 190px);
+
+    line-height: .7;
+
+    letter-spacing: -10px;
+
+    font-weight: 500;
+}
+
+.contact-info-content {
+    padding-top: 10px;
+}
+
+.contact-info-content > p {
+    max-width: 560px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+.contact-info-content .contact-lead {
+    font-size: 28px;
+
+    line-height: 1.3;
+
+    color: #111;
+
+    margin-bottom: 45px;
+}
+
+
+/* CONTACT METHODS */
+
+.contact-methods {
+    margin-top: 55px;
+
+    border-top: 1px solid #111;
+}
+
+.contact-method {
+    display: grid;
+
+    grid-template-columns: 100px 1fr 30px;
+
+    align-items: center;
+
+    min-height: 75px;
+
+    border-bottom: 1px solid rgba(0,0,0,.2);
+
+    transition:
+        padding .3s ease,
+        background .3s ease;
+}
+
+.contact-method:hover {
+    padding-left: 15px;
+
+    background: #f3f1e9;
+}
+
+.contact-method-label {
+    font-family: "DM Mono", monospace;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.contact-method-value {
+    font-size: 16px;
+}
+
+.contact-method-arrow {
+    font-size: 18px;
+
+    transition: transform .3s ease;
+}
+
+.contact-method:hover .contact-method-arrow {
+    transform: translate(4px,-4px);
+}
+
+
+/* =====================================================
+   OPEN TO
+===================================================== */
+
+.contact-open-section {
+    padding: 130px 5vw;
+
+    background: #f3f1e9;
+}
+
+.contact-open-list {
+    margin-top: 80px;
+
+    border-top: 1px solid #111;
+}
+
+.contact-open-item {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 300px 40px;
+
+    align-items: center;
+
+    min-height: 190px;
+
+    border-bottom: 1px solid #aaa;
+
+    transition:
+        padding .35s ease,
+        background .35s ease;
+}
+
+.contact-open-item:hover {
+    padding-left: 20px;
+
+    background: #e5e2d8;
+}
+
+.contact-open-item > span:first-child {
+    font-family: "DM Mono", monospace;
+
+    font-size: 10px;
+
+    color: #777;
+}
+
+.contact-open-item h2 {
+    font-size: clamp(42px, 5vw, 75px);
+
+    font-weight: 500;
+
+    line-height: .85;
+
+    letter-spacing: -3px;
+}
+
+.contact-open-item p {
+    max-width: 260px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #666;
+}
+
+.contact-open-arrow {
+    font-size: 24px;
+
+    transition: transform .3s ease;
+}
+
+.contact-open-item:hover .contact-open-arrow {
+    transform: translate(5px,-5px);
+}
+
+
+/* =====================================================
+   BIG EMAIL
+===================================================== */
+
+.contact-email-section {
+    padding: 170px 5vw;
+
+    background: #111;
+
+    color: #f4f1e8;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.contact-email-label {
+    display: block;
+
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    color: #888;
+
+    margin-bottom: 40px;
+}
+
+.big-email {
+    display: inline-block;
+
+    font-size: clamp(45px, 8vw, 120px);
+
+    line-height: .8;
+
+    letter-spacing: -5px;
+
+    font-weight: 500;
+
+    border-bottom: 2px solid #f4f1e8;
+
+    padding-bottom: 12px;
+
+    transition: opacity .3s ease;
+}
+
+.big-email:hover {
+    opacity: .65;
+}
+
+.contact-email-arrow {
+    display: inline-block;
+
+    font-size: 45px;
+
+    margin-left: 20px;
+}
+
+
+/* =====================================================
+   CONTACT END
+===================================================== */
+
+.contact-end {
+    padding: 130px 5vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 50px;
+}
+
+.contact-end-title > span {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #777;
+}
+
+.contact-end-title h2 {
+    margin-top: 25px;
+
+    font-size: clamp(100px, 15vw, 220px);
+
+    font-weight: 500;
+
+    line-height: .7;
+
+    letter-spacing: -12px;
+}
+
+.contact-end-title h2 span {
+    color: #777;
+}
+
+.contact-end-links {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+}
+
+.contact-end-links a {
+    font-family: "DM Mono", monospace;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    border-bottom: 1px solid #111;
+
+    padding-bottom: 6px;
+}
+
+
+/* =====================================================
+   CONTACT MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .contact-open-item {
+        grid-template-columns: 50px 1fr 35px;
+    }
+
+    .contact-open-item p {
+        display: none;
+    }
+
+    .contact-end {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .contact-page-hero {
+        height: calc(100vh - 65px);
+
+        min-height: 600px;
+    }
+
+    .contact-page-title h1 {
+        font-size: 27vw;
+
+        letter-spacing: -7px;
+    }
+
+    .contact-page-title p {
+        margin-top: 30px;
+
+        font-size: 8px;
+    }
+
+    .contact-orbit-one {
+        width: 380px;
+        height: 380px;
+    }
+
+    .contact-orbit-two {
+        width: 500px;
+        height: 220px;
+    }
+
+    .contact-info-section,
+    .contact-open-section,
+    .contact-end {
+        padding: 90px 5%;
+    }
+
+    .contact-info-grid {
+        padding-top: 70px;
+    }
+
+    .contact-info-content .contact-lead {
+        font-size: 21px;
+    }
+
+    .contact-info-content > p {
+        font-size: 15px;
+    }
+
+    .contact-info-heading strong {
+        font-size: 24vw;
+
+        letter-spacing: -6px;
+    }
+
+    .contact-method {
+        grid-template-columns: 75px 1fr 20px;
+    }
+
+    .contact-method-value {
+        font-size: 13px;
+    }
+
+    .contact-open-list {
+        margin-top: 60px;
+    }
+
+    .contact-open-item {
+        min-height: 145px;
+
+        grid-template-columns: 35px 1fr 25px;
+    }
+
+    .contact-open-item h2 {
+        font-size: 39px;
+
+        letter-spacing: -2px;
+    }
+
+    .contact-email-section {
+        padding: 110px 5%;
+    }
+
+    .big-email {
+        font-size: 10vw;
+
+        letter-spacing: -2px;
+    }
+
+    .contact-email-arrow {
+        font-size: 25px;
+
+        margin-left: 8px;
+    }
+
+    .contact-end-title h2 {
+        font-size: 27vw;
+
+        letter-spacing: -6px;
+    }
+
+}
