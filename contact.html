@@ -5,136 +5,482 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ellie — contact</title>
+    <title>contact — ellie</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="site page-site contact-page-site">
+    <!-- LOADING SCREEN -->
+    <div class="loading-screen" id="loadingScreen">
 
-    <header class="site-header">
+        <div class="loader-inner">
 
-        <a href="index.html" class="logo">et</a>
+            <div class="loader-name">hello</div>
 
-        <div class="header-status">
-            <span class="status-dot"></span>
-            let's connect
+            <div class="loader-line">
+                <div class="loader-progress"></div>
+            </div>
+
+            <div class="loader-status">
+                <span>opening contact</span>
+                <span id="loaderPercent">0%</span>
+            </div>
+
         </div>
 
-        <nav>
-            <a href="index.html">home</a>
-            <a href="etresume.pdf" target="_blank">resume ↗</a>
-        </nav>
-
-    </header>
+    </div>
 
 
-    <main class="contact-page">
+    <!-- WEBSITE -->
+    <div class="site" id="site">
 
-        <div class="page-meta">
-            <span>contact / 01</span>
-            <span>say hello</span>
-        </div>
+        <!-- HEADER -->
+        <header class="site-header">
 
-
-        <section class="contact-intro">
-
-            <span class="eyebrow">
-                have a project?
-            </span>
-
-            <h1>
-                let's<br>
-                <span>talk.</span>
-            </h1>
-
-        </section>
-
-
-        <section class="contact-links">
-
-            <a href="mailto:YOUR-EMAIL-HERE">
-
-                <span class="contact-number">01</span>
-
-                <span class="contact-label">
-                    email
-                </span>
-
-                <span class="contact-value">
-                    YOUR-EMAIL-HERE ↗
-                </span>
-
+            <a href="index.html" class="logo">
+                et
             </a>
 
+            <div class="header-status">
 
-            <a href="https://www.linkedin.com/" target="_blank">
+                <span class="status-dot"></span>
 
-                <span class="contact-number">02</span>
+                available for creative work
 
-                <span class="contact-label">
-                    linkedin
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+                    home
+                </a>
+
+                <a href="about.html">
+                    about
+                </a>
+
+                <a href="design.html">
+                    design
+                </a>
+
+                <a href="marketing.html">
+                    marketing
+                </a>
+
+                <a href="etresume.pdf" target="_blank">
+                    resume ↗
+                </a>
+
+            </nav>
+
+        </header>
+
+
+        <main>
+
+
+            <!-- =========================================
+                 CONTACT HERO
+            ========================================== -->
+
+            <section class="contact-page-hero">
+
+                <div class="contact-page-meta contact-meta-left">
+
+                    <span>05 / contact</span>
+                    <span>let's connect</span>
+
+                </div>
+
+
+                <div class="contact-page-meta contact-meta-right">
+
+                    <span>ellie tandon</span>
+                    <span>2026</span>
+
+                </div>
+
+
+                <!-- ORBITS -->
+
+                <div class="contact-orbit contact-orbit-one"></div>
+
+                <div class="contact-orbit contact-orbit-two"></div>
+
+
+                <!-- CROSSES -->
+
+                <div class="contact-cross contact-cross-one">
+                    +
+                </div>
+
+                <div class="contact-cross contact-cross-two">
+                    +
+                </div>
+
+                <div class="contact-cross contact-cross-three">
+                    +
+                </div>
+
+
+                <!-- TITLE -->
+
+                <div class="contact-page-title">
+
+                    <span>
+                        have an idea?
+                    </span>
+
+                    <h1>
+                        hello<span>.</span>
+                    </h1>
+
+                    <p>
+                        i'd love to hear from you
+                    </p>
+
+                </div>
+
+
+                <div class="contact-page-bottom">
+
+                    <span>
+                        Dallas, Texas
+                    </span>
+
+                    <span>
+                        ↓ say hello
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 INTRO
+            ========================================== -->
+
+            <section class="contact-intro">
+
+                <div class="section-top">
+
+                    <span>01 / connect</span>
+
+                    <span>get in touch</span>
+
+                </div>
+
+
+                <div class="contact-intro-grid">
+
+                    <h2>
+                        let's<br>
+                        talk<span>.</span>
+                    </h2>
+
+
+                    <div class="contact-intro-copy">
+
+                        <p class="contact-lead">
+
+                            Whether you have a project,
+                            internship opportunity, creative
+                            collaboration, or just want to say hi,
+                            I'd love to hear from you.
+
+                        </p>
+
+
+                        <p>
+
+                            I'm always interested in meeting
+                            creative people, learning about new
+                            projects, and finding opportunities
+                            to grow.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 CONTACT LINKS
+            ========================================== -->
+
+            <section class="contact-links-section">
+
+                <div class="section-top">
+
+                    <span>02 / links</span>
+
+                    <span>find me online</span>
+
+                </div>
+
+
+                <div class="contact-links">
+
+
+                    <!-- EMAIL -->
+
+                    <a
+                        href="mailto:YOUR-EMAIL@example.com"
+                        class="contact-link"
+                    >
+
+                        <div class="contact-link-number">
+                            01
+                        </div>
+
+                        <div class="contact-link-main">
+
+                            <span>
+                                email
+                            </span>
+
+                            <h3>
+                                say hello
+                            </h3>
+
+                        </div>
+
+                        <div class="contact-link-arrow">
+                            ↗
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- LINKEDIN -->
+
+                    <a
+                        href="YOUR-LINKEDIN-URL"
+                        target="_blank"
+                        class="contact-link"
+                    >
+
+                        <div class="contact-link-number">
+                            02
+                        </div>
+
+                        <div class="contact-link-main">
+
+                            <span>
+                                linkedin
+                            </span>
+
+                            <h3>
+                                connect
+                            </h3>
+
+                        </div>
+
+                        <div class="contact-link-arrow">
+                            ↗
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- INSTAGRAM -->
+
+                    <a
+                        href="YOUR-INSTAGRAM-URL"
+                        target="_blank"
+                        class="contact-link"
+                    >
+
+                        <div class="contact-link-number">
+                            03
+                        </div>
+
+                        <div class="contact-link-main">
+
+                            <span>
+                                instagram
+                            </span>
+
+                            <h3>
+                                see more
+                            </h3>
+
+                        </div>
+
+                        <div class="contact-link-arrow">
+                            ↗
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- RESUME -->
+
+                    <a
+                        href="etresume.pdf"
+                        target="_blank"
+                        class="contact-link"
+                    >
+
+                        <div class="contact-link-number">
+                            04
+                        </div>
+
+                        <div class="contact-link-main">
+
+                            <span>
+                                resume
+                            </span>
+
+                            <h3>
+                                view resume
+                            </h3>
+
+                        </div>
+
+                        <div class="contact-link-arrow">
+                            ↗
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 AVAILABILITY
+            ========================================== -->
+
+            <section class="contact-availability">
+
+                <div class="section-top">
+
+                    <span>03 / availability</span>
+
+                    <span>currently</span>
+
+                </div>
+
+
+                <div class="availability-grid">
+
+                    <div class="availability-title">
+
+                        <span class="availability-dot"></span>
+
+                        <h2>
+                            open to<br>
+                            opportunities<span>.</span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="availability-copy">
+
+                        <p>
+
+                            I'm currently interested in
+                            creative internships, marketing
+                            opportunities, design projects,
+                            social media work, and collaborations.
+
+                        </p>
+
+
+                        <p>
+
+                            If you think we'd be a good fit,
+                            feel free to reach out.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================================
+                 BIG EMAIL
+            ========================================== -->
+
+            <section class="contact-big">
+
+                <span>
+                    want to work together?
                 </span>
 
-                <span class="contact-value">
-                    connect ↗
-                </span>
+                <a href="mailto:YOUR-EMAIL@example.com">
+                    email me ↗
+                </a>
 
-            </a>
-
-
-            <a href="https://www.instagram.com/" target="_blank">
-
-                <span class="contact-number">03</span>
-
-                <span class="contact-label">
-                    instagram
-                </span>
-
-                <span class="contact-value">
-                    follow ↗
-                </span>
-
-            </a>
-
-        </section>
+            </section>
 
 
-        <section class="contact-note">
 
-            <p>
-                I'm always interested in creative projects,
-                internships, collaborations, and opportunities
-                to make something interesting.
-            </p>
+            <!-- =========================================
+                 END
+            ========================================== -->
 
-        </section>
+            <section class="contact-page-end">
+
+                <a href="index.html">
+                    ← back home
+                </a>
+
+                <a href="about.html">
+                    about →
+                </a>
+
+                <a href="design.html">
+                    design →
+                </a>
+
+                <a href="marketing.html">
+                    marketing →
+                </a>
+
+            </section>
 
 
-        <section class="page-back">
-
-            <a href="index.html">
-                ← back to home
-            </a>
-
-        </section>
-
-    </main>
+        </main>
 
 
-    <footer>
+        <!-- FOOTER -->
 
-        <span>ellie</span>
-        <span>media arts + design</span>
-        <span>© 2026</span>
+        <footer>
 
-    </footer>
+            <span>ellie</span>
 
-</div>
+            <span>media arts + design</span>
 
-<script src="script.js"></script>
+            <span>© 2026</span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
