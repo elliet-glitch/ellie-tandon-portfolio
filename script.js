@@ -10,16 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const percent = document.getElementById("loaderPercent");
 
     let loadingProgress = 0;
+    let loadingInterval = null;
+    let loadingFinished = false;
+    let finishTimeout = null;
 
     if (loadingScreen) {
 
-        const loadingInterval = setInterval(() => {
+        const updateProgress = () => {
+
+            if (loadingFinished) return;
 
             loadingProgress += Math.floor(Math.random() * 8) + 3;
 
             if (loadingProgress >= 100) {
                 loadingProgress = 100;
-                clearInterval(loadingInterval);
+
+                if (loadingInterval) {
+                    clearInterval(loadingInterval);
+                    loadingInterval = null;
+                }
             }
 
             if (progress) {
@@ -29,10 +38,22 @@ document.addEventListener("DOMContentLoaded", () => {
             if (percent) {
                 percent.textContent = `${loadingProgress}%`;
             }
+        };
 
-        }, 100);
+
+        loadingInterval = setInterval(updateProgress, 100);
+
 
         function finishLoading() {
+
+            if (loadingFinished) return;
+
+            loadingFinished = true;
+
+            if (loadingInterval) {
+                clearInterval(loadingInterval);
+                loadingInterval = null;
+            }
 
             if (progress) {
                 progress.style.width = "100%";
@@ -42,11 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 percent.textContent = "100%";
             }
 
-            setTimeout(() => {
+            finishTimeout = setTimeout(() => {
 
-                if (loadingScreen) {
-                    loadingScreen.classList.add("hidden");
-                }
+                loadingScreen.classList.add("hidden");
 
                 if (site) {
                     site.classList.add("visible");
@@ -55,16 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 350);
         }
 
+
         window.addEventListener("load", () => {
+
             setTimeout(finishLoading, 500);
-        });
+
+        }, { once: true });
+
 
         setTimeout(() => {
 
-            if (
-                loadingScreen &&
-                !loadingScreen.classList.contains("hidden")
-            ) {
+            if (!loadingFinished) {
                 finishLoading();
             }
 
@@ -83,7 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         folder.addEventListener("mousemove", (event) => {
 
+            if (window.innerWidth < 700) return;
+
             const rect = folder.getBoundingClientRect();
+
+            if (!rect.width || !rect.height) return;
 
             const x =
                 (event.clientX - rect.left) /
@@ -103,8 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 rotate(${baseRotation + x * 5}deg)
                 scale(1.035)
             `;
-
         });
+
 
         folder.addEventListener("mouseleave", () => {
 
@@ -115,8 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             folder.style.transform =
                 `rotate(${rotation}deg)`;
-
         });
+
 
         folder.addEventListener("click", () => {
 
@@ -126,7 +150,6 @@ document.addEventListener("DOMContentLoaded", () => {
             folder.style.opacity = ".7";
 
         });
-
     });
 
 
@@ -153,9 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
             heroName.style.transform = `
                 translate(${x * 8}px, ${y * 5}px)
             `;
-
         });
-
     }
 
 
@@ -186,12 +207,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 cross.style.transform = `
                     translate(${x * amount}px, ${y * amount}px)
                 `;
-
             });
+        });
+    }
 
+
+    /* =====================================================
+       RESET MOUSE EFFECTS ON MOBILE
+    ===================================================== */
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth >= 700) return;
+
+        if (heroName) {
+            heroName.style.transform = "";
+        }
+
+        crosses.forEach(cross => {
+            cross.style.transform = "";
         });
 
-    }
+        folders.forEach(folder => {
+
+            const rotation =
+                folder.classList.contains("folder-design")
+                    ? -7
+                    : 7;
+
+            folder.style.transform =
+                `rotate(${rotation}deg)`;
+        });
+    });
 
 
     /* =====================================================
@@ -205,15 +252,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if (revealItems.length > 0) {
 
         const observer = new IntersectionObserver(
-            (entries) => {
+            (entries, observerInstance) => {
 
                 entries.forEach(entry => {
 
-                    if (entry.isIntersecting) {
+                    if (!entry.isIntersecting) return;
 
-                        entry.target.classList.add("revealed");
+                    entry.target.classList.add("revealed");
 
-                    }
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform =
+                        "translateY(0)";
+
+                    observerInstance.unobserve(entry.target);
 
                 });
 
@@ -222,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 threshold: 0.15
             }
         );
+
 
         revealItems.forEach(item => {
 
@@ -236,7 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
             observer.observe(item);
 
         });
-
     }
 
 
@@ -263,17 +314,16 @@ document.addEventListener("DOMContentLoaded", () => {
         function updateProjectCount() {
 
             const visibleProjects =
-                document.querySelectorAll(
-                    ".work-item:not(.filter-hidden)"
+                Array.from(projectItems).filter(
+                    project =>
+                        !project.classList.contains("filter-hidden")
                 );
 
             if (projectCount) {
 
                 projectCount.textContent =
                     String(visibleProjects.length).padStart(2, "0");
-
             }
-
         }
 
 
@@ -304,10 +354,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         project.getAttribute("data-category");
 
 
-                    if (
+                    const shouldShow =
                         filter === "all" ||
-                        category === filter
-                    ) {
+                        category === filter;
+
+
+                    if (shouldShow) {
 
                         project.classList.remove(
                             "filter-hidden"
@@ -318,21 +370,31 @@ document.addEventListener("DOMContentLoaded", () => {
                         project.classList.add(
                             "filter-hidden"
                         );
-
                     }
-
                 });
 
 
                 updateProjectCount();
 
             });
-
         });
 
 
         updateProjectCount();
+    }
 
+
+    /* =====================================================
+       REDUCED MOTION
+       Normal design is unchanged for users without
+       reduced-motion preferences.
+    ===================================================== */
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+
+        document.documentElement.classList.add(
+            "reduced-motion"
+        );
     }
 
 });
