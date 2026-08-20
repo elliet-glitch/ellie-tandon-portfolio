@@ -1,239 +1,755 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selected work — ellie</title>
 
-<title>Projects | Ellie Tandon</title>
+    <meta
+        name="description"
+        content="Selected design, photography, interactive, and marketing work by Ellie Tandon."
+    >
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+    <!-- =========================
+         LOADING SCREEN
+    ========================== -->
 
-<nav>
+    <div class="loading-screen" id="loadingScreen">
 
-<h2 class="logo">
-Ellie Tandon
-</h2>
+        <div class="loader-inner">
 
-<div class="nav-links">
+            <div class="loader-name">work</div>
 
-<a href="index.html">Home</a> <a href="about.html">About</a> <a href="projects.html">Projects</a> <a href="design.html">Design</a> <a href="contact.html">Contact</a>
+            <div class="loader-line">
+                <div class="loader-progress" id="loaderProgress"></div>
+            </div>
 
-</div>
+            <div class="loader-status">
+                <span>opening folder</span>
+                <span id="loaderPercent">0%</span>
+            </div>
 
-</nav>
+        </div>
 
-</header>
+    </div>
 
-<section class="selected-work">
 
-<div class="selected-work-header">
+    <!-- =========================
+         SITE
+    ========================== -->
 
-<p class="subtitle">
-Selected Work
-</p>
+    <div class="site" id="site">
 
-<h1>
-A few things I've made.
-</h1>
 
-<p>
-A collection of interactive experiences, visual design,
-photography, publication design, and creative projects.
-</p>
+        <!-- =========================
+             HEADER
+        ========================== -->
 
-</div>
+        <header class="site-header">
 
-<div class="work-grid">
+            <a href="index.html" class="logo">
+                ET
+            </a>
 
-<!-- DESKTOP NARRATIVE -->
+            <div class="header-status">
 
-<a href="desktop-narrative.html" class="work-item work-large">
+                <span class="status-dot"></span>
 
-<img
-src="images/desktop-narrative.png"
-alt="A Life Hidden in a Desktop"
+                selected work
 
->
+            </div>
 
-<div class="work-label">
+            <nav>
 
-<span>
-Interactive Design
-</span>
+                <a href="index.html">
+                    home
+                </a>
 
-<h3>
-A Life Hidden in a Desktop
-</h3>
+                <a href="about.html">
+                    about
+                </a>
 
-<p>
-Interactive storytelling • Digital artifacts
-</p>
+                <a href="contact.html">
+                    contact
+                </a>
 
-</div>
+            </nav>
 
-</a>
+        </header>
 
-<!-- YEARBOOK -->
 
-<a href="yearbook.html" class="work-item">
 
-<img
-src="images/yearbook.png"
-alt="The Imprint Yearbook"
+        <main>
 
->
 
-<div class="work-label">
+            <!-- =========================
+                 WORK HERO
+            ========================== -->
 
-<span>
-Publication Design
-</span>
+            <section class="work-hero">
 
-<h3>
-The Imprint Yearbook
-</h3>
+                <div class="work-hero-meta work-hero-meta-left">
 
-<p>
-Editorial design • Layout • Visual storytelling
-</p>
+                    <span>portfolio / 2026</span>
+                    <span>selected work</span>
 
-</div>
+                </div>
 
-</a>
 
-<!-- PHOTOGRAPHY -->
+                <div class="work-hero-meta work-hero-meta-right">
 
-<a href="photography.html" class="work-item">
+                    <span>design</span>
+                    <span>marketing</span>
+                    <span>interactive</span>
 
-<img
-src="images/photography.jpg"
-alt="Photography Collection"
+                </div>
 
->
 
-<div class="work-label">
+                <!-- Decorative elements -->
 
-<span>
-Photography
-</span>
+                <div class="work-orbit work-orbit-one"></div>
+                <div class="work-orbit work-orbit-two"></div>
 
-<h3>
-Photography Collection
-</h3>
+                <div class="work-cross work-cross-one">+</div>
+                <div class="work-cross work-cross-two">+</div>
+                <div class="work-cross work-cross-three">+</div>
 
-<p>
-Photography • Composition • Storytelling
-</p>
 
-</div>
+                <!-- Title -->
 
-</a>
+                <div class="work-hero-center">
 
-<!-- QUIET PIXELS -->
+                    <span class="work-eyebrow">
+                        folder / 00
+                    </span>
 
-<a href="quiet-pixels.html" class="work-item work-large">
+                    <h1>
+                        work<span>.</span>
+                    </h1>
 
-<img
-src="images/quiet-pixels.png"
-alt="Quiet Pixels Dream of Falling Apart"
+                    <p>
+                        design + photography + interactive + marketing
+                    </p>
 
->
+                </div>
 
-<div class="work-label">
 
-<span>
-Creative Coding
-</span>
+                <div class="work-scroll">
+                    <span>↓</span>
+                    <span>scroll to explore</span>
+                </div>
 
-<h3>
-Quiet Pixels Dream of Falling Apart
-</h3>
+            </section>
 
-<p>
-Interactive poetry • Glitch • Creative coding
-</p>
 
-</div>
 
-</a>
+            <!-- =========================
+                 INTRO
+            ========================== -->
 
-<!-- DUNKIN -->
+            <section class="work-intro">
 
-<a href="dunkin.html" class="work-item">
+                <div class="section-top">
 
-<img
-src="images/dunkin.png"
-alt="Dunkin marketing project"
+                    <span>01 / selected work</span>
 
->
+                    <span>things i've made</span>
 
-<div class="work-label">
+                </div>
 
-<span>
-Marketing & Design
-</span>
 
-<h3>
-Dunkin Marketing Campaign
-</h3>
+                <div class="work-intro-grid">
 
-<p>
-Marketing strategy • Visual communication • Branding
-</p>
+                    <h2>
+                        a few things<br>
+                        i've made<span>.</span>
+                    </h2>
 
-</div>
 
-</a>
+                    <div class="work-intro-copy">
 
-<!-- COLLAGE -->
+                        <p class="work-intro-lead">
 
-<a href="design.html" class="work-item">
+                            A collection of interactive
+                            experiences, visual design,
+                            photography, publication design,
+                            and creative projects.
 
-<img
-src="images/collage-design.jpg"
-alt="Collage design project"
+                        </p>
 
->
+                        <p>
 
-<div class="work-label">
+                            I like working across different
+                            mediums and finding ways to combine
+                            visual communication, storytelling,
+                            technology, and strategy.
 
-<span>
-Visual Design
-</span>
+                        </p>
 
-<h3>
-Collage & Graphic Design
-</h3>
+                    </div>
 
-<p>
-Composition • Typography • Visual experimentation
-</p>
+                </div>
 
-</div>
+            </section>
 
-</a>
 
-</div>
 
-<div class="work-button">
+            <!-- =========================
+                 PROJECTS
+            ========================== -->
 
-<a href="design.html" class="button">
-Explore More Design Work →
-</a>
+            <section class="work-projects">
 
-</div>
+                <div class="section-top">
 
-</section>
-<script src="script.js"></script>
+                    <span>02 / projects</span>
+
+                    <span>selected work</span>
+
+                </div>
+
+
+                <div class="work-grid">
+
+
+                    <!-- PROJECT 01 -->
+
+                    <a
+                        href="desktop-narrative.html"
+                        class="work-card work-card-large"
+                    >
+
+                        <div class="work-card-image">
+
+                            <img
+                                src="images/desktop-narrative.png"
+                                alt="A Life Hidden in a Desktop"
+                            >
+
+                            <span class="work-card-number">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="work-card-info">
+
+                            <div>
+
+                                <span class="work-card-label">
+                                    interactive design
+                                </span>
+
+                                <h3>
+                                    A Life Hidden<br>
+                                    in a Desktop
+                                </h3>
+
+                            </div>
+
+
+                            <div class="work-card-description">
+
+                                <p>
+                                    Interactive storytelling
+                                    through a fictional computer
+                                    desktop interface.
+                                </p>
+
+                                <span class="work-card-arrow">
+                                    ↗
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- PROJECT 02 -->
+
+                    <a
+                        href="yearbook.html"
+                        class="work-card"
+                    >
+
+                        <div class="work-card-image">
+
+                            <img
+                                src="images/yearbook.png"
+                                alt="The Imprint Yearbook"
+                            >
+
+                            <span class="work-card-number">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="work-card-info">
+
+                            <div>
+
+                                <span class="work-card-label">
+                                    publication design
+                                </span>
+
+                                <h3>
+                                    The Imprint<br>
+                                    Yearbook
+                                </h3>
+
+                            </div>
+
+
+                            <div class="work-card-description">
+
+                                <p>
+                                    Editorial design, layout,
+                                    photography, and visual
+                                    storytelling.
+                                </p>
+
+                                <span class="work-card-arrow">
+                                    ↗
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- PROJECT 03 -->
+
+                    <a
+                        href="photography.html"
+                        class="work-card"
+                    >
+
+                        <div class="work-card-image">
+
+                            <img
+                                src="images/photography.jpg"
+                                alt="Photography collection"
+                            >
+
+                            <span class="work-card-number">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <div class="work-card-info">
+
+                            <div>
+
+                                <span class="work-card-label">
+                                    photography
+                                </span>
+
+                                <h3>
+                                    Photography<br>
+                                    Collection
+                                </h3>
+
+                            </div>
+
+
+                            <div class="work-card-description">
+
+                                <p>
+                                    People, places, events,
+                                    composition, and visual
+                                    storytelling.
+                                </p>
+
+                                <span class="work-card-arrow">
+                                    ↗
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- PROJECT 04 -->
+
+                    <a
+                        href="quiet-pixels.html"
+                        class="work-card"
+                    >
+
+                        <div class="work-card-image">
+
+                            <img
+                                src="images/quiet-pixels.png"
+                                alt="Quiet Pixels Dream of Falling Apart"
+                            >
+
+                            <span class="work-card-number">
+                                04
+                            </span>
+
+                        </div>
+
+
+                        <div class="work-card-info">
+
+                            <div>
+
+                                <span class="work-card-label">
+                                    creative coding
+                                </span>
+
+                                <h3>
+                                    Quiet Pixels<br>
+                                    Dream of Falling Apart
+                                </h3>
+
+                            </div>
+
+
+                            <div class="work-card-description">
+
+                                <p>
+                                    Interactive poetry,
+                                    visual atmosphere,
+                                    and experimental code.
+                                </p>
+
+                                <span class="work-card-arrow">
+                                    ↗
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- PROJECT 05 -->
+
+                    <a
+                        href="dunkin.html"
+                        class="work-card"
+                    >
+
+                        <div class="work-card-image">
+
+                            <img
+                                src="images/dunkin.png"
+                                alt="Dunkin marketing campaign"
+                            >
+
+                            <span class="work-card-number">
+                                05
+                            </span>
+
+                        </div>
+
+
+                        <div class="work-card-info">
+
+                            <div>
+
+                                <span class="work-card-label">
+                                    marketing + design
+                                </span>
+
+                                <h3>
+                                    Dunkin'<br>
+                                    Marketing Campaign
+                                </h3>
+
+                            </div>
+
+
+                            <div class="work-card-description">
+
+                                <p>
+                                    Marketing strategy,
+                                    visual communication,
+                                    branding, and campaign
+                                    planning.
+                                </p>
+
+                                <span class="work-card-arrow">
+                                    ↗
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+
+
+                    <!-- PROJECT 06 -->
+
+                    <a
+                        href="design.html"
+                        class="work-card"
+                    >
+
+                        <div class="work-card-image">
+
+                            <img
+                                src="images/collage-design.jpg"
+                                alt="Collage and graphic design project"
+                            >
+
+                            <span class="work-card-number">
+                                06
+                            </span>
+
+                        </div>
+
+
+                        <div class="work-card-info">
+
+                            <div>
+
+                                <span class="work-card-label">
+                                    visual design
+                                </span>
+
+                                <h3>
+                                    Collage +<br>
+                                    Graphic Design
+                                </h3>
+
+                            </div>
+
+
+                            <div class="work-card-description">
+
+                                <p>
+                                    Composition, typography,
+                                    imagery, and visual
+                                    experimentation.
+                                </p>
+
+                                <span class="work-card-arrow">
+                                    ↗
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 CATEGORIES
+            ========================== -->
+
+            <section class="work-categories">
+
+                <div class="section-top">
+
+                    <span>03 / explore</span>
+
+                    <span>areas of work</span>
+
+                </div>
+
+
+                <div class="work-category-list">
+
+                    <a href="design.html">
+
+                        <span>01</span>
+
+                        <h3>
+                            Design + Graphics
+                        </h3>
+
+                        <span>↗</span>
+
+                    </a>
+
+
+                    <a href="marketing.html">
+
+                        <span>02</span>
+
+                        <h3>
+                            Marketing + Strategy
+                        </h3>
+
+                        <span>↗</span>
+
+                    </a>
+
+
+                    <a href="photography.html">
+
+                        <span>03</span>
+
+                        <h3>
+                            Photography
+                        </h3>
+
+                        <span>↗</span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 END
+            ========================== -->
+
+            <section class="work-end">
+
+                <div class="end-folder">
+
+                    <span>
+                        folder / 00
+                    </span>
+
+                    <strong>
+                        work
+                    </strong>
+
+                </div>
+
+
+                <div class="end-links">
+
+                    <a href="index.html">
+                        ← back home
+                    </a>
+
+                    <a href="contact.html">
+                        let's work together →
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer>
+
+            <span>
+                © 2026 Ellie Tandon
+            </span>
+
+            <span>
+                Media Arts & Design / UT Dallas
+            </span>
+
+            <span>
+                Dallas, TX
+            </span>
+
+        </footer>
+
+    </div>
+
+
+
+    <!-- =========================
+         LOADING SCRIPT
+    ========================== -->
+
+    <script>
+
+        const loadingScreen =
+            document.getElementById("loadingScreen");
+
+        const site =
+            document.getElementById("site");
+
+        const loaderProgress =
+            document.getElementById("loaderProgress");
+
+        const loaderPercent =
+            document.getElementById("loaderPercent");
+
+
+        let progress = 0;
+
+
+        const loader = setInterval(() => {
+
+            progress += Math.floor(Math.random() * 8) + 3;
+
+
+            if (progress >= 100) {
+
+                progress = 100;
+
+                clearInterval(loader);
+
+                loaderProgress.style.width = "100%";
+
+                loaderPercent.textContent = "100%";
+
+
+                setTimeout(() => {
+
+                    loadingScreen.classList.add("hidden");
+
+                    site.classList.add("visible");
+
+                }, 300);
+
+
+            } else {
+
+                loaderProgress.style.width =
+                    progress + "%";
+
+                loaderPercent.textContent =
+                    progress + "%";
+
+            }
+
+        }, 80);
+
+    </script>
+
 </body>
 
 </html>

@@ -3042,3 +3042,615 @@ footer {
     display: block;
     object-fit: cover;
 }
+/* =========================================================
+   PROJECTS / SELECTED WORK PAGE
+========================================================= */
+
+
+/* =========================
+   WORK HERO
+========================= */
+
+.work-hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line, #d8d4cc);
+    background: var(--background, #f4f1ea);
+}
+
+.work-hero-center {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 120px 30px 100px;
+}
+
+.work-eyebrow {
+    display: block;
+    margin-bottom: 24px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    opacity: .55;
+}
+
+.work-hero-center h1 {
+    margin: 0;
+    font-size: clamp(80px, 15vw, 190px);
+    line-height: .8;
+    font-weight: 500;
+    letter-spacing: -.07em;
+}
+
+.work-hero-center h1 span {
+    opacity: .45;
+}
+
+.work-hero-center p {
+    margin: 35px 0 0;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    opacity: .6;
+}
+
+.work-hero-meta {
+    position: absolute;
+    z-index: 6;
+    top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    opacity: .55;
+}
+
+.work-hero-meta-left {
+    left: 5%;
+}
+
+.work-hero-meta-right {
+    right: 5%;
+    text-align: right;
+}
+
+.work-scroll {
+    position: absolute;
+    z-index: 6;
+    bottom: 30px;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    opacity: .6;
+}
+
+.work-scroll span:first-child {
+    font-size: 18px;
+}
+
+
+/* =========================
+   DECORATIVE ORBITS
+========================= */
+
+.work-orbit {
+    position: absolute;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    opacity: .16;
+    pointer-events: none;
+}
+
+.work-orbit-one {
+    width: 620px;
+    height: 260px;
+    transform: rotate(-25deg);
+    animation: workOrbitOne 16s linear infinite;
+}
+
+.work-orbit-two {
+    width: 760px;
+    height: 340px;
+    transform: rotate(30deg);
+    animation: workOrbitTwo 20s linear infinite;
+}
+
+@keyframes workOrbitOne {
+    from {
+        transform: rotate(-25deg);
+    }
+
+    to {
+        transform: rotate(335deg);
+    }
+}
+
+@keyframes workOrbitTwo {
+    from {
+        transform: rotate(30deg);
+    }
+
+    to {
+        transform: rotate(-330deg);
+    }
+}
+
+.work-cross {
+    position: absolute;
+    z-index: 4;
+    font-size: 20px;
+    font-weight: 300;
+    opacity: .45;
+    animation: workFloat 5s ease-in-out infinite;
+}
+
+.work-cross-one {
+    top: 25%;
+    left: 20%;
+}
+
+.work-cross-two {
+    right: 18%;
+    top: 30%;
+    animation-delay: -2s;
+}
+
+.work-cross-three {
+    bottom: 18%;
+    right: 30%;
+    animation-delay: -4s;
+}
+
+@keyframes workFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================
+   WORK INTRO
+========================= */
+
+.work-intro {
+    padding: 110px 5% 130px;
+}
+
+.work-intro-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 10%;
+    padding-top: 75px;
+}
+
+.work-intro-grid h2 {
+    margin: 0;
+    font-size: clamp(48px, 7vw, 100px);
+    line-height: .92;
+    font-weight: 500;
+    letter-spacing: -.05em;
+}
+
+.work-intro-grid h2 span {
+    opacity: .45;
+}
+
+.work-intro-copy {
+    max-width: 500px;
+    padding-top: 12px;
+}
+
+.work-intro-copy p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0 0 28px;
+    max-width: 470px;
+}
+
+.work-intro-copy .work-intro-lead {
+    font-size: clamp(20px, 2vw, 27px);
+    line-height: 1.35;
+}
+
+
+/* =========================
+   PROJECT SECTION
+========================= */
+
+.work-projects {
+    padding: 0 5% 140px;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 80px 35px;
+    margin-top: 70px;
+}
+
+.work-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.work-card-large {
+    grid-column: span 2;
+}
+
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.work-card-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #dedbd4;
+}
+
+.work-card-large .work-card-image {
+    aspect-ratio: 2 / .95;
+}
+
+.work-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition:
+        transform .7s cubic-bezier(.2, .7, .2, 1),
+        filter .7s ease;
+}
+
+.work-card:hover .work-card-image img {
+    transform: scale(1.035);
+}
+
+.work-card-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(255,255,255,.65);
+    border-radius: 50%;
+
+    color: white;
+    background: rgba(0,0,0,.18);
+
+    font-size: 10px;
+    letter-spacing: .08em;
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.work-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+
+    padding-top: 22px;
+    border-top: 1px solid var(--line, #d8d4cc);
+    margin-top: 14px;
+}
+
+.work-card-label {
+    display: block;
+    margin-bottom: 12px;
+
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .13em;
+    opacity: .55;
+}
+
+.work-card-info h3 {
+    margin: 0;
+
+    font-size: clamp(28px, 3.5vw, 52px);
+    line-height: .95;
+    font-weight: 500;
+    letter-spacing: -.04em;
+}
+
+.work-card-description {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    max-width: 290px;
+    padding-top: 3px;
+}
+
+.work-card-description p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: .65;
+}
+
+.work-card-arrow {
+    flex-shrink: 0;
+    font-size: 21px;
+    transition: transform .3s ease;
+}
+
+.work-card:hover .work-card-arrow {
+    transform: translate(5px, -5px);
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.work-categories {
+    padding: 0 5% 130px;
+}
+
+.work-category-list {
+    margin-top: 55px;
+    border-top: 1px solid var(--line, #d8d4cc);
+}
+
+.work-category-list a {
+    display: grid;
+    grid-template-columns: 70px 1fr 50px;
+    align-items: center;
+    gap: 20px;
+
+    padding: 28px 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--line, #d8d4cc);
+
+    transition: padding .3s ease;
+}
+
+.work-category-list a:hover {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.work-category-list a > span:first-child {
+    font-size: 10px;
+    opacity: .5;
+}
+
+.work-category-list h3 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 55px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -.04em;
+}
+
+.work-category-list a > span:last-child {
+    justify-self: end;
+    font-size: 22px;
+    transition: transform .3s ease;
+}
+
+.work-category-list a:hover > span:last-child {
+    transform: translate(5px, -5px);
+}
+
+
+/* =========================
+   WORK END
+========================= */
+
+.work-end {
+    padding: 100px 5% 120px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    border-top: 1px solid var(--line, #d8d4cc);
+}
+
+.work-end .end-folder {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.work-end .end-folder span {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    opacity: .5;
+}
+
+.work-end .end-folder strong {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: .85;
+    font-weight: 500;
+    letter-spacing: -.06em;
+}
+
+.work-end .end-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.work-end .end-links a {
+    color: inherit;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    transition: opacity .25s ease;
+}
+
+.work-end .end-links a:hover {
+    opacity: .5;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .work-hero {
+        min-height: 70vh;
+    }
+
+    .work-hero-meta {
+        top: 25px;
+        font-size: 9px;
+    }
+
+    .work-hero-center {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .work-hero-center h1 {
+        font-size: clamp(70px, 21vw, 130px);
+    }
+
+    .work-hero-center p {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .work-orbit-one {
+        width: 400px;
+        height: 180px;
+    }
+
+    .work-orbit-two {
+        width: 500px;
+        height: 230px;
+    }
+
+    .work-intro {
+        padding: 80px 6% 90px;
+    }
+
+    .work-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-top: 55px;
+    }
+
+    .work-intro-grid h2 {
+        font-size: clamp(48px, 15vw, 80px);
+    }
+
+    .work-projects {
+        padding: 0 6% 100px;
+    }
+
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 65px;
+        margin-top: 45px;
+    }
+
+    .work-card-large {
+        grid-column: span 1;
+    }
+
+    .work-card-large .work-card-image,
+    .work-card-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .work-card-info {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .work-card-description {
+        max-width: 100%;
+    }
+
+    .work-card-info h3 {
+        font-size: 36px;
+    }
+
+    .work-categories {
+        padding: 0 6% 90px;
+    }
+
+    .work-category-list a {
+        grid-template-columns: 40px 1fr 30px;
+        gap: 12px;
+        padding: 24px 0;
+    }
+
+    .work-category-list h3 {
+        font-size: 25px;
+    }
+
+    .work-end {
+        padding: 80px 6% 90px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    .work-end .end-links {
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .work-orbit,
+    .work-cross {
+        animation: none;
+    }
+
+    .work-card-image img,
+    .work-card-arrow,
+    .work-category-list a {
+        transition: none;
+    }
+
+}
